@@ -1,0 +1,1347 @@
+<style>
+/* =========================================================
+   RUDRA EARTHING SYSTEMS — HEADER
+   Original layout preserved
+   ========================================================= */
+
+header.main-header{
+    position:relative;
+    z-index:1000;
+}
+
+/* ================= TOPBAR ================= */
+
+header.main-header .topbar{
+    background:#071d2b;
+    padding:12px 0;
+    color:#fff;
+}
+
+header.main-header .topbar-contact-info ul{
+    display:flex;
+    align-items:center;
+    list-style:none;
+    padding:0;
+    margin:0;
+    gap:30px;
+}
+
+header.main-header .topbar-contact-info ul li{
+    margin:0;
+    padding:0;
+    list-style:none;
+}
+
+header.main-header .topbar-contact-info ul li a{
+    color:#fff;
+    text-decoration:none;
+    transition:all .3s ease-in-out;
+    font-size:14px;
+}
+
+header.main-header .topbar-contact-info ul li a:hover{
+    color:#f26a21;
+}
+
+header.main-header .topbar-contact-info ul li a i{
+    font-size:14px;
+    color:inherit;
+    margin-right:8px;
+}
+
+header.main-header .topbar-social-links{
+    text-align:right;
+}
+
+header.main-header .topbar-social-links ul{
+    margin:0;
+    padding:0;
+    list-style:none;
+}
+
+header.main-header .topbar-social-links ul li{
+    display:inline-block;
+    border-right:1px solid rgba(255,255,255,.25);
+    margin-right:14px;
+    padding-right:14px;
+}
+
+header.main-header .topbar-social-links ul li:last-child{
+    border-right:0;
+    margin-right:0;
+    padding-right:0;
+}
+
+header.main-header .topbar-social-links ul li a{
+    color:#fff;
+    text-decoration:none;
+}
+
+header.main-header .topbar-social-links ul li a i{
+    font-size:16px;
+    color:#fff;
+    transition:all .3s ease-in-out;
+}
+
+header.main-header .topbar-social-links ul li a:hover i{
+    color:#f26a21;
+}
+
+
+/* ================= MAIN HEADER ================= */
+
+header.main-header .header-sticky{
+    position:relative;
+    top:0;
+    z-index:1000;
+    transition:
+        transform .4s ease-in-out,
+        background-color .3s ease,
+        border-color .3s ease,
+        box-shadow .3s ease;
+}
+
+header.main-header .header-sticky.hide{
+    transform:translateY(-100%);
+}
+
+header.main-header .header-sticky.active{
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    background:#fff;
+    border-bottom:1px solid rgba(0,0,0,.08);
+    transform:translateY(0);
+    box-shadow:0 8px 30px rgba(0,0,0,.06);
+}
+
+header.main-header .navbar{
+    padding:25px 0;
+    display:flex;
+    align-items:center;
+}
+
+header.main-header .navbar-brand{
+    padding:0;
+    margin:0;
+    display:inline-flex;
+    align-items:center;
+}
+
+header.main-header .navbar-brand img{
+    display:block;
+    width:auto;
+    max-width:190px;
+    height:50px;
+    object-fit:contain;
+}
+
+
+/* ================= DESKTOP NAV ================= */
+
+header.main-header .main-menu{
+    display:flex;
+    align-items:center;
+    flex:1;
+}
+
+header.main-header .main-menu .nav-menu-wrapper{
+    flex:1;
+    text-align:center;
+    margin:0 20px;
+}
+
+header.main-header .main-menu .nav-menu-wrapper>ul{
+    align-items:center;
+    display:inline-flex;
+    margin:0;
+    padding:0;
+    list-style:none;
+}
+
+header.main-header .main-menu ul li{
+    margin:0;
+    position:relative;
+    list-style:none;
+}
+
+header.main-header .main-menu ul li.nav-item>a{
+    font-size:16px;
+    font-weight:500;
+    line-height:normal;
+    padding:15px!important;
+    color:#202020;
+    text-transform:capitalize;
+    text-decoration:none;
+    display:block;
+    transition:all .3s ease-in-out;
+}
+
+header.main-header .main-menu ul li.submenu>a:after{
+    content:'\f107';
+    font-family:'FontAwesome';
+    font-weight:900;
+    font-size:14px;
+    margin-left:8px;
+}
+
+header.main-header .main-menu ul li a:hover,
+header.main-header .main-menu ul li a:focus{
+    color:#f26a21;
+}
+
+
+/* DESKTOP DROPDOWN */
+
+header.main-header .main-menu ul ul{
+    visibility:hidden;
+    opacity:0;
+    transform:scale(1,.8);
+    transform-origin:top;
+    padding:0;
+    margin:0;
+    list-style:none;
+    width:230px;
+    border-radius:0;
+    position:absolute;
+    left:0;
+    top:100%;
+    background:linear-gradient(90deg,#f26a21 0%,#e54a16 100%);
+    text-align:left;
+    transition:all .3s ease-in-out;
+}
+
+header.main-header .main-menu ul li:hover>ul{
+    visibility:visible;
+    opacity:1;
+    transform:scale(1,1);
+    padding:5px 0;
+}
+
+header.main-header .main-menu ul ul li{
+    margin:0;
+    padding:0;
+}
+
+header.main-header .main-menu ul ul li.nav-item>a{
+    color:#fff;
+    padding:9px 20px!important;
+    transition:all .3s ease-in-out;
+}
+
+header.main-header .main-menu ul ul li a:hover{
+    color:#fff;
+    background:rgba(255,255,255,.12);
+    padding-left:23px!important;
+}
+
+
+/* ================= QUOTE BUTTON ================= */
+
+header.main-header .header-btn{
+    flex-shrink:0;
+}
+
+header.main-header .header-btn .btn-default{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    text-decoration:none;
+    white-space:nowrap;
+}
+
+
+/* ================= MOBILE DEFAULT ================= */
+
+header.main-header .responsive-menu,
+header.main-header .navbar-toggle{
+    display:none;
+}
+
+
+/* =========================================================
+   TABLET / MOBILE
+   ========================================================= */
+
+@media(max-width:1199px){
+
+    header.main-header .topbar{
+        padding:10px 0;
+    }
+
+    header.main-header .topbar-contact-info ul{
+        gap:20px;
+    }
+
+    header.main-header .main-menu .nav-menu-wrapper{
+        margin:0 8px;
+    }
+
+    header.main-header .main-menu ul li.nav-item>a{
+        padding:15px 10px!important;
+    }
+
+    header.main-header .navbar-brand img{
+        max-width:175px;
+    }
+}
+
+
+@media(max-width:991px){
+
+    /* Topbar */
+
+    header.main-header .topbar{
+        padding:10px 0;
+    }
+
+
+    /* Navbar */
+
+    header.main-header .navbar{
+        padding:15px 0;
+    }
+
+
+    /* Hide desktop navigation */
+
+    header.main-header .main-menu{
+        display:none!important;
+    }
+
+
+    /* Mobile toggle */
+
+    header.main-header .navbar-toggle{
+        display:block;
+        margin-left:auto;
+        cursor:pointer;
+    }
+
+
+    header.main-header .mobile-menu-toggle{
+        width:38px;
+        height:38px;
+        padding:0;
+        border:0;
+        outline:none;
+        background:linear-gradient(90deg,#f26a21,#e54a16);
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        justify-content:center;
+        gap:4px;
+        cursor:pointer;
+        clip-path:polygon(
+            0 0,
+            calc(100% - 8px) 0,
+            100% 8px,
+            100% 100%,
+            0 100%
+        );
+    }
+
+    header.main-header .mobile-menu-toggle span{
+        display:block;
+        width:22px;
+        height:3px;
+        border-radius:2px;
+        background:#fff;
+        transition:all .25s ease;
+    }
+
+    header.main-header .mobile-menu-toggle.open span:nth-child(1){
+        transform:translateY(7px) rotate(45deg);
+    }
+
+    header.main-header .mobile-menu-toggle.open span:nth-child(2){
+        opacity:0;
+    }
+
+    header.main-header .mobile-menu-toggle.open span:nth-child(3){
+        transform:translateY(-7px) rotate(-45deg);
+    }
+
+
+    /* Mobile menu container */
+
+    header.main-header .responsive-menu{
+        display:none;
+        position:absolute;
+        top:100%;
+        left:0;
+        width:100%;
+        z-index:1001;
+    }
+
+    header.main-header .responsive-menu.is-open{
+        display:block;
+    }
+
+
+    /* Mobile menu */
+
+    header.main-header .mobile-menu-inner{
+        width:100%;
+        background:linear-gradient(
+            90deg,
+            #f26a21 0%,
+            #e54a16 100%
+        );
+        padding:5px 0;
+        box-shadow:0 10px 25px rgba(0,0,0,.18);
+        overflow:hidden;
+    }
+
+
+    header.main-header .mobile-menu-inner ul{
+        list-style:none;
+        margin:0;
+        padding:0;
+    }
+
+
+    header.main-header .mobile-menu-inner li{
+        margin:0;
+        padding:0;
+        list-style:none;
+        border-bottom:1px solid rgba(255,255,255,.14);
+    }
+
+    header.main-header .mobile-menu-inner li:last-child{
+        border-bottom:0;
+    }
+
+
+    /* Main mobile links */
+
+    header.main-header .mobile-nav-list>li>a{
+        display:flex;
+        align-items:center;
+        justify-content:space-between;
+        width:100%;
+        min-height:42px;
+        padding:8px 20px;
+        color:#fff;
+        text-decoration:none;
+        font-size:16px;
+        font-weight:400;
+        line-height:1.4;
+        transition:
+            background .2s ease,
+            padding-left .2s ease;
+        box-sizing:border-box;
+    }
+
+    header.main-header .mobile-nav-list>li>a:hover,
+    header.main-header .mobile-nav-list>li>a:focus{
+        color:#fff;
+        background:rgba(255,255,255,.10);
+    }
+
+
+    /* Dropdown arrow */
+
+    header.main-header .mobile-arrow{
+        display:inline-flex;
+        align-items:center;
+        justify-content:center;
+        width:28px;
+        height:28px;
+        margin-left:auto;
+        font-size:19px;
+        line-height:1;
+        color:#fff;
+        transition:transform .25s ease;
+    }
+
+
+    /* Mobile submenus */
+
+    header.main-header .mobile-nav-list li>ul{
+        display:none;
+        margin:0;
+        padding:0;
+        background:rgba(0,0,0,.10);
+        border-top:1px solid rgba(255,255,255,.10);
+    }
+
+    header.main-header .mobile-nav-list li.open>ul{
+        display:block;
+    }
+
+
+    /* Submenu links */
+
+    header.main-header .mobile-nav-list li>ul li{
+        border-bottom:1px solid rgba(255,255,255,.09);
+    }
+
+    header.main-header .mobile-nav-list li>ul li:last-child{
+        border-bottom:0;
+    }
+
+    header.main-header .mobile-nav-list li>ul a{
+        display:block;
+        width:100%;
+        padding:8px 20px 8px 34px;
+        color:#fff;
+        text-decoration:none;
+        font-size:15px;
+        font-weight:400;
+        line-height:1.4;
+        transition:
+            background .2s ease,
+            padding-left .2s ease;
+        box-sizing:border-box;
+    }
+
+    header.main-header .mobile-nav-list li>ul a:hover,
+    header.main-header .mobile-nav-list li>ul a:focus{
+        color:#fff;
+        background:rgba(255,255,255,.10);
+        padding-left:39px;
+    }
+
+
+    /* Rotate arrow when dropdown is open */
+
+    header.main-header .mobile-dropdown.open>a .mobile-arrow{
+        transform:rotate(180deg);
+    }
+
+
+    /* Slight active/open effect */
+
+    header.main-header .mobile-dropdown.open>a{
+        background:rgba(255,255,255,.08);
+    }
+
+
+    /* Prevent old mobile generated menu from showing */
+
+    .slicknav_menu{
+        display:none!important;
+    }
+
+    .slicknav_btn,
+    .slicknav_nav{
+        display:none!important;
+    }
+}
+
+
+/* ================= SMALL MOBILE ================= */
+
+@media(max-width:767px){
+
+    header.main-header .topbar-social-links{
+        display:none;
+    }
+
+    header.main-header .topbar-contact-info ul{
+        gap:15px;
+        justify-content:center;
+    }
+
+    header.main-header .topbar-contact-info ul li a{
+        font-size:13px;
+    }
+
+    header.main-header .topbar-contact-info ul li a i{
+        font-size:13px;
+        margin-right:5px;
+    }
+}
+
+
+@media(max-width:575px){
+
+    header.main-header .navbar-brand img{
+        max-width:155px;
+        height:44px;
+    }
+
+    header.main-header .mobile-menu-inner{
+        padding:4px 0;
+    }
+
+    header.main-header .mobile-nav-list>li>a{
+        padding:8px 16px;
+        min-height:40px;
+        font-size:15px;
+    }
+
+    header.main-header .mobile-nav-list li>ul a{
+        padding:8px 16px 8px 30px;
+        font-size:14px;
+    }
+
+    header.main-header .mobile-nav-list li>ul a:hover{
+        padding-left:35px;
+    }
+}
+</style>
+
+
+<header class="main-header">
+
+    <!-- ================= TOPBAR ================= -->
+
+    <div class="topbar">
+
+        <div class="container">
+
+            <div class="row align-items-center">
+
+                <div class="col-md-9">
+
+                    <div class="topbar-contact-info">
+
+                        <ul>
+
+                            <li>
+                                <a href="tel:+917355667609">
+                                    <i class="fa-solid fa-phone"></i>
+                                    +91 7355667609
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="tel:+918286825295">
+                                    <i class="fa-solid fa-phone"></i>
+                                    +91 82868 25295
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="mailto:Rudraearthingsystem@gmail.com">
+                                    <i class="fa-solid fa-envelope"></i>
+                                    Rudraearthingsystem@gmail.com
+                                </a>
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-md-3">
+
+                    <div class="topbar-social-links">
+
+                        <ul>
+
+                            <li>
+                                <a href="#" aria-label="LinkedIn">
+                                    <i class="fa-brands fa-linkedin-in"></i>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#" aria-label="Instagram">
+                                    <i class="fa-brands fa-instagram"></i>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#" aria-label="Facebook">
+                                    <i class="fa-brands fa-facebook-f"></i>
+                                </a>
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= MAIN HEADER ================= -->
+
+    <div class="header-sticky">
+
+        <nav class="navbar navbar-expand-lg">
+
+            <div class="container">
+
+                <!-- LOGO -->
+
+                <a
+                    class="navbar-brand"
+                    href="index.html"
+                    aria-label="Rudra Earthing Systems home"
+                >
+                    <img
+                        src="images/logo-light.png"
+                        alt="Rudra Earthing Systems"
+                    >
+                </a>
+
+
+                <!-- ================= DESKTOP MENU ================= -->
+
+                <div class="collapse navbar-collapse main-menu">
+
+                    <div class="nav-menu-wrapper">
+
+                        <ul class="navbar-nav mr-auto" id="menu">
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="#home">
+                                    Home
+                                </a>
+                            </li>
+
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="#about">
+                                    About Us
+                                </a>
+                            </li>
+
+
+                            <!-- PRODUCTS -->
+
+                            <li class="nav-item submenu">
+
+                                <a
+                                    class="nav-link"
+                                    href="#products"
+                                >
+                                    Products
+                                </a>
+
+                                <ul>
+
+                                    <li class="nav-item">
+                                        <a
+                                            class="nav-link"
+                                            href="#products"
+                                        >
+                                            Earthing Electrodes
+                                        </a>
+                                    </li>
+
+                                    <li class="nav-item">
+                                        <a
+                                            class="nav-link"
+                                            href="#products"
+                                        >
+                                            Lightning Protection
+                                        </a>
+                                    </li>
+
+                                    <li class="nav-item">
+                                        <a
+                                            class="nav-link"
+                                            href="#products"
+                                        >
+                                            Solar Earthing
+                                        </a>
+                                    </li>
+
+                                    <li class="nav-item">
+                                        <a
+                                            class="nav-link"
+                                            href="#products"
+                                        >
+                                            Earthing Accessories
+                                        </a>
+                                    </li>
+
+                                </ul>
+
+                            </li>
+
+
+                            <!-- SOLUTIONS -->
+
+                            <li class="nav-item submenu">
+
+                                <a
+                                    class="nav-link"
+                                    href="#solutions"
+                                >
+                                    Solutions
+                                </a>
+
+                                <ul>
+
+                                    <li class="nav-item">
+                                        <a
+                                            class="nav-link"
+                                            href="#solutions"
+                                        >
+                                            Industrial Infrastructure
+                                        </a>
+                                    </li>
+
+                                    <li class="nav-item">
+                                        <a
+                                            class="nav-link"
+                                            href="#solutions"
+                                        >
+                                            Commercial Buildings
+                                        </a>
+                                    </li>
+
+                                    <li class="nav-item">
+                                        <a
+                                            class="nav-link"
+                                            href="#solutions"
+                                        >
+                                            Solar Projects
+                                        </a>
+                                    </li>
+
+                                    <li class="nav-item">
+                                        <a
+                                            class="nav-link"
+                                            href="#solutions"
+                                        >
+                                            Power &amp; Substations
+                                        </a>
+                                    </li>
+
+                                </ul>
+
+                            </li>
+
+
+                            <li class="nav-item">
+                                <a
+                                    class="nav-link"
+                                    href="#contact"
+                                >
+                                    Contact Us
+                                </a>
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+
+                    <!-- QUOTE -->
+
+                    <div class="header-btn">
+
+                        <a
+                            href="#contact"
+                            class="btn-default"
+                        >
+                            Request a Quote
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ================= MOBILE BUTTON ================= -->
+
+                <div class="navbar-toggle">
+
+                    <button
+                        class="mobile-menu-toggle"
+                        type="button"
+                        aria-label="Open navigation"
+                        aria-expanded="false"
+                    >
+
+                        <span></span>
+                        <span></span>
+                        <span></span>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </nav>
+
+
+        <!-- ================= MOBILE MENU ================= -->
+
+        <div
+            class="responsive-menu"
+            aria-hidden="true"
+        >
+
+            <div class="mobile-menu-inner">
+
+                <ul class="mobile-nav-list">
+
+                    <!-- HOME -->
+
+                    <li>
+                        <a href="#home">
+                            <span>Home</span>
+                        </a>
+                    </li>
+
+
+                    <!-- ABOUT -->
+
+                    <li>
+                        <a href="#about">
+                            <span>About Us</span>
+                        </a>
+                    </li>
+
+
+                    <!-- PRODUCTS -->
+
+                    <li class="mobile-dropdown">
+
+                        <a
+                            href="#products"
+                            class="mobile-dropdown-toggle"
+                            aria-expanded="false"
+                        >
+
+                            <span>Products</span>
+
+                            <span
+                                class="mobile-arrow"
+                                aria-hidden="true"
+                            >
+                                ⌄
+                            </span>
+
+                        </a>
+
+
+                        <ul>
+
+                            <li>
+                                <a href="#products">
+                                    Earthing Electrodes
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#products">
+                                    Lightning Protection
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#products">
+                                    Solar Earthing
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#products">
+                                    Earthing Accessories
+                                </a>
+                            </li>
+
+                        </ul>
+
+                    </li>
+
+
+                    <!-- SOLUTIONS -->
+
+                    <li class="mobile-dropdown">
+
+                        <a
+                            href="#solutions"
+                            class="mobile-dropdown-toggle"
+                            aria-expanded="false"
+                        >
+
+                            <span>Solutions</span>
+
+                            <span
+                                class="mobile-arrow"
+                                aria-hidden="true"
+                            >
+                                ⌄
+                            </span>
+
+                        </a>
+
+
+                        <ul>
+
+                            <li>
+                                <a href="#solutions">
+                                    Industrial Infrastructure
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#solutions">
+                                    Commercial Buildings
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#solutions">
+                                    Solar Projects
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#solutions">
+                                    Power &amp; Substations
+                                </a>
+                            </li>
+
+                        </ul>
+
+                    </li>
+
+
+                    <!-- CONTACT -->
+
+                    <li>
+                        <a href="#contact">
+                            <span>Contact Us</span>
+                        </a>
+                    </li>
+
+
+                    <!-- QUOTE -->
+
+                    <li>
+                        <a href="#contact">
+                            <span>Request a Quote</span>
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<script>
+(function(){
+
+    var script = document.currentScript;
+
+    if(!script) return;
+
+    var root = script.parentElement;
+
+    if(!root) return;
+
+    var header = root.querySelector('.main-header');
+
+    if(!header) return;
+
+
+    var sticky = header.querySelector('.header-sticky');
+
+    var toggle = header.querySelector('.mobile-menu-toggle');
+
+    var menu = header.querySelector('.responsive-menu');
+
+
+    /* ================= MENU CLOSE ================= */
+
+    function closeMenu(){
+
+        if(!menu || !toggle) return;
+
+        menu.classList.remove('is-open');
+
+        toggle.classList.remove('open');
+
+        toggle.setAttribute(
+            'aria-expanded',
+            'false'
+        );
+
+        menu.setAttribute(
+            'aria-hidden',
+            'true'
+        );
+
+
+        /* close all dropdowns */
+
+        menu
+            .querySelectorAll('.mobile-dropdown.open')
+            .forEach(function(item){
+
+                item.classList.remove('open');
+
+                var link =
+                    item.querySelector('.mobile-dropdown-toggle');
+
+                if(link){
+
+                    link.setAttribute(
+                        'aria-expanded',
+                        'false'
+                    );
+
+                }
+
+            });
+
+    }
+
+
+    /* ================= MOBILE MENU ================= */
+
+    if(toggle && menu){
+
+        toggle.addEventListener(
+            'click',
+            function(e){
+
+                e.preventDefault();
+
+                var isOpen =
+                    menu.classList.contains('is-open');
+
+
+                if(isOpen){
+
+                    closeMenu();
+
+                }else{
+
+                    menu.classList.add('is-open');
+
+                    toggle.classList.add('open');
+
+                    toggle.setAttribute(
+                        'aria-expanded',
+                        'true'
+                    );
+
+                    menu.setAttribute(
+                        'aria-hidden',
+                        'false'
+                    );
+
+                }
+
+            }
+        );
+
+
+        /* ================= DROPDOWNS ================= */
+
+        menu
+            .querySelectorAll('.mobile-dropdown-toggle')
+            .forEach(function(link){
+
+                link.addEventListener(
+                    'click',
+                    function(e){
+
+                        e.preventDefault();
+
+                        e.stopPropagation();
+
+                        var parent =
+                            link.closest('.mobile-dropdown');
+
+                        if(!parent) return;
+
+
+                        var wasOpen =
+                            parent.classList.contains('open');
+
+
+                        /* close other dropdowns */
+
+                        menu
+                            .querySelectorAll(
+                                '.mobile-dropdown.open'
+                            )
+                            .forEach(function(other){
+
+                                if(other !== parent){
+
+                                    other.classList.remove(
+                                        'open'
+                                    );
+
+                                    var otherLink =
+                                        other.querySelector(
+                                            '.mobile-dropdown-toggle'
+                                        );
+
+                                    if(otherLink){
+
+                                        otherLink.setAttribute(
+                                            'aria-expanded',
+                                            'false'
+                                        );
+
+                                    }
+
+                                }
+
+                            });
+
+
+                        if(wasOpen){
+
+                            parent.classList.remove(
+                                'open'
+                            );
+
+                            link.setAttribute(
+                                'aria-expanded',
+                                'false'
+                            );
+
+                        }else{
+
+                            parent.classList.add(
+                                'open'
+                            );
+
+                            link.setAttribute(
+                                'aria-expanded',
+                                'true'
+                            );
+
+                        }
+
+                    }
+                );
+
+            });
+
+
+        /* ================= NORMAL MOBILE LINKS ================= */
+
+        menu
+            .querySelectorAll(
+                '.mobile-nav-list > li:not(.mobile-dropdown) > a'
+            )
+            .forEach(function(link){
+
+                link.addEventListener(
+                    'click',
+                    function(){
+
+                        closeMenu();
+
+                    }
+                );
+
+            });
+
+
+        /* ================= SUBMENU LINKS ================= */
+
+        menu
+            .querySelectorAll(
+                '.mobile-dropdown > ul a'
+            )
+            .forEach(function(link){
+
+                link.addEventListener(
+                    'click',
+                    function(){
+
+                        closeMenu();
+
+                    }
+                );
+
+            });
+
+
+        /* ================= RESIZE ================= */
+
+        window.addEventListener(
+            'resize',
+            function(){
+
+                if(window.innerWidth > 991){
+
+                    closeMenu();
+
+                }
+
+            }
+        );
+
+    }
+
+
+    /* ================= STICKY HEADER ================= */
+
+    var lastScroll =
+        window.scrollY || 0;
+
+
+    window.addEventListener(
+        'scroll',
+        function(){
+
+            if(!sticky) return;
+
+            var currentScroll =
+                window.scrollY || 0;
+
+
+            /* activate sticky */
+
+            if(currentScroll > 600){
+
+                sticky.classList.add('active');
+
+            }else{
+
+                sticky.classList.remove('active');
+
+            }
+
+
+            /* hide while scrolling down */
+
+            if(
+                currentScroll > lastScroll &&
+                currentScroll > 180
+            ){
+
+                sticky.classList.add('hide');
+
+            }else{
+
+                sticky.classList.remove('hide');
+
+            }
+
+
+            lastScroll = currentScroll;
+
+        },
+        {
+            passive:true
+        }
+    );
+
+
+})();
+</script>

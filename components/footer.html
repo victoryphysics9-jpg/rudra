@@ -1,0 +1,430 @@
+<!--
+  Rudra Earthing Systems — Reusable Footer Component
+  Self-contained: HTML + CSS + JavaScript
+  Place this file at: components/footer.html
+-->
+<footer class="rudra-footer" id="rudra-footer">
+  <div class="rudra-footer__glow" aria-hidden="true"></div>
+
+  <div class="rudra-footer__container">
+    <div class="rudra-footer__grid">
+
+      <!-- Brand -->
+      <section class="rudra-footer__brand">
+        <a class="rudra-footer__logo" href="index.html" aria-label="Rudra Earthing Systems home">
+          <img src="images/logo-dark.png" alt="Rudra Earthing Systems" loading="lazy">
+        </a>
+
+        <p>
+          Rudra Earthing Systems delivers dependable earthing, grounding and
+          lightning protection solutions for industrial, commercial, solar
+          and electrical infrastructure.
+        </p>
+
+        <div class="rudra-footer__social" aria-label="Social media links">
+          <a href="#" aria-label="LinkedIn" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#" aria-label="Instagram" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="Facebook" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        </div>
+      </section>
+
+      <!-- Quick links -->
+      <nav class="rudra-footer__links" aria-label="Quick links">
+        <h3>Quick Links</h3>
+        <a href="index.html">Home</a>
+        <a href="index.html#about">About Rudra</a>
+        <a href="index.html#products">Products</a>
+        <a href="index.html#solutions">Solutions</a>
+        <a href="index.html#contact">Request a Quote</a>
+      </nav>
+
+      <!-- Product links -->
+      <nav class="rudra-footer__links" aria-label="Products">
+        <h3>Products</h3>
+        <a href="index.html#products">Earthing Electrodes</a>
+        <a href="index.html#products">Copper Bonded Rods</a>
+        <a href="index.html#products">Lightning Arresters</a>
+        <a href="index.html#products">Solar Earthing Kits</a>
+        <a href="index.html#products">Earthing Accessories</a>
+      </nav>
+
+      <!-- Contact -->
+      <section class="rudra-footer__contact">
+        <h3>Contact Us</h3>
+
+        <a href="mailto:Rudraearthingsystem@gmail.com" class="rudra-footer__contact-item">
+          <span class="rudra-footer__icon"><i class="fa-regular fa-envelope"></i></span>
+          <span>
+            <small>Email</small>
+            Rudraearthingsystem@gmail.com
+          </span>
+        </a>
+
+        <a href="tel:+917355667609" class="rudra-footer__contact-item">
+          <span class="rudra-footer__icon"><i class="fa-solid fa-phone"></i></span>
+          <span>
+            <small>Call Us</small>
+            +91 7355667609
+          </span>
+        </a>
+
+        <a href="tel:+918286825295" class="rudra-footer__contact-item">
+          <span class="rudra-footer__icon"><i class="fa-solid fa-phone"></i></span>
+          <span>
+            <small>Call Us</small>
+            +91 82868 25295
+          </span>
+        </a>
+      </section>
+    </div>
+
+    <div class="rudra-footer__bottom">
+      <p>© <span data-rudra-year></span> Rudra Earthing Systems. All Rights Reserved.</p>
+
+      <div class="rudra-footer__legal">
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="terms-and-conditions.html">Terms &amp; Conditions</a>
+        <a href="disclaimer.html">Disclaimer</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style>
+  /* =========================================================
+     RUDRA FOOTER — SELF CONTAINED
+     ========================================================= */
+
+  #rudra-footer.rudra-footer {
+    --rudra-navy: #071a2b;
+    --rudra-navy-2: #0b2439;
+    --rudra-orange: #ed701e;
+    --rudra-orange-2: #ff9a3d;
+    --rudra-white: #ffffff;
+    --rudra-muted: #b7c5d1;
+    --rudra-border: rgba(255,255,255,.10);
+
+    position: relative;
+    overflow: hidden;
+    background:
+      radial-gradient(circle at 82% 15%, rgba(237,112,30,.13), transparent 28%),
+      linear-gradient(135deg, var(--rudra-navy) 0%, #061523 100%);
+    color: var(--rudra-white);
+    padding: 78px 0 0;
+    isolation: isolate;
+    font-family: inherit;
+  }
+
+  #rudra-footer .rudra-footer__glow {
+    position: absolute;
+    width: 380px;
+    height: 380px;
+    right: -180px;
+    bottom: -210px;
+    border: 1px solid rgba(237,112,30,.16);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  #rudra-footer .rudra-footer__glow::before,
+  #rudra-footer .rudra-footer__glow::after {
+    content: "";
+    position: absolute;
+    inset: 35px;
+    border: 1px solid rgba(237,112,30,.10);
+    border-radius: 50%;
+  }
+
+  #rudra-footer .rudra-footer__glow::after {
+    inset: 75px;
+  }
+
+  #rudra-footer .rudra-footer__container {
+    width: min(1320px, calc(100% - 40px));
+    margin: 0 auto;
+  }
+
+  #rudra-footer .rudra-footer__grid {
+    display: grid;
+    grid-template-columns: 1.45fr .8fr 1fr 1.15fr;
+    gap: 55px;
+    padding-bottom: 60px;
+  }
+
+  #rudra-footer .rudra-footer__brand {
+    max-width: 430px;
+  }
+
+  #rudra-footer .rudra-footer__logo {
+    display: inline-flex;
+    align-items: center;
+    margin-bottom: 24px;
+  }
+
+  #rudra-footer .rudra-footer__logo img {
+    display: block;
+    width: auto;
+    max-width: 220px;
+    max-height: 70px;
+    object-fit: contain;
+  }
+
+  #rudra-footer .rudra-footer__brand p {
+    color: var(--rudra-muted);
+    line-height: 1.8;
+    margin: 0 0 26px;
+    font-size: 15px;
+  }
+
+  #rudra-footer .rudra-footer__social {
+    display: flex;
+    gap: 10px;
+  }
+
+  #rudra-footer .rudra-footer__social a {
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--rudra-orange);
+    background: rgba(255,255,255,.08);
+    border: 1px solid var(--rudra-border);
+    border-radius: 50%;
+    text-decoration: none;
+    transition: transform .3s ease, color .3s ease, background .3s ease, border-color .3s ease;
+  }
+
+  #rudra-footer .rudra-footer__social a:hover {
+    color: #fff;
+    background: var(--rudra-orange);
+    border-color: var(--rudra-orange);
+    transform: translateY(-4px);
+  }
+
+  #rudra-footer .rudra-footer__links h3,
+  #rudra-footer .rudra-footer__contact h3 {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 700;
+    margin: 5px 0 23px;
+    position: relative;
+    padding-bottom: 12px;
+  }
+
+  #rudra-footer .rudra-footer__links h3::after,
+  #rudra-footer .rudra-footer__contact h3::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 34px;
+    height: 2px;
+    background: var(--rudra-orange);
+  }
+
+  #rudra-footer .rudra-footer__links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 11px;
+  }
+
+  #rudra-footer .rudra-footer__links a {
+    color: var(--rudra-muted);
+    text-decoration: none;
+    font-size: 14px;
+    line-height: 1.5;
+    transition: color .25s ease, transform .25s ease;
+  }
+
+  #rudra-footer .rudra-footer__links a::before {
+    content: "›";
+    color: var(--rudra-orange);
+    margin-right: 8px;
+    transition: margin-right .25s ease;
+  }
+
+  #rudra-footer .rudra-footer__links a:hover {
+    color: #fff;
+    transform: translateX(4px);
+  }
+
+  #rudra-footer .rudra-footer__links a:hover::before {
+    margin-right: 11px;
+  }
+
+  #rudra-footer .rudra-footer__contact {
+    min-width: 0;
+  }
+
+  #rudra-footer .rudra-footer__contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 13px;
+    color: #fff;
+    text-decoration: none;
+    margin-bottom: 19px;
+    min-width: 0;
+  }
+
+  #rudra-footer .rudra-footer__contact-item:hover {
+    color: #fff;
+  }
+
+  #rudra-footer .rudra-footer__icon {
+    flex: 0 0 38px;
+    width: 38px;
+    height: 38px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--rudra-orange);
+    background: rgba(237,112,30,.10);
+    border: 1px solid rgba(237,112,30,.24);
+    border-radius: 8px;
+    transition: background .25s ease, color .25s ease, transform .25s ease;
+  }
+
+  #rudra-footer .rudra-footer__contact-item:hover .rudra-footer__icon {
+    color: #fff;
+    background: var(--rudra-orange);
+    transform: translateY(-2px);
+  }
+
+  #rudra-footer .rudra-footer__contact-item > span:last-child {
+    min-width: 0;
+    word-break: break-word;
+    font-size: 14px;
+    line-height: 1.55;
+  }
+
+  #rudra-footer .rudra-footer__contact-item small {
+    display: block;
+    color: #8094a5;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    margin-bottom: 2px;
+  }
+
+  #rudra-footer .rudra-footer__bottom {
+    min-height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    border-top: 1px solid var(--rudra-border);
+  }
+
+  #rudra-footer .rudra-footer__bottom p {
+    margin: 0;
+    color: #8fa1af;
+    font-size: 13px;
+  }
+
+  #rudra-footer .rudra-footer__legal {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 20px;
+  }
+
+  #rudra-footer .rudra-footer__legal a {
+    color: #8fa1af;
+    font-size: 13px;
+    text-decoration: none;
+    transition: color .25s ease;
+  }
+
+  #rudra-footer .rudra-footer__legal a:hover {
+    color: var(--rudra-orange-2);
+  }
+
+  @media (max-width: 1199px) {
+    #rudra-footer .rudra-footer__grid {
+      grid-template-columns: 1.3fr 1fr 1fr;
+      gap: 40px;
+    }
+
+    #rudra-footer .rudra-footer__contact {
+      grid-column: 1 / -1;
+    }
+  }
+
+  @media (max-width: 767px) {
+    #rudra-footer.rudra-footer {
+      padding-top: 55px;
+    }
+
+    #rudra-footer .rudra-footer__container {
+      width: min(100% - 30px, 600px);
+    }
+
+    #rudra-footer .rudra-footer__grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 36px 24px;
+      padding-bottom: 40px;
+    }
+
+    #rudra-footer .rudra-footer__brand,
+    #rudra-footer .rudra-footer__contact {
+      grid-column: 1 / -1;
+      max-width: none;
+    }
+
+    #rudra-footer .rudra-footer__bottom {
+      padding: 20px 0;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    #rudra-footer .rudra-footer__legal {
+      justify-content: flex-start;
+      gap: 10px 18px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    #rudra-footer .rudra-footer__grid {
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+
+    #rudra-footer .rudra-footer__links {
+      grid-column: 1 / -1;
+    }
+
+    #rudra-footer .rudra-footer__logo img {
+      max-width: 195px;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    #rudra-footer * {
+      scroll-behavior: auto !important;
+      transition-duration: .01ms !important;
+    }
+  }
+</style>
+
+<script>
+(function () {
+  "use strict";
+
+  const footer = document.getElementById("rudra-footer");
+  if (!footer) return;
+
+  const year = footer.querySelector("[data-rudra-year]");
+  if (year) year.textContent = new Date().getFullYear();
+
+  // If Font Awesome is not present on a page, keep the footer functional
+  // without throwing JavaScript errors.
+  footer.querySelectorAll("a[href='#']").forEach(function (link) {
+    link.addEventListener("click", function (event) {
+      event.preventDefault();
+    });
+  });
+})();
+</script>

@@ -1,0 +1,1726 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <style>
+/* =========================================
+   RUDRA EARTHING - FINAL PRELOADER
+========================================= */
+
+.rudra-preloader {
+    position: fixed !important;
+    inset: 0 !important;
+    z-index: 999999 !important;
+
+    width: 100%;
+    height: 100%;
+
+    background: #071a2b !important;
+
+    display: flex;
+    align-items: center !important;
+    justify-content: center !important;
+
+    opacity: 1;
+    visibility: visible;
+}
+
+.rudra-preloader__container {
+    position: relative !important;
+
+    width: 120px !important;
+    height: 105px !important;
+
+    margin: 0 !important;
+    border-radius: 0 !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.rudra-logo-loader {
+    display: block;
+
+    width: 120px !important;
+    height: auto !important;
+
+    max-width: none !important;
+    overflow: visible;
+
+    border: 0 !important;
+}
+
+
+/* =========================================
+   COMMON
+========================================= */
+
+.rudra-logo-loader .ground-piece,
+.rudra-logo-loader .ground-rod,
+.rudra-logo-loader .r-plate {
+    opacity: 0;
+}
+
+
+/* =========================================
+   BASE 1
+========================================= */
+
+.rudra-logo-loader .base-1 {
+    animation: rudraBaseOne 1.4s cubic-bezier(.2,.8,.2,1) infinite;
+}
+
+@keyframes rudraBaseOne {
+    0%, 3% {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+
+    7% {
+        opacity: 1;
+    }
+
+    12%, 88% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+}
+
+
+/* =========================================
+   BASE 2
+========================================= */
+
+.rudra-logo-loader .base-2 {
+    animation: rudraBaseTwo 1.4s cubic-bezier(.2,.8,.2,1) infinite;
+}
+
+@keyframes rudraBaseTwo {
+    0%, 12% {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+
+    16% {
+        opacity: 1;
+    }
+
+    21%, 88% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+}
+
+
+/* =========================================
+   BASE 3
+========================================= */
+
+.rudra-logo-loader .base-3 {
+    animation: rudraBaseThree 1.4s cubic-bezier(.2,.8,.2,1) infinite;
+}
+
+@keyframes rudraBaseThree {
+    0%, 21% {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+
+    25% {
+        opacity: 1;
+    }
+
+    30%, 88% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+}
+
+
+/* =========================================
+   ARROW
+========================================= */
+
+.rudra-logo-loader .base-arrow {
+    animation: rudraBaseArrow 1.4s cubic-bezier(.2,.8,.2,1) infinite;
+}
+
+@keyframes rudraBaseArrow {
+    0%, 30% {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    34% {
+        opacity: 1;
+    }
+
+    39%, 88% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+}
+
+
+/* =========================================
+   GROUNDING ROD
+========================================= */
+
+.rudra-logo-loader .ground-rod {
+    opacity: 0;
+
+    transform-box: fill-box;
+    transform-origin: center;
+
+    animation:
+        rudraRodEnter
+        1.4s
+        cubic-bezier(.18,.8,.2,1)
+        infinite;
+}
+
+@keyframes rudraRodEnter {
+    0%, 39% {
+        opacity: 0;
+        transform: translateX(-45px);
+    }
+
+    45% {
+        opacity: 1;
+    }
+
+    52%, 88% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateX(-45px);
+    }
+}
+
+
+/* =========================================
+   R LOGO
+========================================= */
+
+.rudra-logo-loader .logo-r {
+    opacity: 1;
+
+    transform-box: fill-box;
+    transform-origin: center;
+
+    animation:
+        rudraLogoR
+        1.4s
+        cubic-bezier(.2,.8,.2,1)
+        infinite;
+}
+
+@keyframes rudraLogoR {
+    0%, 52% {
+        opacity: 0;
+        transform: scale(.96);
+    }
+
+    57% {
+        opacity: 1;
+    }
+
+    66%, 88% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(.96);
+    }
+}
+
+
+/* =========================================
+   R PLATE 1
+========================================= */
+
+.rudra-logo-loader .r-plate-1 {
+    animation:
+        rudraRPlateOne
+        1.4s
+        ease-in-out
+        infinite;
+}
+
+@keyframes rudraRPlateOne {
+    0%, 52% {
+        opacity: 0;
+        clip-path: inset(0 100% 0 0);
+    }
+
+    56% {
+        opacity: 1;
+    }
+
+    62%, 88% {
+        opacity: 1;
+        clip-path: inset(0 0 0 0);
+    }
+
+    100% {
+        opacity: 0;
+        clip-path: inset(0 100% 0 0);
+    }
+}
+
+
+/* =========================================
+   R PLATE 2
+========================================= */
+
+.rudra-logo-loader .r-plate-2 {
+    animation:
+        rudraRPlateTwo
+        1.4s
+        ease-in-out
+        infinite;
+}
+
+@keyframes rudraRPlateTwo {
+    0%, 58% {
+        opacity: 0;
+        clip-path: inset(0 100% 0 0);
+    }
+
+    62% {
+        opacity: 1;
+    }
+
+    68%, 88% {
+        opacity: 1;
+        clip-path: inset(0 0 0 0);
+    }
+
+    100% {
+        opacity: 0;
+        clip-path: inset(0 100% 0 0);
+    }
+}
+
+
+/* =========================================
+   R PLATE 3
+========================================= */
+
+.rudra-logo-loader .r-plate-3 {
+    animation:
+        rudraRPlateThree
+        1.4s
+        ease-in-out
+        infinite;
+}
+
+@keyframes rudraRPlateThree {
+    0%, 64% {
+        opacity: 0;
+        clip-path: inset(0 100% 0 0);
+    }
+
+    68% {
+        opacity: 1;
+    }
+
+    74%, 88% {
+        opacity: 1;
+        clip-path: inset(0 0 0 0);
+    }
+
+    100% {
+        opacity: 0;
+        clip-path: inset(0 100% 0 0);
+    }
+}
+
+
+/* =========================================
+   R PLATE 4
+========================================= */
+
+.rudra-logo-loader .r-plate-4 {
+    animation:
+        rudraRPlateFour
+        1.4s
+        ease-in-out
+        infinite;
+}
+
+@keyframes rudraRPlateFour {
+    0%, 70% {
+        opacity: 0;
+        clip-path: inset(0 100% 0 0);
+    }
+
+    74% {
+        opacity: 1;
+    }
+
+    80%, 88% {
+        opacity: 1;
+        clip-path: inset(0 0 0 0);
+    }
+
+    100% {
+        opacity: 0;
+        clip-path: inset(0 100% 0 0);
+    }
+}
+
+/* Standalone component exit */
+.rudra-preloader {
+    animation: rudraPreloaderExit .45s ease 1.45s forwards;
+    pointer-events: auto;
+}
+
+@keyframes rudraPreloaderExit {
+    0% { opacity: 1; visibility: visible; }
+    99% { opacity: 0; visibility: visible; }
+    100% { opacity: 0; visibility: hidden; pointer-events: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .rudra-preloader,
+    .rudra-preloader * {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+    }
+}
+
+
+.rudra-preloader[hidden]{display:none!important}</style>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="Rudra Earthing Systems provides earthing, grounding and lightning protection solutions for industrial, commercial, solar and electrical applications." name="description"/>
+<meta content="Rudra Earthing Systems, earthing, grounding, lightning protection, earthing electrode, copper bonded earthing, solar earthing" name="keywords"/>
+<meta content="Rudra" name="author"/>
+<title>Rudra Earthing Systems | Earthing &amp; Lightning Protection Solutions</title>
+<link href="/assets/icon.svg" rel="shortcut icon" type="image/svg+xml"/>
+<link href="https://fonts.googleapis.com/" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+
+
+
+
+
+
+
+
+
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&amp;family=Rubik:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet"/><link href="/assets/reference/bootstrap.css" rel="stylesheet"/><link href="/assets/reference/theme.css" rel="stylesheet"/><link href="/assets/reference/motion.css" rel="stylesheet"/><link href="https://rudraearthingsystem.com/" rel="canonical"/></head>
+<body>
+<div aria-hidden="true" id="rudra-preloader-mount"><!--
+  Rudra Earthing Systems — Standalone Preloader Component
+  Contains: HTML + SVG + CSS + JS
+  Can be pasted directly into any HTML page.
+-->
+
+<div aria-hidden="true" class="rudra-preloader" data-rudra-preloader="" hidden="" inert=""><div class="rudra-preloader__container"><svg aria-label="Rudra Earthing Systems" class="rudra-logo-loader" role="img" viewbox="0 0 314 266" xmlns="http://www.w3.org/2000/svg"><rect class="ground-piece base-1" fill="#ED701E" height="14" width="118" x="0" y="193"></rect><rect class="ground-piece base-2" fill="#ED701E" height="14" width="98" x="10" y="211"></rect><rect class="ground-piece base-3" fill="#ED701E" height="14" width="85" x="16" y="228"></rect><path class="ground-piece base-arrow" d="M 41 242 L 77 242 L 59 262 Z" fill="#ED701E"></path><g class="ground-rod"><path d="M 31 25 L 50 0 L 69 25 Z" fill="#ED701E"></path><path d="M 31 22 L 69 22 L 69 202 L 31 202 Z" fill="url(#rudraRodGradient)"></path></g><g transform="translate(80 31) scale(1.03)"><g class="logo-r"><path class="r-plate r-plate-1" d="
+M4 10
+L4 51
+L84 51
+L85 52
+L90 52
+L91 53
+L94 53
+L95 54
+L97 54
+L98 55
+L102 56
+L108 61
+L109 61
+L114 67
+L116 71
+L116 82
+L114 86
+L110 91
+L109 91
+L105 95
+L101 97
+L99 97
+L95 100
+L96 100
+L100 103
+L103 101
+L105 101
+L108 99
+L110 99
+L114 97
+L119 93
+L120 93
+L126 87
+L126 86
+L130 81
+L130 79
+L132 76
+L132 73
+L133 72
+L133 58
+L132 57
+L132 54
+L130 51
+L130 49
+L126 42
+L123 39
+L123 38
+L116 31
+L115 31
+L112 28
+L111 28
+L106 24
+L94 18
+L92 18
+L91 17
+L89 17
+L85 15
+L82 15
+L81 14
+L78 14
+L77 13
+L73 13
+L72 12
+L65 12
+L62 10
+L26 10
+L25 9
+L20 9
+L19 10
+Z
+" fill="#ffffff"></path><path class="r-plate r-plate-2" d="
+M64 10
+L68 10
+L69 11
+L75 11
+L76 12
+L79 12
+L80 13
+L87 14
+L93 17
+L95 17
+L107 23
+L109 25
+L113 27
+L119 33
+L121 34
+L121 35
+L126 40
+L126 41
+L128 43
+L132 50
+L132 52
+L134 56
+L134 60
+L135 61
+L135 69
+L134 70
+L134 74
+L133 75
+L133 77
+L132 78
+L131 82
+L126 88
+L126 89
+L118 96
+L111 100
+L109 100
+L106 102
+L101 103
+L101 104
+L102 104
+L108 109
+L109 109
+L126 125
+L132 125
+L133 124
+L141 122
+L153 116
+L155 114
+L158 113
+L165 107
+L166 107
+L171 102
+L171 101
+L175 96
+L180 85
+L180 79
+L181 78
+L181 74
+L180 73
+L180 66
+L179 65
+L178 60
+L175 56
+L174 53
+L171 50
+L171 49
+L162 40
+L161 40
+L158 37
+L157 37
+L152 33
+L149 32
+L147 30
+L139 26
+L137 26
+L132 23
+L127 22
+L124 20
+L122 20
+L118 18
+L115 18
+L111 16
+L103 15
+L102 14
+L97 14
+L96 13
+L85 12
+L84 11
+L76 11
+L75 10
+Z
+" fill="#ED701E"></path><path class="r-plate r-plate-3" d="
+M9 93
+L10 95
+L23 108
+L23 109
+L36 122
+L36 123
+L51 138
+L51 139
+L61 149
+L61 150
+L81 170
+L81 171
+L105 196
+L105 197
+L116 208
+L117 208
+L123 213
+L125 213
+L128 215
+L134 216
+L135 217
+L147 217
+L148 218
+L212 218
+L204 214
+L202 214
+L197 211
+L193 210
+L191 208
+L186 206
+L184 204
+L183 204
+L181 202
+L180 202
+L178 200
+L171 196
+L168 193
+L167 193
+L164 190
+L163 190
+L159 186
+L158 186
+L153 181
+L152 181
+L133 163
+L132 163
+L126 157
+L125 157
+L117 150
+L116 150
+L110 145
+L107 144
+L105 142
+L94 137
+L91 134
+L88 134
+L87 133
+L88 132
+L93 132
+L94 133
+L109 134
+L110 135
+L116 135
+L117 136
+L121 136
+L122 137
+L132 138
+L131 136
+L113 119
+L112 119
+L102 110
+L101 110
+L93 104
+L81 98
+L79 98
+L78 97
+L76 97
+L72 95
+L68 95
+L67 94
+L61 94
+L60 93
+Z
+
+M84 132
+L85 131
+L86 132
+L85 133
+Z
+" fill="#ffffff" fill-rule="evenodd"></path><path class="r-plate r-plate-4" d="
+M94 135
+L106 141
+L108 143
+L115 147
+L122 153
+L123 153
+L135 164
+L136 164
+L154 181
+L155 181
+L165 190
+L166 190
+L169 193
+L173 195
+L179 200
+L182 201
+L184 203
+L192 207
+L194 209
+L198 210
+L208 215
+L210 215
+L214 218
+L220 217
+L208 211
+L206 209
+L205 209
+L203 207
+L196 203
+L193 200
+L192 200
+L161 169
+L161 168
+L154 161
+L154 160
+L137 142
+L135 141
+L129 141
+L128 140
+L120 139
+L119 138
+L108 137
+L104 135
+Z
+" fill="#ED701E"></path></g></g><defs><lineargradient id="rudraRodGradient" x1="0" x2="1" y1="0" y2="0"><stop offset="0%" stop-color="#C95716"></stop><stop offset="22%" stop-color="#ED701E"></stop><stop offset="40%" stop-color="#FFB15C"></stop><stop offset="50%" stop-color="#FFD08A"></stop><stop offset="58%" stop-color="#E47727"></stop><stop offset="78%" stop-color="#C95716"></stop><stop offset="100%" stop-color="#ED701E"></stop></lineargradient></defs></svg></div></div>
+
+</div>
+<script>
+(function () {
+    const loader = document.querySelector(
+        '[data-rudra-preloader]'
+    );
+
+    if (!loader) return;
+
+    loader.removeAttribute('hidden');
+
+    setTimeout(function () {
+        loader.remove();
+    }, 1950);
+})();
+</script>
+<div id="home">
+<div id="rudra-header-mount">
+<header class="main-header">
+<!-- ================= TOPBAR ================= -->
+<div class="topbar">
+<div class="container">
+<div class="row align-items-center">
+<div class="col-md-9">
+<div class="topbar-contact-info">
+<ul>
+<li>
+<a href="tel:+917355667609">
+<i class="fa-solid fa-phone"></i>
+                                    +91 7355667609
+                                </a>
+</li>
+<li>
+<a href="tel:+918286825295">
+<i class="fa-solid fa-phone"></i>
+                                    +91 82868 25295
+                                </a>
+</li>
+<li>
+<a href="mailto:Rudraearthingsystem@gmail.com">
+<i class="fa-solid fa-envelope"></i>
+                                    Rudraearthingsystem@gmail.com
+                                </a>
+</li>
+</ul>
+</div>
+</div>
+<div class="col-md-3">
+<div class="topbar-social-links">
+<ul>
+<li>
+<a aria-label="LinkedIn" href="#">
+<i class="fa-brands fa-linkedin-in"></i>
+</a>
+</li>
+<li>
+<a aria-label="Instagram" href="#">
+<i class="fa-brands fa-instagram"></i>
+</a>
+</li>
+<li>
+<a aria-label="Facebook" href="#">
+<i class="fa-brands fa-facebook-f"></i>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- ================= MAIN HEADER ================= -->
+<div class="header-sticky">
+<nav class="navbar navbar-expand-lg">
+<div class="container">
+<!-- LOGO -->
+<a aria-label="Rudra Earthing Systems home" class="navbar-brand" href="/">
+<img alt="Rudra Earthing Systems" src="/assets/logo-for-light-bg.webp"/>
+</a>
+<!-- ================= DESKTOP MENU ================= -->
+<div class="collapse navbar-collapse main-menu">
+<div class="nav-menu-wrapper">
+<ul class="navbar-nav mr-auto" id="menu">
+<li class="nav-item">
+<a class="nav-link" href="/#home">
+                                    Home
+                                </a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="/about/">
+                                    About Us
+                                </a>
+</li>
+<!-- PRODUCTS -->
+<li class="nav-item submenu">
+<a class="nav-link" href="/products/">
+                                    Products
+                                </a>
+<ul>
+<li class="nav-item">
+<a class="nav-link" href="/products/">
+                                            Earthing Electrodes
+                                        </a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="/products/">
+                                            Lightning Protection
+                                        </a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="/products/">
+                                            Solar Earthing
+                                        </a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="/products/">
+                                            Earthing Accessories
+                                        </a>
+</li>
+</ul>
+</li>
+<!-- SOLUTIONS -->
+<li class="nav-item submenu">
+<a class="nav-link" href="/solutions/">
+                                    Solutions
+                                </a>
+<ul>
+<li class="nav-item">
+<a class="nav-link" href="/solutions/">
+                                            Industrial Infrastructure
+                                        </a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="/solutions/">
+                                            Commercial Buildings
+                                        </a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="/solutions/">
+                                            Solar Projects
+                                        </a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="/solutions/">
+                                            Power &amp; Substations
+                                        </a>
+</li>
+</ul>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="/contact/">
+                                    Contact Us
+                                </a>
+</li>
+</ul>
+</div>
+<!-- QUOTE -->
+<div class="header-btn">
+<a class="btn-default" href="/request-quote/">
+                            Request a Quote
+                        </a>
+</div>
+</div>
+<!-- ================= MOBILE BUTTON ================= -->
+<div class="navbar-toggle">
+<button aria-expanded="false" aria-label="Open navigation" class="mobile-menu-toggle" type="button">
+<span></span>
+<span></span>
+<span></span>
+</button>
+</div>
+</div>
+</nav>
+<!-- ================= MOBILE MENU ================= -->
+<div aria-hidden="true" class="responsive-menu">
+<div class="mobile-menu-inner">
+<ul class="mobile-nav-list">
+<!-- HOME -->
+<li>
+<a href="/#home">
+<span>Home</span>
+</a>
+</li>
+<!-- ABOUT -->
+<li>
+<a href="/about/">
+<span>About Us</span>
+</a>
+</li>
+<!-- PRODUCTS -->
+<li class="mobile-dropdown">
+<a aria-expanded="false" class="mobile-dropdown-toggle" href="/products/">
+<span>Products</span>
+<span aria-hidden="true" class="mobile-arrow">
+                                ⌄
+                            </span>
+</a>
+<ul>
+<li>
+<a href="/products/">
+                                    Earthing Electrodes
+                                </a>
+</li>
+<li>
+<a href="/products/">
+                                    Lightning Protection
+                                </a>
+</li>
+<li>
+<a href="/products/">
+                                    Solar Earthing
+                                </a>
+</li>
+<li>
+<a href="/products/">
+                                    Earthing Accessories
+                                </a>
+</li>
+</ul>
+</li>
+<!-- SOLUTIONS -->
+<li class="mobile-dropdown">
+<a aria-expanded="false" class="mobile-dropdown-toggle" href="/solutions/">
+<span>Solutions</span>
+<span aria-hidden="true" class="mobile-arrow">
+                                ⌄
+                            </span>
+</a>
+<ul>
+<li>
+<a href="/solutions/">
+                                    Industrial Infrastructure
+                                </a>
+</li>
+<li>
+<a href="/solutions/">
+                                    Commercial Buildings
+                                </a>
+</li>
+<li>
+<a href="/solutions/">
+                                    Solar Projects
+                                </a>
+</li>
+<li>
+<a href="/solutions/">
+                                    Power &amp; Substations
+                                </a>
+</li>
+</ul>
+</li>
+<!-- CONTACT -->
+<li>
+<a href="/contact/">
+<span>Contact Us</span>
+</a>
+</li>
+<!-- QUOTE -->
+<li>
+<a href="/request-quote/">
+<span>Request a Quote</span>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</header>
+</div>
+</div>
+
+<div class="hero hero-video">
+<div class="hero-bg-video"><figure>
+<img alt="" fetchpriority="high" src="/images/hero.webp"/>
+</figure></div>
+<div class="container">
+<div class="row align-items-center">
+<div class="col-lg-7">
+<div class="hero-content">
+<div class="section-title dark-section">
+<h3 class="wow fadeInUp">Reliable Lightning safety starts here</h3>
+<h1 class="wow fadeInUp" data-cursor="-opaque" data-wow-delay="0.2s">Safety is not just a priority, it's a <span>Responsibility</span></h1>
+<p class="wow fadeInUp" data-wow-delay="0.4s">Rudra Earthing Systems provides dependable earthing, grounding and lightning protection materials for industrial, commercial, solar and electrical infrastructure.</p>
+</div>
+<div class="hero-btn wow fadeInUp" data-wow-delay="0.6s"><a class="btn-default" href="/request-quote/">Request a Quote</a></div>
+</div>
+</div>
+<div class="col-lg-5">
+<div class="hero-image">
+<figure>
+<img alt="" fetchpriority="high" src="/images/engineer.webp"/>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="about-us" id="about">
+<div class="container">
+<div class="row align-items-center">
+<div class="col-lg-6">
+<div class="about-us-images">
+<div class="about-img-1">
+<figure class="image-anime top-right-tringle-2">
+<img alt="" decoding="async" loading="lazy" src="/images/about.webp"/>
+</figure>
+</div>
+<div class="about-img-2">
+<figure class="image-anime"><img alt="" decoding="async" loading="lazy" src="/images/about-2.webp"/></figure>
+</div>
+<div class="years-experience-box">
+<h2>2017</h2>
+<p>Manufacturing experience since</p>
+</div>
+</div>
+</div>
+<div class="col-lg-6">
+<div class="about-us-content">
+<div class="section-title">
+<h3 class="wow fadeInUp">about us</h3>
+<h2 class="wow fadeInUp" data-cursor="-opaque" data-wow-delay="0.2s">Dedication to delivering best <span> Earthing System solutions</span></h2>
+<p class="wow fadeInUp" data-wow-delay="0.4s">We are your trusted lightning protection solution , dedicated to protecting your home or business with reliable earthing solutions. Our expert team is ready to provide top-tier earthing and lightning solutions tailored to your needs.</p>
+</div>
+<div class="about-body-list wow fadeInUp" data-wow-delay="0.6s">
+<div class="about-body-item">
+<div class="icon-box"><img alt="" decoding="async" src="/images/icon-00.svg"/></div>
+<div class="about-body-item-content">
+<h3>Fast reliable services</h3>
+</div>
+</div>
+<div class="about-body-item">
+<div class="icon-box"><img alt="" decoding="async" src="/images/icon-01.svg"/></div>
+<div class="about-body-item-content">
+<h3>Certified expert &amp; team</h3>
+</div>
+</div>
+</div>
+<div class="about-us-footer wow fadeInUp" data-wow-delay="0.8s">
+<div class="about-list-btn">
+<div class="about-us-list">
+<ul>
+<li>We offer compatible solutions.</li>
+<li>We offer high quality products for safer future.</li>
+<li>We offer India's No.1 Earthing and Lightning Solutions.</li>
+</ul>
+</div>
+<div class="about-btn"><a class="btn-default" href="/about/">More about us</a></div>
+</div>
+<div class="about-video-image">
+<figure class="image-anime"><img alt="" decoding="async" loading="lazy" src="/images/about.webp"/></figure>
+<div class="video-play-button"><a aria-label="Explore installation solutions" href="/solutions/" title="Explore installation solutions"><i class="fa-solid fa-arrow-right"></i></a></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="our-services parallaxie" id="products">
+<div class="container">
+<div class="row section-row">
+<div class="col-lg-12">
+<div class="section-title section-title-center dark-section">
+<h3 class="wow fadeInUp">Our services</h3>
+<h2 class="wow fadeInUp" data-cursor="-opaque" data-wow-delay="0.2s">Explore Our Comprehensive Range of <span>Earthing &amp; Lightning Protection</span></h2>
+</div>
+</div>
+</div>
+<div class="row service-list">
+<div class="col-lg-4 col-md-6">
+<div class="service-item-box wow fadeInUp">
+<div class="service-item active top-right-tringle-2">
+<div class="icon-box"><img alt="" decoding="async" src="/images/earthing-service.webp"/></div>
+<div class="service-item-content">
+<h3><a href="/products/">Earthing Systems</a></h3>
+<p>Reliable earthing solutions designed to provide effective grounding and protect people, electrical equipment and infrastructure.</p>
+</div>
+<div class="service-readmore-btn"><a class="readmore-btn" href="/products/">read more</a></div>
+</div>
+</div>
+</div>
+<div class="col-lg-4 col-md-6">
+<div class="service-item-box wow fadeInUp" data-wow-delay="0.2s">
+<div class="service-item top-right-tringle-2">
+<div class="icon-box"><img alt="" decoding="async" src="/images/icon-03.svg"/></div>
+<div class="service-item-content">
+<h3><a href="/products/">Lightning Protection</a></h3>
+<p>Advanced lightning protection solutions designed to help
+                    safeguard buildings, electrical installations and
+                    sensitive infrastructure from lightning-related risks.</p>
+</div>
+<div class="service-readmore-btn"><a class="readmore-btn" href="/products/">read more</a></div>
+</div>
+</div>
+</div>
+<div class="col-lg-4 col-md-6">
+<div class="service-item-box wow fadeInUp" data-wow-delay="0.6s">
+<div class="service-item top-right-tringle-2">
+<div class="icon-box"><img alt="Rudra Chemical Earthing" decoding="async" src="/images/icon-04.svg"/></div>
+<div class="service-item-content">
+<h3><a href="/products/">Chemical Earthing</a></h3>
+<p>High-performance chemical earthing solutions developed
+                    for stable grounding performance and dependable electrical
+                    safety across demanding applications.</p>
+</div>
+<div class="service-readmore-btn"><a class="readmore-btn" href="/products/">read more</a></div>
+</div>
+</div>
+</div>
+<div class="col-lg-4 col-md-6">
+<div class="service-item-box wow fadeInUp" data-wow-delay="0.8s">
+<div class="service-item top-right-tringle-2">
+<div class="icon-box"><img alt="Rudra Copper Earthing" decoding="async" src="/images/icon-05.svg"/></div>
+<div class="service-item-content">
+<h3><a href="/products/">Copper Earthing</a></h3>
+<p>We provide reliable, state-of-the-art systems that alert you to potential hazards, keeping your home safe.</p>
+</div>
+<div class="service-readmore-btn"><a class="readmore-btn" href="/products/">read more</a></div>
+</div>
+</div>
+</div>
+<div class="col-lg-4 col-md-6">
+<div class="service-item-box wow fadeInUp" data-wow-delay="0.8s">
+<div class="service-item top-right-tringle-2">
+<div class="icon-box"><img alt="Rudra Earth Pit Solutions" decoding="async" src="/images/icon-06.svg"/></div>
+<div class="service-item-content">
+<h3><a href="/products/">Earth Pit Solutions</a></h3>
+<p>Engineered earth pit solutions designed for dependable
+                    grounding, efficient fault-current dissipation and
+                    long-term electrical protection.</p>
+</div>
+<div class="service-readmore-btn"><a class="readmore-btn" href="/products/">read more</a></div>
+</div>
+</div>
+</div>
+<div class="col-lg-12">
+<div class="section-footer-text wow fadeInUp" data-wow-delay="1.2s">
+<p>Need Reliable Earthing System Installation? <a href="/contact/">Contact Us Today!</a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<section class="rudra-products-section" id="rudra-products">
+<div class="container">
+<!-- Section Header -->
+<div class="rudra-products-heading">
+<div class="rudra-section-label">
+<span></span>
+                OUR PRODUCTS
+                <span></span>
+</div>
+<h2>
+                Engineered for <strong>Grounding.</strong><br/>
+                Built for <strong>Protection.</strong>
+</h2>
+<p>
+                Explore Rudra Earthing Solutions' range of earthing,
+                grounding and lightning protection products engineered
+                for dependable electrical safety.
+            </p>
+</div>
+<!-- Featured Product -->
+<div class="rudra-product-feature">
+<div class="rudra-feature-content">
+<span class="rudra-product-tag">
+                    FEATURED SOLUTION
+                </span>
+<span class="rudra-feature-number">01</span>
+<h3>GI Earthing Electrode</h3>
+<p>
+                    Reliable galvanized iron earthing electrodes designed
+                    for efficient grounding and dependable electrical
+                    protection across a wide range of installations.
+                </p>
+<div class="rudra-feature-actions">
+<a class="rudra-product-btn" href="/products/gi-earthing-electrode/">
+                        View Product
+                        <i class="fa-solid fa-arrow-right"></i>
+</a>
+<a class="rudra-text-btn" href="/products/">
+                        View All Products
+                    </a>
+</div>
+</div>
+<div class="rudra-feature-image">
+<div class="rudra-image-glow"></div>
+<img alt="GI Earthing Electrode" decoding="async" loading="lazy" src="/assets/gi-earthing-electrode.webp"/>
+</div>
+</div>
+<!-- Product Grid -->
+<div class="rudra-product-grid" id="rudra-product-grid">
+<!-- 01 -->
+<article class="rudra-product-card" id="product-gi-earthing-electrode">
+<div class="rudra-product-image">
+<span class="rudra-product-index">01</span>
+<img alt="GI Earthing Electrode" decoding="async" loading="lazy" src="/assets/gi-earthing-electrode.webp"/>
+</div>
+<div class="rudra-product-info">
+<span>EARTHING</span>
+<h3>GI Earthing Electrode</h3>
+<a href="/products/gi-earthing-electrode/">
+                        View Product
+                        <i class="fa-solid fa-arrow-right"></i>
+</a>
+</div>
+</article>
+<!-- 02 -->
+<article class="rudra-product-card" id="product-gi-earthing-electrode-with-copper-terminal">
+<div class="rudra-product-image">
+<span class="rudra-product-index">02</span>
+<img alt="GI Earthing Electrode with Copper Terminal" decoding="async" loading="lazy" src="/assets/gi-earthing-electrode-with-copper-terminal.webp"/>
+</div>
+<div class="rudra-product-info">
+<span>EARTHING</span>
+<h3>GI Earthing Electrode with Copper Terminal</h3>
+<a href="/products/gi-earthing-electrode-with-copper-terminal/">
+                        View Product
+                        <i class="fa-solid fa-arrow-right"></i>
+</a>
+</div>
+</article>
+<!-- 03 -->
+<article class="rudra-product-card" id="product-copper-bonded-earthing-electrode">
+<div class="rudra-product-image">
+<span class="rudra-product-index">03</span>
+<img alt="Copper Bonded Electrode" decoding="async" loading="lazy" src="/assets/copper-bonded-earthing-electrode.webp"/>
+</div>
+<div class="rudra-product-info">
+<span>COPPER BONDED</span>
+<h3>Copper Bonded Electrode</h3>
+<a href="/products/copper-bonded-earthing-electrode/">
+                        View Product
+                        <i class="fa-solid fa-arrow-right"></i>
+</a>
+</div>
+</article>
+<!-- 04 -->
+<article class="rudra-product-card" id="product-copper-bonded-earthing-rod">
+<div class="rudra-product-image">
+<span class="rudra-product-index">04</span>
+<img alt="Copper Bonded Earthing Rod" decoding="async" loading="lazy" src="/assets/copper-bonded-earthing-rod.webp"/>
+</div>
+<div class="rudra-product-info">
+<span>COPPER BONDED</span>
+<h3>Copper Bonded Earthing Rod</h3>
+<a href="/products/copper-bonded-earthing-rod/">
+                        View Product
+                        <i class="fa-solid fa-arrow-right"></i>
+</a>
+</div>
+</article>
+<!-- 05 -->
+<article class="rudra-product-card" id="product-4g-copper-bonded-earthing-rod">
+<div class="rudra-product-image">
+<span class="rudra-product-index">05</span>
+<img alt="4G Copper Bonded Earthing Rod" decoding="async" loading="lazy" src="/assets/4g-copper-bonded-earthing-rod.webp"/>
+</div>
+<div class="rudra-product-info">
+<span>4G EARTHING</span>
+<h3>4G Copper Bonded Earthing Rod</h3>
+<a href="/products/4g-copper-bonded-earthing-rod/">
+                        View Product
+                        <i class="fa-solid fa-arrow-right"></i>
+</a>
+</div>
+</article>
+<!-- 06 -->
+<article class="rudra-product-card" id="product-lightning-strike-counter">
+<div class="rudra-product-image">
+<span class="rudra-product-index">06</span>
+<img alt="Lightning Strike Counter" decoding="async" loading="lazy" src="/assets/lightning-strike-counter.webp"/>
+</div>
+<div class="rudra-product-info">
+<span>LIGHTNING PROTECTION</span>
+<h3>Lightning Strike Counter</h3>
+<a href="/products/lightning-strike-counter/">
+                        View Product
+                        <i class="fa-solid fa-arrow-right"></i>
+</a>
+</div>
+</article>
+<!-- 07 -->
+<article class="rudra-product-card" id="product-pure-copper-earthing-electrode">
+<div class="rudra-product-image">
+<span class="rudra-product-index">07</span>
+<img alt="Pure Copper Bonded Electrode" decoding="async" loading="lazy" src="/assets/pure-copper-earthing-electrode.webp"/>
+</div>
+<div class="rudra-product-info">
+<span>PURE COPPER</span>
+<h3>Pure Copper Bonded Electrode</h3>
+<a href="/products/pure-copper-earthing-electrode/">
+                        View Product
+                        <i class="fa-solid fa-arrow-right"></i>
+</a>
+</div>
+</article>
+<!-- 08 -->
+<article class="rudra-product-card" id="product-ese-lightning-arrester">
+<div class="rudra-product-image">
+<span class="rudra-product-index">08</span>
+<img alt="ESE Lightning Arrester" decoding="async" loading="lazy" src="/assets/ese-lightning-arrester.webp"/>
+</div>
+<div class="rudra-product-info">
+<span>LIGHTNING ARRESTER</span>
+<h3>ESE Lightning Arrester</h3>
+<a href="/products/ese-lightning-arrester/">
+                        View Product
+                        <i class="fa-solid fa-arrow-right"></i>
+</a>
+</div>
+</article>
+<!-- 09 -->
+<article class="rudra-product-card" id="product-conventional-lightning-arrester">
+<div class="rudra-product-image">
+<span class="rudra-product-index">09</span>
+<img alt="Conventional Lightning Arrester" decoding="async" loading="lazy" src="/assets/conventional-lightning-arrester.webp"/>
+</div>
+<div class="rudra-product-info">
+<span>LIGHTNING ARRESTER</span>
+<h3>Conventional Lightning Arrester</h3>
+<a href="/products/conventional-lightning-arrester/">
+                        View Product
+                        <i class="fa-solid fa-arrow-right"></i>
+</a>
+</div>
+</article>
+<!-- 10 -->
+<article class="rudra-product-card" id="product-solar-earthing-kit">
+<div class="rudra-product-image">
+<span class="rudra-product-index">10</span>
+<img alt="Solar Earthing Kit" decoding="async" loading="lazy" src="/assets/solar-earthing-kit.webp"/>
+</div>
+<div class="rudra-product-info">
+<span>SOLAR</span>
+<h3>Solar Earthing Kit</h3>
+<a href="/products/solar-earthing-kit/">
+                        View Product
+                        <i class="fa-solid fa-arrow-right"></i>
+</a>
+</div>
+</article>
+<!-- 11 -->
+<article class="rudra-product-card" id="product-earth-backfill-compound">
+<div class="rudra-product-image">
+<span class="rudra-product-index">11</span>
+<img alt="Earth Backfill Compound" decoding="async" loading="lazy" src="/assets/earth-backfill-compound.webp"/>
+</div>
+<div class="rudra-product-info">
+<span>EARTHING ACCESSORY</span>
+<h3>Earth Backfill Compound</h3>
+<a href="/products/earth-backfill-compound/">
+                        View Product
+                        <i class="fa-solid fa-arrow-right"></i>
+</a>
+</div>
+</article>
+<!-- 12 -->
+<article class="rudra-product-card" id="product-earth-pit-cover">
+<div class="rudra-product-image">
+<span class="rudra-product-index">12</span>
+<img alt="Earth Pit Cover" decoding="async" loading="lazy" src="/assets/earth-pit-cover.webp"/>
+</div>
+<div class="rudra-product-info">
+<span>EARTHING ACCESSORY</span>
+<h3>Earth Pit Cover</h3>
+<a href="/products/earth-pit-cover/">
+                        View Product
+                        <i class="fa-solid fa-arrow-right"></i>
+</a>
+</div>
+</article>
+<!-- 13 -->
+<article class="rudra-product-card" id="product-earthing-lightning-accessories">
+<div class="rudra-product-image">
+<span class="rudra-product-index">13</span>
+<img alt="Earthing and Lightning Accessories" decoding="async" loading="lazy" src="/assets/earthing-lightning-accessories.webp"/>
+</div>
+<div class="rudra-product-info">
+<span>ACCESSORIES</span>
+<h3>Earthing &amp; Lightning Accessories</h3>
+<a href="/products/earthing-lightning-accessories/">
+                        View Product
+                        <i class="fa-solid fa-arrow-right"></i>
+</a>
+</div>
+</article>
+<!-- 14 -->
+<article class="rudra-product-card" id="product-exothermic-welding-kit">
+<div class="rudra-product-image">
+<span class="rudra-product-index">14</span>
+<img alt="Exothermic Welding Kit" decoding="async" loading="lazy" src="/assets/exothermic-welding-kit.webp"/>
+</div>
+<div class="rudra-product-info">
+<span>CONNECTION SYSTEM</span>
+<h3>Exothermic Welding Kit</h3>
+<a href="/products/exothermic-welding-kit/">
+                        View Product
+                        <i class="fa-solid fa-arrow-right"></i>
+</a>
+</div>
+</article>
+</div>
+<!-- Bottom CTA -->
+<div class="rudra-products-bottom">
+<p>
+                Need help selecting the right earthing solution?
+            </p>
+<a href="/contact/">
+                Talk to Rudra Experts
+                <i class="fa-solid fa-arrow-right"></i>
+</a>
+</div>
+</div>
+</section>
+<div class="why-choose-us" id="why-rudra">
+<div class="container">
+<div class="row section-row align-items-center">
+<div class="col-lg-6">
+<div class="section-title">
+<h3 class="wow fadeInUp">why choose us</h3>
+<h2 class="wow fadeInUp" data-cursor="-opaque" data-wow-delay="0.2s">We're the trusted choice for <span>earthing and lightning solutions</span></h2>
+</div>
+</div>
+<div class="col-lg-6">
+<div class="section-title-content wow fadeInUp" data-wow-delay="0.4s">
+<p>When it comes to earthing and lightning protection, choosing the right partner is critical. We are committed to delivering reliable, customized solutions that meet your needs.</p>
+</div>
+</div>
+</div>
+<div class="row align-items-center">
+<div class="col-lg-6">
+<div class="why-choose-image">
+<figure class="image-anime reveal top-right-tringle-2"><img alt="" decoding="async" loading="lazy" src="/images/engineer-w1.webp"/></figure>
+</div>
+</div>
+<div class="col-lg-6">
+<div class="why-choose-content">
+<div class="why-choose-list">
+<div class="why-choose-list-item wow fadeInUp">
+<div class="icon-box"><img alt="" decoding="async" src="/images/certified-experts.webp"/></div>
+<div class="why-choose-item-content">
+<h3>Certified experts</h3>
+<p>Our team comprises certified professionals with extensive knowledge in Earthing system installation and maintenance, With years of experience.</p>
+</div>
+</div>
+<div class="why-choose-list-item wow fadeInUp" data-wow-delay="0.2s">
+<div class="icon-box"><img alt="" decoding="async" src="/images/custom-solutions.webp"/></div>
+<div class="why-choose-item-content">
+<h3>Customized solutions</h3>
+<p>We understand that every property has unique Earthing safety requirements. That's why we design and install systems tailored to your specific needs.</p>
+</div>
+</div>
+<div class="why-choose-list-item wow fadeInUp" data-wow-delay="0.4s">
+<div class="icon-box"><img alt="" decoding="async" src="/images/icon-09.svg"/></div>
+<div class="why-choose-item-content">
+<h3>24/7 emergency support</h3>
+<p>Emergencies can happen anytime. Our dedicated team is available around the clock to provide swift assistance and ensure your safety.</p>
+</div>
+</div>
+</div>
+<div class="why-choose-btn wow fadeInUp" data-wow-delay="0.6s"><a class="btn-default" href="/contact/">contact now</a></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="intro-video">
+<div class="container-fluid">
+<div class="row">
+<div class="col-lg-12">
+<div class="intro-video-box">
+<div class="intro-bg-image">
+<figure class="image-anime"><img alt="" decoding="async" loading="lazy" src="/images/hero.webp"/></figure>
+</div>
+<div class="video-play-button btn-effect"><a aria-label="Explore installation solutions" href="/solutions/" title="Explore installation solutions"><i class="fa-solid fa-arrow-right"></i></a></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="how-it-work" id="solutions">
+<div class="container">
+<div class="row section-row align-items-center">
+<div class="col-lg-6">
+<div class="section-title">
+<h3 class="wow fadeInUp">how we work</h3>
+<h2 class="wow fadeInUp" data-cursor="-opaque" data-wow-delay="0.2s">Delivering safety, every step of <span>the way</span></h2>
+</div>
+</div>
+<div class="col-lg-6">
+<div class="section-title-content wow fadeInUp" data-wow-delay="0.4s">
+<p>We follow a structured process to ensure your safety. From the initial consultation to assessing your needs, designing a customized Earthing safety.</p>
+</div>
+</div>
+</div>
+<div class="row work-step-list">
+<div class="col-lg-3 col-md-6">
+<div class="work-step-item wow fadeInUp">
+<div class="work-step-no">
+<h3>01</h3>
+</div>
+<div class="icon-box"><img alt="" decoding="async" src="/images/consultation.webp"/></div>
+<div class="work-step-item-content">
+<h3>Consultation</h3>
+<p>Discuss site requirements with our team.</p>
+</div>
+</div>
+</div>
+<div class="col-lg-3 col-md-6">
+<div class="work-step-item active wow fadeInUp" data-wow-delay="0.2s">
+<div class="work-step-no">
+<h3>02</h3>
+</div>
+<div class="icon-box"><img alt="" decoding="async" src="/images/design.webp"/></div>
+<div class="work-step-item-content">
+<h3>Custom Design System</h3>
+<p>Select a suitable earthing system for the project.</p>
+</div>
+</div>
+</div>
+<div class="col-lg-3 col-md-6">
+<div class="work-step-item wow fadeInUp" data-wow-delay="0.4s">
+<div class="work-step-no">
+<h3>03</h3>
+</div>
+<div class="icon-box"><img alt="" decoding="async" src="/images/process-installation.webp"/></div>
+<div class="work-step-item-content">
+<h3>Profesional Installation</h3>
+<p>Coordinate installation with the project team.</p>
+</div>
+</div>
+</div>
+<div class="col-lg-3 col-md-6">
+<div class="work-step-item wow fadeInUp" data-wow-delay="0.6s">
+<div class="work-step-no">
+<h3>04</h3>
+</div>
+<div class="icon-box"><img alt="" decoding="async" src="/images/support.webp"/></div>
+<div class="work-step-item-content">
+<h3>Ongoing Support</h3>
+<p>Support testing and commissioning.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cta-box bg-section parallaxie" id="contact">
+<div class="container">
+<div class="row align-items-center">
+<div class="col-lg-6 offset-lg-3">
+<div class="cta-box-content">
+<div class="section-title dark-section">
+<h3 class="wow fadeInUp">conatct us</h3>
+<h2 class="wow fadeInUp" data-cursor="-opaque" data-wow-delay="0.2s">Your safety partner is just a <span>call away</span></h2>
+<p class="wow fadeInUp" data-wow-delay="0.4s">Need expert advice or want to discuss your Earthing protection options? We're here to help! Contact us through phone, email.</p>
+</div>
+<div class="cta-box-body wow fadeInUp" data-wow-delay="0.6s">
+<div class="cta-box-btn"><a class="btn-default" href="/contact/">contact us</a></div><span>or</span>
+<div class="contact-now-box">
+<div class="icon-box"><img alt="" decoding="async" src="/images/icon-14.svg"/></div>
+<div class="contact-now-box-content">
+<p>Call Us any time</p>
+<h3><a href="tel:+917355667609">+91 7355667609</a></h3>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="scrolling-ticker">
+<div class="scrolling-ticker-box">
+<div class="scrolling-content"><span><img alt="" decoding="async" src="/images/ticker.webp"/>Certified Systems</span><span><img alt="" decoding="async" src="/images/ticker.webp"/>Earthing Cover Systems</span><span><img alt="" decoding="async" src="/images/ticker.webp"/>Copper Electrode Systems</span><span><img alt="" decoding="async" src="/images/ticker.webp"/>Complete Protection Systems</span><span><img alt="" decoding="async" src="/images/ticker.webp"/>Lightning Systems</span><span><img alt="" decoding="async" src="/images/ticker.webp"/>Earthing Systems</span></div>
+<div class="scrolling-content"><span><img alt="" decoding="async" src="/images/ticker.webp"/>Lightninig Systems</span><span><img alt="" decoding="async" src="/images/ticker.webp"/>Premimum Electrode Systems</span><span><img alt="" decoding="async" src="/images/ticker.webp"/>ESE Systems</span><span><img alt="" decoding="async" src="/images/ticker.webp"/>Earthing Discharge Systems</span><span><img alt="" decoding="async" src="/images/ticker.webp"/>Earthing Systems</span><span><img alt="" decoding="async" src="/images/ticker.webp"/>Complete Lighting and Earthing Protection Systems</span></div>
+</div>
+</div>
+<div id="rudra-footer-mount"><!--
+  Rudra Earthing Systems — Reusable Footer Component
+  Self-contained: HTML + CSS + JavaScript
+  Place this file at: components/footer.html
+-->
+<footer class="rudra-footer" id="rudra-footer">
+<div aria-hidden="true" class="rudra-footer__glow"></div>
+<div class="rudra-footer__container">
+<div class="rudra-footer__grid">
+<!-- Brand -->
+<section class="rudra-footer__brand">
+<a aria-label="Rudra Earthing Systems home" class="rudra-footer__logo" href="/">
+<img alt="Rudra Earthing Systems" loading="lazy" src="/assets/logo-for-dark-bg.webp"/>
+</a>
+<p>
+          Rudra Earthing Systems delivers dependable earthing, grounding and
+          lightning protection solutions for industrial, commercial, solar
+          and electrical infrastructure.
+        </p>
+<div aria-label="Social media links" class="rudra-footer__social">
+<a aria-label="LinkedIn" href="#" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+<a aria-label="Instagram" href="#" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+<a aria-label="Facebook" href="#" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+</div>
+</section>
+<!-- Quick links -->
+<nav aria-label="Quick links" class="rudra-footer__links">
+<h3>Quick Links</h3>
+<a href="/">Home</a>
+<a href="/about/">About Rudra</a>
+<a href="/products/">Products</a>
+<a href="/solutions/">Solutions</a>
+<a href="/request-quote/">Request a Quote</a>
+</nav>
+<!-- Product links -->
+<nav aria-label="Products" class="rudra-footer__links">
+<h3>Products</h3>
+<a href="/products/">Earthing Electrodes</a>
+<a href="/products/">Copper Bonded Rods</a>
+<a href="/products/">Lightning Arresters</a>
+<a href="/products/">Solar Earthing Kits</a>
+<a href="/products/">Earthing Accessories</a>
+</nav>
+<!-- Contact -->
+<section class="rudra-footer__contact">
+<h3>Contact Us</h3>
+<a class="rudra-footer__contact-item" href="mailto:Rudraearthingsystem@gmail.com">
+<span class="rudra-footer__icon"><i class="fa-regular fa-envelope"></i></span>
+<span>
+<small>Email</small>
+            Rudraearthingsystem@gmail.com
+          </span>
+</a>
+<a class="rudra-footer__contact-item" href="tel:+917355667609">
+<span class="rudra-footer__icon"><i class="fa-solid fa-phone"></i></span>
+<span>
+<small>Call Us</small>
+            +91 7355667609
+          </span>
+</a>
+<a class="rudra-footer__contact-item" href="tel:+918286825295">
+<span class="rudra-footer__icon"><i class="fa-solid fa-phone"></i></span>
+<span>
+<small>Call Us</small>
+            +91 82868 25295
+          </span>
+</a>
+</section>
+</div>
+<div class="rudra-footer__bottom">
+<p>© <span data-rudra-year=""></span> Rudra Earthing Systems. All Rights Reserved.</p>
+<div class="rudra-footer__legal">
+<a href="/privacy/">Privacy Policy</a>
+
+
+</div>
+</div>
+</div>
+</footer>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script defer="True" src="/assets/reference/header.js"></script><script defer="True" src="/assets/reference/footer.js"></script><script defer="True" src="/assets/reference/motion.js"></script></body></html>

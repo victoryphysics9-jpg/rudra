@@ -1,0 +1,369 @@
+[
+  {
+    "name": "GI Earthing Electrode",
+    "category": "Earthing",
+    "description": "Hot dip galvanized electrode for grounding applications.",
+    "slug": "gi-earthing-electrode",
+    "headers": [
+      "Model",
+      "Length (m)",
+      "Terminal (mm)",
+      "Compound"
+    ],
+    "rows": [
+      [
+        "RES-GI40",
+        "1, 2, 3",
+        "32 × 6",
+        "Filled"
+      ],
+      [
+        "RES-GI50",
+        "1, 2, 3",
+        "40 × 6",
+        "Filled"
+      ],
+      [
+        "RES-GI80",
+        "1, 2, 3",
+        "50 × 6",
+        "Filled"
+      ]
+    ],
+    "features": [
+      "Designed for fault-current dissipation",
+      "Multiple length options",
+      "Project-specific selection"
+    ]
+  },
+  {
+    "name": "GI Earthing Electrode with Copper Terminal",
+    "category": "Earthing",
+    "description": "Galvanized electrode with copper terminal.",
+    "slug": "gi-earthing-electrode-with-copper-terminal",
+    "headers": [
+      "Model",
+      "Length (m)",
+      "Terminal (mm)",
+      "Compound"
+    ],
+    "rows": [
+      [
+        "RES-GIC40",
+        "1, 2, 3",
+        "32 × 6",
+        "Filled"
+      ],
+      [
+        "RES-GIC50",
+        "1, 2, 3",
+        "40 × 6",
+        "Filled"
+      ],
+      [
+        "RES-GIC80",
+        "1, 2, 3",
+        "50 × 6",
+        "Filled"
+      ]
+    ],
+    "features": [
+      "Designed for fault-current dissipation",
+      "Multiple length options",
+      "Project-specific selection"
+    ]
+  },
+  {
+    "name": "Copper Bonded Earthing Electrode",
+    "category": "Earthing",
+    "description": "Copper bonded electrode for electrical grounding.",
+    "slug": "copper-bonded-earthing-electrode",
+    "headers": [
+      "Model",
+      "Length (m)",
+      "Terminal (mm)",
+      "Compound"
+    ],
+    "rows": [
+      [
+        "RES-CB40",
+        "1, 2, 3",
+        "32 × 6",
+        "Filled"
+      ],
+      [
+        "RES-CB50",
+        "1, 2, 3",
+        "50 × 6",
+        "Filled"
+      ],
+      [
+        "RES-CB80",
+        "1, 2, 3",
+        "50 × 6",
+        "Filled"
+      ]
+    ],
+    "features": [
+      "Designed for fault-current dissipation",
+      "Multiple length options",
+      "Project-specific selection"
+    ]
+  },
+  {
+    "name": "Pure Copper Earthing Electrode",
+    "category": "Earthing",
+    "description": "Copper electrode for grounding applications.",
+    "slug": "pure-copper-earthing-electrode",
+    "note": "Catalogue model codes overlap with the GI copper-terminal series. The supplied photo is identical to the copper-bonded electrode image; both require confirmation.",
+    "headers": [
+      "Model",
+      "Length (m)",
+      "Terminal (mm)",
+      "Compound"
+    ],
+    "rows": [
+      [
+        "RES-GIC40",
+        "1, 2, 3",
+        "32 × 6",
+        "Filled"
+      ],
+      [
+        "RES-GIC50",
+        "1, 2, 3",
+        "40 × 6",
+        "Filled"
+      ],
+      [
+        "RES-GIC80",
+        "1, 2, 3",
+        "50 × 6",
+        "Filled"
+      ]
+    ],
+    "features": [
+      "Designed for fault-current dissipation",
+      "Multiple length options",
+      "Project-specific selection"
+    ]
+  },
+  {
+    "name": "Copper Bonded Earthing Rod",
+    "category": "Earthing",
+    "description": "Available diameters: 14, 17, 19 and 25 mm.",
+    "slug": "copper-bonded-earthing-rod",
+    "note": "Catalogue uses the same model codes for both rod ranges; confirm the intended model before ordering.",
+    "headers": [
+      "Model",
+      "Length (m)",
+      "Diameter (mm)"
+    ],
+    "rows": [
+      [
+        "RES-CBR14",
+        "1, 2, 3",
+        "14"
+      ],
+      [
+        "RES-CBR17",
+        "1, 2, 3",
+        "17"
+      ],
+      [
+        "RES-CBR19",
+        "1, 2, 3",
+        "19"
+      ],
+      [
+        "RES-CBR25",
+        "1, 2, 3",
+        "25"
+      ]
+    ],
+    "features": [
+      "Multiple rod diameters",
+      "Copper-bonded construction",
+      "Designed for grounding applications"
+    ]
+  },
+  {
+    "name": "4G Copper Bonded Earthing Rod",
+    "category": "Earthing",
+    "description": "Available diameters: 14, 17, 19 and 25 mm.",
+    "slug": "4g-copper-bonded-earthing-rod",
+    "note": "Catalogue uses the same model codes for both rod ranges; confirm the intended model before ordering.",
+    "headers": [
+      "Model",
+      "Length (m)",
+      "Diameter (mm)"
+    ],
+    "rows": [
+      [
+        "RES-CBR14",
+        "1, 2, 3",
+        "14"
+      ],
+      [
+        "RES-CBR17",
+        "1, 2, 3",
+        "17"
+      ],
+      [
+        "RES-CBR19",
+        "1, 2, 3",
+        "19"
+      ],
+      [
+        "RES-CBR25",
+        "1, 2, 3",
+        "25"
+      ]
+    ],
+    "features": [
+      "Multiple rod diameters",
+      "Copper-bonded construction",
+      "Designed for grounding applications"
+    ]
+  },
+  {
+    "name": "Solar Earthing Kit",
+    "category": "Earthing",
+    "description": "Grounding kit for solar installations.",
+    "slug": "solar-earthing-kit",
+    "note": "Model-to-diameter mapping is transcribed from the catalogue and requires confirmation.",
+    "headers": [
+      "Model",
+      "Length (m)",
+      "Rod diameter (mm)"
+    ],
+    "rows": [
+      [
+        "RES-SOLAR-14",
+        "1, 2, 3",
+        "14"
+      ],
+      [
+        "RES-SOLAR-17",
+        "1, 2, 3",
+        "17"
+      ],
+      [
+        "RES-SOLAR-T17",
+        "1, 2, 3",
+        "14"
+      ],
+      [
+        "RES-SOLAR-T14",
+        "1, 2, 3",
+        "17"
+      ]
+    ]
+  },
+  {
+    "name": "Earth Backfill Compound",
+    "category": "Accessories",
+    "description": "Available pack sizes: 10, 20 and 25 kg.",
+    "slug": "earth-backfill-compound",
+    "headers": [
+      "Model",
+      "Pack weight"
+    ],
+    "rows": [
+      [
+        "RES-BFC25",
+        "25 kg"
+      ],
+      [
+        "RES-BFC20",
+        "20 kg"
+      ],
+      [
+        "RES-BFC10",
+        "10 kg"
+      ]
+    ],
+    "features": [
+      "Ground enhancement material",
+      "Multiple pack sizes",
+      "Designed to improve soil conductivity"
+    ]
+  },
+  {
+    "name": "Earth Pit Cover",
+    "category": "Accessories",
+    "description": "Protective inspection chamber for earthing installations.",
+    "slug": "earth-pit-cover",
+    "headers": [
+      "Model"
+    ],
+    "rows": [
+      [
+        "RES-EPC001"
+      ],
+      [
+        "RES-EPC002"
+      ],
+      [
+        "RES-EPC003"
+      ]
+    ],
+    "features": [
+      "Inspection chamber",
+      "Protective cover",
+      "Multiple models"
+    ]
+  },
+  {
+    "name": "ESE Lightning Arrester",
+    "category": "Lightning",
+    "description": "Early streamer emission air terminal; design requirements must be verified by an engineer.",
+    "slug": "ese-lightning-arrester",
+    "note": "Protection radius and applicable standards require project-specific engineering review. No radius is claimed here.",
+    "features": [
+      "Early streamer emission air terminal",
+      "Project-specific design assessment",
+      "Request applicable technical documentation"
+    ]
+  },
+  {
+    "name": "Conventional Lightning Arrester",
+    "category": "Lightning",
+    "description": "Air terminal for conventional lightning protection systems.",
+    "slug": "conventional-lightning-arrester"
+  },
+  {
+    "name": "Lightning Strike Counter",
+    "category": "Lightning",
+    "description": "Catalogue models RES-DLSC0101 and RES-ALSC0102.",
+    "slug": "lightning-strike-counter",
+    "headers": [
+      "Model"
+    ],
+    "rows": [
+      [
+        "RES-DLSC0101"
+      ],
+      [
+        "RES-ALSC0102"
+      ]
+    ],
+    "features": [
+      "Lightning strike monitoring",
+      "Catalogue lists an 8-digit display",
+      "Model-specific details on request"
+    ]
+  },
+  {
+    "name": "Exothermic Welding Kit",
+    "category": "Accessories",
+    "description": "Contact our team for model details.",
+    "slug": "exothermic-welding-kit"
+  },
+  {
+    "name": "Earthing & Lightning Accessories",
+    "category": "Accessories",
+    "description": "Contact our team for available components.",
+    "slug": "earthing-lightning-accessories"
+  }
+]

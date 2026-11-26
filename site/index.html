@@ -55,6 +55,370 @@
     #rudra-page-loader { display: none; }
 }
 </style>
+
+
+<style id="rudra-xtra-homepage-styles">
+
+/* FEATURED PRODUCT LAYOUT */
+
+#rudra-products .rudra-xtra-feature {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    background: #071a2b;
+    min-height: 560px;
+    isolation: isolate;
+}
+
+/* FEATURED PRODUCT CONTENT */
+
+#rudra-products .rudra-xtra-feature .rudra-feature-content {
+    min-width: 0;
+    padding: clamp(24px, 4vw, 52px);
+    align-self: center;
+}
+
+#rudra-products .rudra-xtra-feature h3 {
+    color: #fff;
+    font-size: clamp(30px, 3.7vw, 49px);
+    line-height: 1.12;
+    overflow-wrap: break-word;
+}
+
+#rudra-products .rudra-xtra-feature .rudra-feature-content p {
+    color: #cbd5e1;
+}
+
+#rudra-products .rudra-xtra-kicker {
+    display: block;
+    color: #a6b9cd;
+    font-size: 11px;
+    letter-spacing: 1.6px;
+    margin: 20px 0 10px;
+}
+
+/* PRODUCT HIGHLIGHTS */
+
+#rudra-products .rudra-xtra-highlights {
+    list-style: none;
+    margin: 24px 0;
+    padding: 0;
+    display: grid;
+    gap: 10px;
+    color: #e1ebf4;
+    font-size: 14px;
+}
+
+#rudra-products .rudra-xtra-highlights li {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+}
+
+#rudra-products .rudra-xtra-highlights li::before {
+    content: "";
+    display: inline-block;
+    flex: 0 0 7px;
+    height: 7px;
+    background: #ed701e;
+    transform: rotate(45deg);
+}
+
+/* FEATURED PRODUCT BUTTONS */
+
+#rudra-products .rudra-xtra-feature .rudra-feature-actions {
+    flex-wrap: wrap;
+    gap: 18px;
+}
+
+/* CLEAN PRODUCT BACKGROUND */
+
+#rudra-products .rudra-xtra-feature .rudra-feature-image {
+    min-width: 0;
+    min-height: 560px;
+    padding: 30px 20px;
+    display: grid;
+    place-items: center;
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    box-sizing: border-box;
+    background: linear-gradient(145deg, #071a2b, #102d48);
+}
+
+/* REMOVE EXTERNAL THEME DECORATIONS */
+
+#rudra-products .rudra-xtra-feature .rudra-feature-image::before,
+#rudra-products .rudra-xtra-feature .rudra-feature-image::after {
+    content: none !important;
+    display: none !important;
+}
+
+/* FEATURED PRODUCT IMAGE */
+
+#rudra-products .rudra-xtra-feature .rudra-feature-image img {
+    position: relative;
+    z-index: 3;
+    display: block;
+    width: auto !important;
+    height: 490px !important;
+    max-width: 100% !important;
+    max-height: none !important;
+    object-fit: contain !important;
+    transform: none;
+    filter: drop-shadow(0 16px 20px rgba(0, 0, 0, .38));
+    animation: rudraXtraHomepageFloat 5s ease-in-out infinite;
+}
+
+/* PRODUCT FLOATING ANIMATION */
+
+@keyframes rudraXtraHomepageFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+/* EXISTING PRODUCT GRID STYLES */
+
+#rudra-products .rudra-product-image {
+    height: 260px;
+    padding: 16px;
+    box-sizing: border-box;
+}
+
+#rudra-products .rudra-product-image img {
+    display: block;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+}
+
+#rudra-products .rudra-products-bottom {
+    flex-wrap: wrap;
+}
+
+#rudra-product-grid {
+    scroll-margin-top: 110px;
+}
+
+/* TABLET RESPONSIVE */
+
+@media (max-width: 991px) {
+
+    #rudra-products .rudra-xtra-feature {
+        grid-template-columns: minmax(0, 1fr);
+        min-height: 0;
+    }
+
+    #rudra-products .rudra-xtra-feature .rudra-feature-image {
+        min-height: 460px;
+    }
+
+    #rudra-products .rudra-xtra-feature .rudra-feature-image img {
+        height: 400px !important;
+    }
+}
+
+/* MOBILE RESPONSIVE */
+
+@media (max-width: 575px) {
+
+    #rudra-products .rudra-xtra-feature .rudra-feature-content {
+        padding: 28px 22px;
+    }
+
+    #rudra-products .rudra-xtra-feature .rudra-feature-image {
+        min-height: 390px;
+        padding: 25px 15px;
+    }
+
+    #rudra-products .rudra-xtra-feature .rudra-feature-image img {
+        height: 330px !important;
+    }
+}
+
+/* ACCESSIBILITY */
+
+@media (prefers-reduced-motion: reduce) {
+
+    #rudra-products .rudra-xtra-feature .rudra-feature-image img {
+        animation: none !important;
+        transition: none !important;
+        transform: none;
+    }
+}
+
+</style>
+<style>
+#rudra-cert-marquee {
+    width: 100%;
+    background: #fff;
+    padding: 25px 0;
+    overflow: hidden;
+    border-top: 1px solid #eee;
+}
+
+#rudra-cert-marquee h2 {
+    text-align: center;
+    color: #071a2b;
+    font-size: 32px;
+    margin: 0 0 20px;
+}
+
+#rudra-cert-marquee .cert-track {
+    display: flex;
+    width: max-content;
+    animation: rudraLogoScroll 18s linear infinite !important;
+}
+
+#rudra-cert-marquee .cert-group {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: space-around;
+    width: max(100vw, 600px);
+    box-sizing: border-box;
+    gap: 30px;
+    padding: 15px 20px;
+}
+
+#rudra-cert-marquee img {
+    width: 140px !important;
+    height: 100px !important;
+    max-width: none !important;
+    object-fit: contain !important;
+    flex-shrink: 0;
+    display: block;
+}
+
+@keyframes rudraLogoScroll {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+
+/* MOBILE RESPONSIVE */
+
+@media (max-width: 767px) {
+    #rudra-cert-marquee {
+        padding: 20px 0;
+    }
+
+    #rudra-cert-marquee h2 {
+        font-size: 26px;
+    }
+
+    #rudra-cert-marquee .cert-group {
+        width: max(100vw, 480px);
+        gap: 20px;
+    }
+
+    #rudra-cert-marquee img {
+        width: 90px !important;
+        height: 75px !important;
+    }
+
+    #rudra-cert-marquee .cert-track {
+        animation-duration: 12s !important;
+    }
+}
+
+
+
+#rudra-product-grid .rudra-product-card {
+    cursor: pointer;
+}
+
+#rudra-product-grid .rudra-product-card:focus-within {
+    outline: 2px solid #ed701e;
+    outline-offset: 4px;
+}
+
+
+</style>
+
+
+<style>
+/* RUDRA PRODUCT DISPLAY IMPROVEMENT */
+
+#rudra-products {
+    background: #eef2f6;
+}
+
+/* RESPONSIVE GRID */
+
+#rudra-product-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+}
+
+/* PREMIUM PRODUCT BACKGROUND */
+
+#rudra-products .rudra-product-image {
+    position: relative;
+    isolation: isolate;
+    height: 350px;
+    padding: 25px;
+
+    background: radial-gradient(
+        ellipse at center,
+        #ffffff 0%,
+        #e4ebf2 55%,
+        #ccd8e4 100%
+    );
+}
+
+
+/* PRODUCT IMAGE CLARITY */
+
+#rudra-products .rudra-product-image img {
+    position: relative;
+    z-index: 1;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+    filter: drop-shadow(
+        5px 8px 6px rgba(7, 26, 43, .18)
+    );
+}
+
+/* TABLET */
+
+@media (max-width: 991px) {
+    #rudra-product-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+    }
+
+    #rudra-products .rudra-product-image {
+        height: 320px;
+    }
+}
+
+/* MOBILE */
+
+@media (max-width: 575px) {
+    #rudra-product-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    #rudra-products .rudra-product-image {
+        height: 310px;
+        padding: 20px;
+    }
+}
+</style>
+
+
+
 </head>
 <body>
 <div id="rudra-page-loader" aria-hidden="true" inert>
@@ -100,12 +464,13 @@
 </a>
 </li>
 <li>
-<a aria-label="Instagram" href="#">
+<a aria-label="Instagram" href="https://www.instagram.com/rudra_earthing_system/">
 <i class="fa-brands fa-instagram"></i>
 </a>
 </li>
 <li>
-<a aria-label="Facebook" href="#">
+<a aria-label="Facebook" href="https://www.facebook.com/share/1cXKNMwEED/
+">
 <i class="fa-brands fa-facebook-f"></i>
 </a>
 </li>
@@ -138,30 +503,49 @@
                                 </a>
 </li>
 <!-- PRODUCTS -->
-<li class="nav-item submenu">
-<a class="nav-link" href="/products/">
-                                    Products
-                                </a>
-<ul>
-<li class="nav-item">
-<a class="nav-link" href="/products/">
-                                            Earthing Electrodes
-                                        </a>
+<li class="nav-item submenu" id="rudra-desktop-products" data-rn-dropdown>
+<a class="nav-link" href="/products/" aria-expanded="false" aria-controls="rn-desktop-categories" data-rn-trigger>Products</a>
+<ul id="rn-desktop-categories">
+<li class="nav-item"><a class="nav-link" href="/products/">View All Products</a></li>
+<li class="nav-item submenu rn-category" data-rn-category>
+<a class="nav-link" href="/products/" aria-expanded="false" aria-controls="rn-desktop-cat-0" data-rn-category-trigger>Earthing Electrodes</a>
+<ul id="rn-desktop-cat-0" class="rn-product-flyout">
+<li class="nav-item"><a class="nav-link" href="/products/gi-earthing-electrode/">GI Earthing Electrode</a></li>
+<li class="nav-item"><a class="nav-link" href="/products/gi-earthing-electrode-with-copper-terminal/">GI Earthing Electrode with Copper Terminal</a></li>
+<li class="nav-item"><a class="nav-link" href="/products/copper-bonded-earthing-electrode/">Copper Bonded Earthing Electrode</a></li>
+<li class="nav-item"><a class="nav-link" href="/products/pure-copper-earthing-electrode/">Pure Copper Earthing Electrode</a></li>
+</ul>
 </li>
-<li class="nav-item">
-<a class="nav-link" href="/products/">
-                                            Lightning Protection
-                                        </a>
+<li class="nav-item submenu rn-category" data-rn-category>
+<a class="nav-link" href="/products/" aria-expanded="false" aria-controls="rn-desktop-cat-1" data-rn-category-trigger>Earthing Rods</a>
+<ul id="rn-desktop-cat-1" class="rn-product-flyout">
+<li class="nav-item"><a class="nav-link" href="/products/copper-bonded-earthing-rod/">Copper Bonded Earthing Rod</a></li>
+<li class="nav-item"><a class="nav-link" href="/products/4g-copper-bonded-earthing-rod/">4G Copper Bonded Earthing Rod</a></li>
+</ul>
 </li>
-<li class="nav-item">
-<a class="nav-link" href="/products/">
-                                            Solar Earthing
-                                        </a>
+<li class="nav-item submenu rn-category" data-rn-category>
+<a class="nav-link" href="/products/" aria-expanded="false" aria-controls="rn-desktop-cat-2" data-rn-category-trigger>Lightning Protection</a>
+<ul id="rn-desktop-cat-2" class="rn-product-flyout">
+<li class="nav-item"><a class="nav-link" href="/products/ese-lightning-arrester/">ESE Lightning Arrester</a></li>
+<li class="nav-item"><a class="nav-link" href="/products/conventional-lightning-arrester/">Conventional Lightning Arrester</a></li>
+<li class="nav-item"><a class="nav-link" href="/products/lightning-strike-counter/">Lightning Strike Counter</a></li>
+<li class="nav-item"><a class="nav-link" href="/products/xtra-advance-ese-lightning-arrester/">XTRA Advance ESE Lightning Arrester</a></li>
+</ul>
 </li>
-<li class="nav-item">
-<a class="nav-link" href="/products/">
-                                            Earthing Accessories
-                                        </a>
+<li class="nav-item submenu rn-category" data-rn-category>
+<a class="nav-link" href="/products/" aria-expanded="false" aria-controls="rn-desktop-cat-3" data-rn-category-trigger>Solar Earthing</a>
+<ul id="rn-desktop-cat-3" class="rn-product-flyout">
+<li class="nav-item"><a class="nav-link" href="/products/solar-earthing-kit/">Solar Earthing Kit</a></li>
+</ul>
+</li>
+<li class="nav-item submenu rn-category" data-rn-category>
+<a class="nav-link" href="/products/" aria-expanded="false" aria-controls="rn-desktop-cat-4" data-rn-category-trigger>Earthing Accessories</a>
+<ul id="rn-desktop-cat-4" class="rn-product-flyout">
+<li class="nav-item"><a class="nav-link" href="/products/earth-backfill-compound/">Earth Backfill Compound</a></li>
+<li class="nav-item"><a class="nav-link" href="/products/earth-pit-cover/">Earth Pit Cover</a></li>
+<li class="nav-item"><a class="nav-link" href="/products/exothermic-welding-kit/">Exothermic Welding Kit</a></li>
+<li class="nav-item"><a class="nav-link" href="/products/earthing-lightning-accessories/">Earthing &amp; Lightning Accessories</a></li>
+</ul>
 </li>
 </ul>
 </li>
@@ -191,6 +575,14 @@
                                             Power &amp; Substations
                                         </a>
 </li>
+</ul>
+</li>
+<!-- CATALOGUE -->
+<li class="nav-item submenu" id="rudra-desktop-catalogue" data-rn-dropdown>
+<a class="nav-link" href="/downloads/rudra-catalogue.pdf" aria-expanded="false" aria-controls="rn-desktop-catalogue-list" data-rn-trigger>Catalogue</a>
+<ul id="rn-desktop-catalogue-list">
+<li class="nav-item"><a class="nav-link" href="/downloads/rudra-catalogue.pdf" target="_blank" rel="noopener noreferrer">View Catalogue</a></li>
+<li class="nav-item"><a class="nav-link" href="/downloads/rudra-catalogue.pdf" download>Download PDF</a></li>
 </ul>
 </li>
 <li class="nav-item">
@@ -234,33 +626,51 @@
 </a>
 </li>
 <!-- PRODUCTS -->
-<li class="mobile-dropdown">
-<a aria-expanded="false" class="mobile-dropdown-toggle" href="/products/">
-<span>Products</span>
-<span aria-hidden="true" class="mobile-arrow">
-                                ⌄
-                            </span>
+<li class="mobile-dropdown" id="rudra-mobile-products">
+<a aria-expanded="false" class="mobile-dropdown-toggle" href="/products/" aria-controls="rn-mobile-categories">
+<span>Products</span><span class="rn-chevron" aria-hidden="true"></span>
 </a>
-<ul>
-<li>
-<a href="/products/">
-                                    Earthing Electrodes
-                                </a>
+<ul id="rn-mobile-categories">
+<li><a href="/products/">View All Products</a></li>
+<li class="rn-mobile-category">
+<button type="button" class="rn-category-button" aria-expanded="false" aria-controls="rn-mobile-cat-0"><span>Earthing Electrodes</span><span class="rn-chevron" aria-hidden="true"></span></button>
+<ul id="rn-mobile-cat-0">
+<li><a href="/products/gi-earthing-electrode/">GI Earthing Electrode</a></li>
+<li><a href="/products/gi-earthing-electrode-with-copper-terminal/">GI Earthing Electrode with Copper Terminal</a></li>
+<li><a href="/products/copper-bonded-earthing-electrode/">Copper Bonded Earthing Electrode</a></li>
+<li><a href="/products/pure-copper-earthing-electrode/">Pure Copper Earthing Electrode</a></li>
+</ul>
 </li>
-<li>
-<a href="/products/">
-                                    Lightning Protection
-                                </a>
+<li class="rn-mobile-category">
+<button type="button" class="rn-category-button" aria-expanded="false" aria-controls="rn-mobile-cat-1"><span>Earthing Rods</span><span class="rn-chevron" aria-hidden="true"></span></button>
+<ul id="rn-mobile-cat-1">
+<li><a href="/products/copper-bonded-earthing-rod/">Copper Bonded Earthing Rod</a></li>
+<li><a href="/products/4g-copper-bonded-earthing-rod/">4G Copper Bonded Earthing Rod</a></li>
+</ul>
 </li>
-<li>
-<a href="/products/">
-                                    Solar Earthing
-                                </a>
+<li class="rn-mobile-category">
+<button type="button" class="rn-category-button" aria-expanded="false" aria-controls="rn-mobile-cat-2"><span>Lightning Protection</span><span class="rn-chevron" aria-hidden="true"></span></button>
+<ul id="rn-mobile-cat-2">
+<li><a href="/products/ese-lightning-arrester/">ESE Lightning Arrester</a></li>
+<li><a href="/products/conventional-lightning-arrester/">Conventional Lightning Arrester</a></li>
+<li><a href="/products/lightning-strike-counter/">Lightning Strike Counter</a></li>
+<li><a href="/products/xtra-advance-ese-lightning-arrester/">XTRA Advance ESE Lightning Arrester</a></li>
+</ul>
 </li>
-<li>
-<a href="/products/">
-                                    Earthing Accessories
-                                </a>
+<li class="rn-mobile-category">
+<button type="button" class="rn-category-button" aria-expanded="false" aria-controls="rn-mobile-cat-3"><span>Solar Earthing</span><span class="rn-chevron" aria-hidden="true"></span></button>
+<ul id="rn-mobile-cat-3">
+<li><a href="/products/solar-earthing-kit/">Solar Earthing Kit</a></li>
+</ul>
+</li>
+<li class="rn-mobile-category">
+<button type="button" class="rn-category-button" aria-expanded="false" aria-controls="rn-mobile-cat-4"><span>Earthing Accessories</span><span class="rn-chevron" aria-hidden="true"></span></button>
+<ul id="rn-mobile-cat-4">
+<li><a href="/products/earth-backfill-compound/">Earth Backfill Compound</a></li>
+<li><a href="/products/earth-pit-cover/">Earth Pit Cover</a></li>
+<li><a href="/products/exothermic-welding-kit/">Exothermic Welding Kit</a></li>
+<li><a href="/products/earthing-lightning-accessories/">Earthing &amp; Lightning Accessories</a></li>
+</ul>
 </li>
 </ul>
 </li>
@@ -268,9 +678,7 @@
 <li class="mobile-dropdown">
 <a aria-expanded="false" class="mobile-dropdown-toggle" href="/solutions/">
 <span>Solutions</span>
-<span aria-hidden="true" class="mobile-arrow">
-                                ⌄
-                            </span>
+<span class="rn-chevron" aria-hidden="true"></span>
 </a>
 <ul>
 <li>
@@ -295,6 +703,14 @@
 </li>
 </ul>
 </li>
+<!-- CATALOGUE -->
+<li class="mobile-dropdown" id="rudra-mobile-catalogue">
+<a aria-expanded="false" class="mobile-dropdown-toggle" href="/downloads/rudra-catalogue.pdf" aria-controls="rn-mobile-catalogue-list"><span>Catalogue</span><span class="rn-chevron" aria-hidden="true"></span></a>
+<ul id="rn-mobile-catalogue-list">
+<li><a href="/downloads/rudra-catalogue.pdf" target="_blank" rel="noopener noreferrer">View Catalogue</a></li>
+<li><a href="/downloads/rudra-catalogue.pdf" download>Download PDF</a></li>
+</ul>
+</li>
 <!-- CONTACT -->
 <li>
 <a href="/contact/">
@@ -311,6 +727,151 @@
 </div>
 </div>
 </div>
+
+<style id="rudra-nested-nav-styles">
+/* Only the new product/catalogue dropdowns use these rules. */
+@media (min-width:992px) {
+    #menu > li[data-rn-dropdown] > ul,
+    #menu #rudra-desktop-products .rn-category > ul {
+        visibility:hidden; opacity:0; pointer-events:none;
+        transform:none; padding:5px 0; transition:none;
+    }
+    #menu > li[data-rn-dropdown].rn-open > ul,
+    #menu #rudra-desktop-products .rn-category.rn-open > ul {
+        visibility:visible; opacity:1; pointer-events:auto;
+    }
+    #menu #rudra-desktop-products > ul {width:245px; z-index:20;}
+    #menu #rudra-desktop-catalogue > ul {left:auto; right:0; z-index:20;}
+    #menu #rudra-desktop-products .rn-category > a {
+        display:flex; align-items:center; justify-content:space-between; gap:8px;
+    }
+    #menu #rudra-desktop-products .rn-category > a::after {
+        content:""; flex:0 0 7px; width:7px; height:7px;
+        border-right:1.8px solid currentColor; border-bottom:1.8px solid currentColor;
+        transform:rotate(-45deg); margin:0 2px 0 auto;
+    }
+    #menu #rudra-desktop-products .rn-category.rn-open > a {
+        background:rgba(255,255,255,.14); color:#fff;
+    }
+    #menu #rudra-desktop-products .rn-product-flyout {
+        left:100%; top:0; width:300px; max-height:var(--rn-flyout-height,360px);
+        overflow-y:auto; overscroll-behavior:contain;
+        box-shadow:5px 8px 24px rgba(7,26,43,.15);
+        border-left:1px solid rgba(255,255,255,.22);
+    }
+    #menu #rudra-desktop-products.rn-flip .rn-product-flyout {left:auto; right:100%;}
+    #menu #rudra-desktop-products.rn-flip .rn-category > a::after {transform:rotate(135deg);}
+    #menu #rudra-desktop-products .rn-product-flyout a {white-space:normal; overflow-wrap:anywhere;}
+}
+/* Keep the existing desktop layout; make room for the added Catalogue item. */
+@media (min-width:992px) and (max-width:1199px) {
+    header.main-header .main-menu .nav-menu-wrapper > #menu > li > a {font-size:14px; padding:15px 8px!important; white-space:nowrap;}
+    header.main-header .main-menu .nav-menu-wrapper {margin:0 6px;}
+}
+@media (max-width:991px) {
+    header.main-header .responsive-menu.is-open .mobile-menu-inner {
+        max-height:var(--rn-mobile-height,65vh); overflow-y:auto; overscroll-behavior:contain;
+    }
+    #rudra-mobile-products .rn-category-button {
+        display:flex; align-items:center; justify-content:space-between; gap:12px;
+        width:100%; min-height:44px; padding:10px 20px 10px 34px;
+        border:0; background:transparent; color:#fff; text-align:left;
+        font:inherit; font-size:15px; line-height:1.4; cursor:pointer;
+    }
+    #rudra-mobile-products .rn-category-button[aria-expanded="true"] {background:rgba(255,255,255,.12);}
+    #rudra-mobile-products .rn-mobile-category > ul {display:none;}
+    #rudra-mobile-products .rn-mobile-category.rn-expanded > ul {display:block; background:rgba(0,0,0,.12);}
+    #rudra-mobile-products .rn-mobile-category > ul a {padding:10px 20px 10px 48px!important; min-height:44px; line-height:1.4;}
+    header.main-header .responsive-menu .rn-chevron {
+        display:inline-block; flex:0 0 8px; width:8px; height:8px;
+        border-right:2px solid currentColor; border-bottom:2px solid currentColor;
+        transform:rotate(45deg); margin:0 10px 4px 4px;
+    }
+    header.main-header .responsive-menu [aria-expanded="true"] > .rn-chevron {transform:rotate(225deg); margin-bottom:-4px;}
+}
+#rudra-header-mount [data-rn-trigger]:focus-visible,
+#rudra-header-mount [data-rn-category-trigger]:focus-visible,
+#rudra-header-mount .rn-category-button:focus-visible {outline:2px solid currentColor; outline-offset:-3px;}
+</style>
+
+<script id="rudra-nested-nav-script">
+(function(){
+    const header = document.querySelector('#rudra-header-mount .main-header');
+    if (!header) return;
+    const desktop = Array.from(header.querySelectorAll('[data-rn-dropdown]'));
+    const mobile = header.querySelector('#rudra-mobile-products');
+    const mobileMenu = header.querySelector('.responsive-menu');
+    const mobileToggle = header.querySelector('.mobile-menu-toggle');
+    const hover = window.matchMedia('(hover:hover) and (pointer:fine)');
+    const cats = Array.from(header.querySelectorAll('[data-rn-category]'));
+    let pinned = null;
+    function setCategory(item, open){
+        item.classList.toggle('rn-open',open);
+        item.querySelector('[data-rn-category-trigger]').setAttribute('aria-expanded',String(open));
+        if(open){
+            const panel=item.querySelector('.rn-product-flyout');
+            const rect=item.getBoundingClientRect();
+            panel.style.setProperty('--rn-flyout-height',Math.max(90,window.innerHeight-rect.top-12)+'px');
+        }
+    }
+    function closeRoot(root){
+        root.classList.remove('rn-open');
+        root.querySelector('[data-rn-trigger]').setAttribute('aria-expanded','false');
+        root.querySelectorAll('[data-rn-category]').forEach(item=>setCategory(item,false));
+        if(pinned===root) pinned=null;
+    }
+    function openRoot(root){
+        desktop.forEach(other=>{if(other!==root)closeRoot(other);});
+        root.classList.add('rn-open');
+        root.querySelector('[data-rn-trigger]').setAttribute('aria-expanded','true');
+        if(root.id==='rudra-desktop-products'){
+            const rect=root.querySelector('#rn-desktop-categories').getBoundingClientRect();
+            root.classList.toggle('rn-flip',rect.right+300>window.innerWidth-12);
+        }
+    }
+    desktop.forEach(root=>{
+        const trigger=root.querySelector('[data-rn-trigger]');
+        root.addEventListener('mouseenter',()=>{if(hover.matches)openRoot(root);});
+        root.addEventListener('mouseleave',()=>{if(hover.matches&&pinned!==root&&!root.contains(document.activeElement))closeRoot(root);});
+        trigger.addEventListener('click',e=>{
+            e.preventDefault();
+            if(pinned===root){closeRoot(root);return;}
+            openRoot(root); pinned=root;
+        });
+        root.addEventListener('focusout',e=>{if(!root.contains(e.relatedTarget)&&!root.matches(':hover'))closeRoot(root);});
+    });
+    cats.forEach(item=>{
+        const trigger=item.querySelector('[data-rn-category-trigger]');
+        function show(){cats.forEach(other=>setCategory(other,other===item));}
+        item.addEventListener('mouseenter',()=>{if(hover.matches)show();});
+        trigger.addEventListener('click',e=>{e.preventDefault();show();});
+    });
+    document.addEventListener('click',e=>desktop.forEach(root=>{if(!root.contains(e.target))closeRoot(root);}));
+    header.addEventListener('keydown',e=>{
+        if(e.key!=='Escape')return;
+        const root=desktop.find(item=>item.classList.contains('rn-open'));
+        if(root){closeRoot(root);root.querySelector('[data-rn-trigger]').focus();e.preventDefault();return;}
+        if(mobileMenu.classList.contains('is-open')){mobileToggle.click();mobileToggle.focus();e.preventDefault();}
+    });
+    if(mobile){
+        const buttons=Array.from(mobile.querySelectorAll('.rn-category-button'));
+        function reset(){buttons.forEach(b=>{b.setAttribute('aria-expanded','false');b.closest('li').classList.remove('rn-expanded');});}
+        buttons.forEach(button=>button.addEventListener('click',()=>{
+            const wasOpen=button.getAttribute('aria-expanded')==='true';reset();
+            if(!wasOpen){button.setAttribute('aria-expanded','true');button.closest('li').classList.add('rn-expanded');}
+        }));
+        // Existing header.js still manages main mobile dropdowns and sticky behavior.
+        new MutationObserver(()=>{if(!mobile.classList.contains('open'))reset();}).observe(mobile,{attributes:true,attributeFilter:['class']});
+    }
+    function updateMobileHeight(){
+        if(mobileMenu.classList.contains('is-open')){
+            mobileMenu.style.setProperty('--rn-mobile-height',Math.max(100,window.innerHeight-Math.max(0,mobileMenu.getBoundingClientRect().top)-8)+'px');
+        }
+    }
+    new MutationObserver(updateMobileHeight).observe(mobileMenu,{attributes:true,attributeFilter:['class']});
+    window.addEventListener('resize',()=>{desktop.forEach(closeRoot);updateMobileHeight();});
+})();
+</script>
 </header>
 </div>
 </div>
@@ -489,7 +1050,6 @@
 </div>
 <section class="rudra-products-section" id="rudra-products">
 <div class="container">
-<!-- Section Header -->
 <div class="rudra-products-heading">
 <div class="rudra-section-label">
 <span></span>
@@ -501,150 +1061,38 @@
                 Built for <strong>Protection.</strong>
 </h2>
 <p>
-                Explore Rudra Earthing Solutions' range of earthing,
+                Explore Rudra Earthing Systems' range of earthing,
                 grounding and lightning protection products engineered
                 for dependable electrical safety.
             </p>
 </div>
 <!-- Featured Product -->
-<div class="rudra-product-feature">
-<div class="rudra-feature-content">
-<span class="rudra-product-tag">
-                    FEATURED SOLUTION
-                </span>
-<span class="rudra-feature-number">01</span>
-<h3>GI Earthing Electrode</h3>
-<p>
-                    Reliable galvanized iron earthing electrodes designed
-                    for efficient grounding and dependable electrical
-                    protection across a wide range of installations.
-                </p>
-<div class="rudra-feature-actions">
-<a class="rudra-product-btn" href="/products/gi-earthing-electrode/">
-                        View Product
-                        <i class="fa-solid fa-arrow-right"></i>
-</a>
-<a class="rudra-text-btn" href="/products/">
-                        View All Products
-                    </a>
-</div>
-</div>
-<div class="rudra-feature-image">
-<div class="rudra-image-glow"></div>
-<img alt="GI Earthing Electrode" decoding="async" loading="lazy" src="/assets/gi-earthing-electrode.webp"/>
-</div>
+<div class="rudra-product-feature rudra-xtra-feature">
+  <div class="rudra-feature-content">
+    <span class="rudra-product-tag">FEATURED PRODUCT</span>
+    <span class="rudra-xtra-kicker">XTRA SERIES / LIGHTNING PROTECTION</span>
+    <h3>XTRA Advance<br>ESE Lightning Arrester</h3>
+    <p>Advanced Early Streamer Emission (ESE) lightning protection solution for buildings, industrial facilities and critical infrastructure.</p>
+    <ul class="rudra-xtra-highlights">
+      <li>Early Streamer Emission technology</li>
+      <li>Lightning protection applications</li>
+      <li>Industrial and commercial infrastructure</li>
+    </ul>
+    <div class="rudra-feature-actions">
+      <a class="rudra-product-btn" href="/request-quote/">Request a Quote <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+      <a class="rudra-text-btn" href="#rudra-product-grid">Explore All Products</a>
+    </div>
+  </div>
+  <div class="rudra-feature-image">
+    <img src="/assets/ese.webp" alt="Rudra XTRA Advance ESE Lightning Arrester" width="682" height="2048" loading="lazy" decoding="async">
+  </div>
 </div>
 <!-- Product Grid -->
 <div class="rudra-product-grid" id="rudra-product-grid">
-<!-- 01 -->
-<article class="rudra-product-card" id="product-gi-earthing-electrode">
-<div class="rudra-product-image">
-<span class="rudra-product-index">01</span>
-<img alt="GI Earthing Electrode" decoding="async" loading="lazy" src="/assets/gi-earthing-electrode.webp"/>
-</div>
-<div class="rudra-product-info">
-<span>EARTHING</span>
-<h3>GI Earthing Electrode</h3>
-<a href="/products/gi-earthing-electrode/">
-                        View Product
-                        <i class="fa-solid fa-arrow-right"></i>
-</a>
-</div>
-</article>
-<!-- 02 -->
-<article class="rudra-product-card" id="product-gi-earthing-electrode-with-copper-terminal">
-<div class="rudra-product-image">
-<span class="rudra-product-index">02</span>
-<img alt="GI Earthing Electrode with Copper Terminal" decoding="async" loading="lazy" src="/assets/gi-earthing-electrode-with-copper-terminal.webp"/>
-</div>
-<div class="rudra-product-info">
-<span>EARTHING</span>
-<h3>GI Earthing Electrode with Copper Terminal</h3>
-<a href="/products/gi-earthing-electrode-with-copper-terminal/">
-                        View Product
-                        <i class="fa-solid fa-arrow-right"></i>
-</a>
-</div>
-</article>
-<!-- 03 -->
-<article class="rudra-product-card" id="product-copper-bonded-earthing-electrode">
-<div class="rudra-product-image">
-<span class="rudra-product-index">03</span>
-<img alt="Copper Bonded Electrode" decoding="async" loading="lazy" src="/assets/copper-bonded-earthing-electrode.webp"/>
-</div>
-<div class="rudra-product-info">
-<span>COPPER BONDED</span>
-<h3>Copper Bonded Electrode</h3>
-<a href="/products/copper-bonded-earthing-electrode/">
-                        View Product
-                        <i class="fa-solid fa-arrow-right"></i>
-</a>
-</div>
-</article>
-<!-- 04 -->
-<article class="rudra-product-card" id="product-copper-bonded-earthing-rod">
-<div class="rudra-product-image">
-<span class="rudra-product-index">04</span>
-<img alt="Copper Bonded Earthing Rod" decoding="async" loading="lazy" src="/assets/copper-bonded-earthing-rod.webp"/>
-</div>
-<div class="rudra-product-info">
-<span>COPPER BONDED</span>
-<h3>Copper Bonded Earthing Rod</h3>
-<a href="/products/copper-bonded-earthing-rod/">
-                        View Product
-                        <i class="fa-solid fa-arrow-right"></i>
-</a>
-</div>
-</article>
-<!-- 05 -->
-<article class="rudra-product-card" id="product-4g-copper-bonded-earthing-rod">
-<div class="rudra-product-image">
-<span class="rudra-product-index">05</span>
-<img alt="4G Copper Bonded Earthing Rod" decoding="async" loading="lazy" src="/assets/4g-copper-bonded-earthing-rod.webp"/>
-</div>
-<div class="rudra-product-info">
-<span>4G EARTHING</span>
-<h3>4G Copper Bonded Earthing Rod</h3>
-<a href="/products/4g-copper-bonded-earthing-rod/">
-                        View Product
-                        <i class="fa-solid fa-arrow-right"></i>
-</a>
-</div>
-</article>
-<!-- 06 -->
-<article class="rudra-product-card" id="product-lightning-strike-counter">
-<div class="rudra-product-image">
-<span class="rudra-product-index">06</span>
-<img alt="Lightning Strike Counter" decoding="async" loading="lazy" src="/assets/lightning-strike-counter.webp"/>
-</div>
-<div class="rudra-product-info">
-<span>LIGHTNING PROTECTION</span>
-<h3>Lightning Strike Counter</h3>
-<a href="/products/lightning-strike-counter/">
-                        View Product
-                        <i class="fa-solid fa-arrow-right"></i>
-</a>
-</div>
-</article>
-<!-- 07 -->
-<article class="rudra-product-card" id="product-pure-copper-earthing-electrode">
-<div class="rudra-product-image">
-<span class="rudra-product-index">07</span>
-<img alt="Pure Copper Bonded Electrode" decoding="async" loading="lazy" src="/assets/pure-copper-earthing-electrode.webp"/>
-</div>
-<div class="rudra-product-info">
-<span>PURE COPPER</span>
-<h3>Pure Copper Bonded Electrode</h3>
-<a href="/products/pure-copper-earthing-electrode/">
-                        View Product
-                        <i class="fa-solid fa-arrow-right"></i>
-</a>
-</div>
-</article>
-<!-- 08 -->
+
 <article class="rudra-product-card" id="product-ese-lightning-arrester">
 <div class="rudra-product-image">
-<span class="rudra-product-index">08</span>
+<span class="rudra-product-index">01</span>
 <img alt="ESE Lightning Arrester" decoding="async" loading="lazy" src="/assets/ese-lightning-arrester.webp"/>
 </div>
 <div class="rudra-product-info">
@@ -656,10 +1104,9 @@
 </a>
 </div>
 </article>
-<!-- 09 -->
 <article class="rudra-product-card" id="product-conventional-lightning-arrester">
 <div class="rudra-product-image">
-<span class="rudra-product-index">09</span>
+<span class="rudra-product-index">02</span>
 <img alt="Conventional Lightning Arrester" decoding="async" loading="lazy" src="/assets/conventional-lightning-arrester.webp"/>
 </div>
 <div class="rudra-product-info">
@@ -671,7 +1118,104 @@
 </a>
 </div>
 </article>
-<!-- 10 -->
+<article class="rudra-product-card" id="product-gi-earthing-electrode">
+<div class="rudra-product-image">
+<span class="rudra-product-index">03</span>
+<img alt="GI Earthing Electrode" decoding="async" loading="lazy" src="/assets/gi-earthing-electrode.webp"/>
+</div>
+<div class="rudra-product-info">
+<span>EARTHING</span>
+<h3>GI Earthing Electrode</h3>
+<a href="/products/gi-earthing-electrode/">
+                        View Product
+                        <i class="fa-solid fa-arrow-right"></i>
+</a>
+</div>
+</article>
+<article class="rudra-product-card" id="product-gi-earthing-electrode-with-copper-terminal">
+<div class="rudra-product-image">
+<span class="rudra-product-index">04</span>
+<img alt="GI Earthing Electrode with Copper Terminal" decoding="async" loading="lazy" src="/assets/gi-earthing-electrode-with-copper-terminal.webp"/>
+</div>
+<div class="rudra-product-info">
+<span>EARTHING</span>
+<h3>GI Earthing Electrode with Copper Terminal</h3>
+<a href="/products/gi-earthing-electrode-with-copper-terminal/">
+                        View Product
+                        <i class="fa-solid fa-arrow-right"></i>
+</a>
+</div>
+</article>
+<article class="rudra-product-card" id="product-copper-bonded-earthing-electrode">
+<div class="rudra-product-image">
+<span class="rudra-product-index">05</span>
+<img alt="Copper Bonded Earthing Electrode" decoding="async" loading="lazy" src="/assets/copper-bonded-earthing-electrode.webp"/>
+</div>
+<div class="rudra-product-info">
+<span>COPPER BONDED</span>
+<h3>Copper Bonded Earthing Electrode</h3>
+<a href="/products/copper-bonded-earthing-electrode/">
+                        View Product
+                        <i class="fa-solid fa-arrow-right"></i>
+</a>
+</div>
+</article>
+<article class="rudra-product-card" id="product-copper-bonded-earthing-rod">
+<div class="rudra-product-image">
+<span class="rudra-product-index">06</span>
+<img alt="Copper Bonded Earthing Rod" decoding="async" loading="lazy" src="/assets/copper-bonded-earthing-rod.webp"/>
+</div>
+<div class="rudra-product-info">
+<span>COPPER BONDED</span>
+<h3>Copper Bonded Earthing Rod</h3>
+<a href="/products/copper-bonded-earthing-rod/">
+                        View Product
+                        <i class="fa-solid fa-arrow-right"></i>
+</a>
+</div>
+</article>
+<article class="rudra-product-card" id="product-4g-copper-bonded-earthing-rod">
+<div class="rudra-product-image">
+<span class="rudra-product-index">07</span>
+<img alt="4G Copper Bonded Earthing Rod" decoding="async" loading="lazy" src="/assets/4g-copper-bonded-earthing-rod.webp"/>
+</div>
+<div class="rudra-product-info">
+<span>4G EARTHING</span>
+<h3>4G Copper Bonded Earthing Rod</h3>
+<a href="/products/4g-copper-bonded-earthing-rod/">
+                        View Product
+                        <i class="fa-solid fa-arrow-right"></i>
+</a>
+</div>
+</article>
+<article class="rudra-product-card" id="product-lightning-strike-counter">
+<div class="rudra-product-image">
+<span class="rudra-product-index">08</span>
+<img alt="Lightning Strike Counter" decoding="async" loading="lazy" src="/assets/lightning-strike-counter.webp"/>
+</div>
+<div class="rudra-product-info">
+<span>LIGHTNING PROTECTION</span>
+<h3>Lightning Strike Counter</h3>
+<a href="/products/lightning-strike-counter/">
+                        View Product
+                        <i class="fa-solid fa-arrow-right"></i>
+</a>
+</div>
+</article>
+<article class="rudra-product-card" id="product-pure-copper-earthing-electrode">
+<div class="rudra-product-image">
+<span class="rudra-product-index">09</span>
+<img alt="Pure Copper Earthing Electrode" decoding="async" loading="lazy" src="/assets/pure-copper-earthing-electrode.webp"/>
+</div>
+<div class="rudra-product-info">
+<span>PURE COPPER</span>
+<h3>Pure Copper Earthing Electrode</h3>
+<a href="/products/pure-copper-earthing-electrode/">
+                        View Product
+                        <i class="fa-solid fa-arrow-right"></i>
+</a>
+</div>
+</article>
 <article class="rudra-product-card" id="product-solar-earthing-kit">
 <div class="rudra-product-image">
 <span class="rudra-product-index">10</span>
@@ -686,7 +1230,6 @@
 </a>
 </div>
 </article>
-<!-- 11 -->
 <article class="rudra-product-card" id="product-earth-backfill-compound">
 <div class="rudra-product-image">
 <span class="rudra-product-index">11</span>
@@ -701,7 +1244,6 @@
 </a>
 </div>
 </article>
-<!-- 12 -->
 <article class="rudra-product-card" id="product-earth-pit-cover">
 <div class="rudra-product-image">
 <span class="rudra-product-index">12</span>
@@ -716,25 +1258,9 @@
 </a>
 </div>
 </article>
-<!-- 13 -->
-<article class="rudra-product-card" id="product-earthing-lightning-accessories">
-<div class="rudra-product-image">
-<span class="rudra-product-index">13</span>
-<img alt="Earthing and Lightning Accessories" decoding="async" loading="lazy" src="/assets/earthing-lightning-accessories.webp"/>
-</div>
-<div class="rudra-product-info">
-<span>ACCESSORIES</span>
-<h3>Earthing &amp; Lightning Accessories</h3>
-<a href="/products/earthing-lightning-accessories/">
-                        View Product
-                        <i class="fa-solid fa-arrow-right"></i>
-</a>
-</div>
-</article>
-<!-- 14 -->
 <article class="rudra-product-card" id="product-exothermic-welding-kit">
 <div class="rudra-product-image">
-<span class="rudra-product-index">14</span>
+<span class="rudra-product-index">13</span>
 <img alt="Exothermic Welding Kit" decoding="async" loading="lazy" src="/assets/exothermic-welding-kit.webp"/>
 </div>
 <div class="rudra-product-info">
@@ -746,16 +1272,64 @@
 </a>
 </div>
 </article>
-</div>
-<!-- Bottom CTA -->
-<div class="rudra-products-bottom">
-<p>
-                Need help selecting the right earthing solution?
-            </p>
-<a href="/contact/">
-                Talk to Rudra Experts
-                <i class="fa-solid fa-arrow-right"></i>
-</a>
+
+<article class="rudra-product-card"
+         id="product-xtra-advance-ese-lightning-arrester">
+
+    <div class="rudra-product-image">
+
+        <span class="rudra-product-index">14</span>
+
+        <img src="/assets/ese.webp"
+             alt="XTRA Advance ESE Lightning Arrester"
+             loading="lazy"
+             decoding="async">
+
+    </div>
+
+    <div class="rudra-product-info">
+
+        <span>ADVANCED LIGHTNING PROTECTION</span>
+
+        <h3>XTRA Advance ESE Lightning Arrester</h3>
+
+        <a href="/products/xtra-advance-ese-lightning-arrester/">
+            View Product
+            <i class="fa-solid fa-arrow-right"></i>
+        </a>
+
+    </div>
+
+</article>
+
+<article class="rudra-product-card"
+         id="product-earthing-lightning-accessories">
+
+    <div class="rudra-product-image">
+
+        <span class="rudra-product-index">15</span>
+
+        <img src="/assets/earthing-lightning-accessories.webp"
+             alt="Earthing &amp; Lightning Accessories"
+             loading="lazy"
+             decoding="async">
+
+    </div>
+
+    <div class="rudra-product-info">
+
+        <span>ACCESSORIES</span>
+
+        <h3>Earthing &amp; Lightning Accessories</h3>
+
+        <a href="/products/earthing-lightning-accessories/">
+            View Product
+            <i class="fa-solid fa-arrow-right"></i>
+        </a>
+
+    </div>
+
+</article>
 </div>
 </div>
 </section>
@@ -838,17 +1412,30 @@
 </div>
 </div>
 </div>
-<div class="scrolling-ticker">
-<div class="scrolling-ticker-box">
-<div class="scrolling-content"><span><img alt="" decoding="async" src="/images/ticker.webp"/>Certified Systems</span><span><img alt="" decoding="async" src="/images/ticker.webp"/>Earthing Cover Systems</span><span><img alt="" decoding="async" src="/images/ticker.webp"/>Copper Electrode Systems</span><span><img alt="" decoding="async" src="/images/ticker.webp"/>Complete Protection Systems</span><span><img alt="" decoding="async" src="/images/ticker.webp"/>Lightning Systems</span><span><img alt="" decoding="async" src="/images/ticker.webp"/>Earthing Systems</span></div>
-<div class="scrolling-content"><span><img alt="" decoding="async" src="/images/ticker.webp"/>Lightninig Systems</span><span><img alt="" decoding="async" src="/images/ticker.webp"/>Premimum Electrode Systems</span><span><img alt="" decoding="async" src="/images/ticker.webp"/>ESE Systems</span><span><img alt="" decoding="async" src="/images/ticker.webp"/>Earthing Discharge Systems</span><span><img alt="" decoding="async" src="/images/ticker.webp"/>Earthing Systems</span><span><img alt="" decoding="async" src="/images/ticker.webp"/>Complete Lighting and Earthing Protection Systems</span></div>
-</div>
-</div>
-<div id="rudra-footer-mount"><!--
-  Rudra Earthing Systems — Reusable Footer Component
-  Self-contained: HTML + CSS + JavaScript
-  Place this file at: components/footer.html
--->
+<section id="rudra-cert-marquee">
+
+    <h2>Certifications</h2>
+
+    <div class="cert-track">
+
+        <div class="cert-group">
+            <img src="/images/CE_Logo.png" alt="CE">
+            <img src="/images/NABL_Logo.png" alt="NABL">
+            <img src="/images/ROHS_Logo.svg" alt="RoHS">
+            <img src="/images/CPRI_Logo.png" alt="CPRI">
+        </div>
+
+        <div class="cert-group" aria-hidden="true">
+            <img src="/images/CE_Logo.png" alt="">
+            <img src="/images/NABL_Logo.png" alt="">
+            <img src="/images/ROHS_Logo.svg" alt="">
+            <img src="/images/CPRI_Logo.png" alt="">
+        </div>
+
+    </div>
+
+</section>
+<div id="rudra-footer-mount">
 <footer class="rudra-footer" id="rudra-footer">
 <div aria-hidden="true" class="rudra-footer__glow"></div>
 <div class="rudra-footer__container">
@@ -865,27 +1452,70 @@
         </p>
 <div aria-label="Social media links" class="rudra-footer__social">
 <a aria-label="LinkedIn" href="#" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-<a aria-label="Instagram" href="#" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
-<a aria-label="Facebook" href="#" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+<a aria-label="Instagram" href="https://www.instagram.com/rudra_earthing_system/" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+<a aria-label="Facebook" href="https://www.facebook.com/share/1cXKNMwEED/
+" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
 </div>
 </section>
 <!-- Quick links -->
+<!-- Quick links -->
 <nav aria-label="Quick links" class="rudra-footer__links">
-<h3>Quick Links</h3>
-<a href="/">Home</a>
-<a href="/about/">About Rudra</a>
-<a href="/products/">Products</a>
-<a href="/solutions/">Solutions</a>
-<a href="/request-quote/">Request a Quote</a>
+
+    <h3>Quick Links</h3>
+
+    <a href="/">Home</a>
+
+    <a href="/about/">About Rudra</a>
+
+    <a href="/products/">All Products</a>
+
+    <a href="/solutions/">Solutions</a>
+
+    <a href="/downloads/rudra-catalogue.pdf"
+       target="_blank"
+       rel="noopener noreferrer">
+        Product Catalogue
+    </a>
+
+    <a href="/contact/">Contact Us</a>
+
+    <a href="/request-quote/">Request a Quote</a>
+
 </nav>
+
 <!-- Product links -->
 <nav aria-label="Products" class="rudra-footer__links">
-<h3>Products</h3>
-<a href="/products/">Earthing Electrodes</a>
-<a href="/products/">Copper Bonded Rods</a>
-<a href="/products/">Lightning Arresters</a>
-<a href="/products/">Solar Earthing Kits</a>
-<a href="/products/">Earthing Accessories</a>
+
+    <h3>Products</h3>
+
+    <a href="/products/gi-earthing-electrode/">
+        GI Earthing Electrode
+    </a>
+
+    <a href="/products/copper-bonded-earthing-rod/">
+        Copper Bonded Earthing Rod
+    </a>
+
+    <a href="/products/ese-lightning-arrester/">
+        ESE Lightning Arrester
+    </a>
+
+    <a href="/products/xtra-advance-ese-lightning-arrester/">
+        XTRA Advance ESE Lightning Arrester
+    </a>
+
+    <a href="/products/solar-earthing-kit/">
+        Solar Earthing Kit
+    </a>
+
+    <a href="/products/earthing-lightning-accessories/">
+        Earthing &amp; Lightning Accessories
+    </a>
+
+    <a href="/products/">
+        View All Products →
+    </a>
+
 </nav>
 <!-- Contact -->
 <section class="rudra-footer__contact">
@@ -943,4 +1573,46 @@
 
 
 
-<script defer="True" src="/assets/reference/header.js"></script><script defer="True" src="/assets/reference/footer.js"></script><script defer="True" src="/assets/reference/motion.js"></script></body></html>
+<script defer="True" src="/assets/reference/header.js"></script><script defer="True" src="/assets/reference/footer.js"></script><script defer="True" src="/assets/reference/motion.js"></script>
+
+<script>
+/* =========================================
+   RUDRA - CLICKABLE PRODUCT CARDS
+========================================= */
+
+document.querySelectorAll(
+    '#rudra-product-grid .rudra-product-card'
+).forEach(function (card) {
+
+    const productLink = card.querySelector(
+        '.rudra-product-info a[href]'
+    );
+
+    if (!productLink) return;
+
+    card.addEventListener('click', function (event) {
+
+        // Preserve original link behaviour
+        if (event.target.closest('a, button')) return;
+
+        // Prevent navigation during text selection
+        if (window.getSelection().toString().trim()) return;
+
+        // Support opening in a new tab
+        if (event.ctrlKey || event.metaKey) {
+            window.open(
+                productLink.href,
+                '_blank',
+                'noopener,noreferrer'
+            );
+            return;
+        }
+
+        window.location.href = productLink.href;
+
+    });
+
+});
+</script>
+
+</body></html>

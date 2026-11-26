@@ -9,8 +9,66 @@ $$('.show-tab').forEach(b=>b.addEventListener('click',()=>{$$('.show-tab').forEa
 let category='all';const search=$('#search');function filter(){const q=(search?.value||'').trim().toLowerCase();let count=0;$$('#catalogue .product-card').forEach(c=>{const ok=(category==='all'||c.dataset.category===category)&&c.dataset.search.includes(q);c.hidden=!ok;if(ok){count++;c.classList.remove('pending')}});if($('#result-count'))$('#result-count').textContent=`${count} product${count===1?'':'s'}`;if($('#no-results'))$('#no-results').hidden=!!count}search?.addEventListener('input',filter);$$('[data-filter]').forEach(b=>b.addEventListener('click',()=>{category=b.dataset.filter;$$('[data-filter]').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));filter()}));
 const key='rudra-rfq-v1';let items=[];try{const x=JSON.parse(localStorage.getItem(key)||'[]');if(Array.isArray(x))items=x.filter(i=>typeof i.slug==='string'&&typeof i.name==='string'&&Number.isInteger(i.qty)&&i.qty>0&&i.qty<=99999).slice(0,50)}catch{}
 function save(){try{localStorage.setItem(key,JSON.stringify(items))}catch{};$$('.rfq-count').forEach(e=>{e.hidden=!items.length;e.textContent=items.length});renderQuote()}
-function toast(msg){$('.toast')?.remove();const t=document.createElement('div');t.className='toast';t.setAttribute('role','status');t.append(document.createTextNode(msg+' '));const a=document.createElement('a');a.href='/request-quote/';a.textContent='View RFQ';t.append(a);document.body.append(t);setTimeout(()=>t.remove(),4500)}
-$$('.add-quote').forEach(b=>b.addEventListener('click',()=>{if(!items.some(i=>i.slug===b.dataset.product)){items.push({slug:b.dataset.product,name:b.dataset.name,qty:1});save();toast('Added to quotation.')}else toast('Already in your quotation.')}));
+function toast(msg){$('.toast')?.remove();const t=document.createElement('div');t.className='toast show';t.setAttribute('role','status');t.append(document.createTextNode(msg+' '));const a=document.createElement('a');a.href='/request-quote/';a.textContent='View Quotation →';t.append(a);document.body.append(t);setTimeout(()=>t.remove(),4500)}
+function updateQuotationButtons() {
+    $$('.add-quote').forEach(button => {
+        const added = items.some(
+            item => item.slug === button.dataset.product
+        );
+
+        if (added) {
+            button.classList.add('is-added');
+
+            button.textContent = button.closest('.rp-related-card')
+                ? '✓ Added'
+                : '✓ Added to Quotation';
+
+            button.setAttribute(
+                'aria-label',
+                button.dataset.name + ' already added to quotation'
+            );
+        }
+    });
+}
+
+$$('.add-quote').forEach(button => {
+
+    button.addEventListener('click', () => {
+
+        const exists = items.some(
+            item => item.slug === button.dataset.product
+        );
+
+        if (!exists) {
+
+            items.push({
+                slug: button.dataset.product,
+                name: button.dataset.name,
+                qty: 1
+            });
+
+            save();
+
+            updateQuotationButtons();
+
+            toast(
+                '✓ ' + button.dataset.name +
+                ' added to quotation successfully!'
+            );
+
+        } else {
+
+            toast(
+                '✓ This product is already in your quotation.'
+            );
+
+        }
+
+    });
+
+});
+
+updateQuotationButtons();
 function renderQuote(){const list=$('#quote-list');if(!list)return;list.replaceChildren();if(!items.length)return;const h=document.createElement('h3');h.textContent='Selected products';list.append(h);for(const item of items){const row=document.createElement('div');row.className='quote-row';const name=document.createElement('span');name.textContent=item.name;const qty=document.createElement('input');qty.type='number';qty.min=1;qty.max=99999;qty.value=item.qty;qty.setAttribute('aria-label','Quantity for '+item.name);qty.addEventListener('change',()=>{item.qty=Math.max(1,Math.min(99999,Math.round(Number(qty.value)||1)));save()});const del=document.createElement('button');del.type='button';del.textContent='Remove';del.addEventListener('click',()=>{items=items.filter(x=>x!==item);save()});row.append(name,qty,del);list.append(row)}}save();
 const params=new URLSearchParams(location.search), attribution={};for(const k of ['utm_source','utm_medium','utm_campaign','utm_term','utm_content','gclid']){if(params.has(k))attribution[k]=params.get(k).slice(0,200)}try{if(Object.keys(attribution).length)sessionStorage.setItem('rudra-attribution',JSON.stringify(attribution));else Object.assign(attribution,JSON.parse(sessionStorage.getItem('rudra-attribution')||'{}'))}catch{}
 const form=$('#rfq-form'), cfg=window.RUDRA_CONFIG||{};if(form){const select=form.elements.product;if([...select.options].some(x=>x.value===params.get('product')))select.value=params.get('product');if(cfg.turnstileSiteKey&&cfg.enquiryEndpoint){const script=document.createElement('script');script.src='https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit';script.async=true;script.onload=()=>window.turnstile.render('#captcha-slot',{sitekey:cfg.turnstileSiteKey});document.head.append(script)}form.addEventListener('submit',async e=>{e.preventDefault();const status=$('#form-status'),b=form.querySelector('button[type=submit]');const raw=Object.fromEntries(new FormData(form));const payload={name:raw.name,company:raw.company,phone:raw.phone,email:raw.email,location:raw.location,product:raw.product,message:raw.message,consent:!!raw.consent,website:raw.website,items,attribution,captcha:raw['cf-turnstile-response']||''};if(!cfg.enquiryEndpoint){const text=[`Name: ${raw.name}`,`Company: ${raw.company}`,`Phone: ${raw.phone}`,`Email: ${raw.email}`,`Delivery: ${raw.location}`,`Product: ${raw.product}`,...items.map(i=>`${i.name} — Qty ${i.qty}`),raw.message].join('\n');status.textContent='Online submission is not configured. Your email application will open; please send the message there.';location.href='mailto:rudraearthingsystem@gmail.com?subject='+encodeURIComponent('Rudra product quotation')+'&body='+encodeURIComponent(text);return}b.disabled=true;status.textContent='Submitting your requirement…';try{const res=await fetch(cfg.enquiryEndpoint,{method:'POST',headers:{'Content-Type':'application/json',...(cfg.supabaseAnonKey?{apikey:cfg.supabaseAnonKey,Authorization:'Bearer '+cfg.supabaseAnonKey}:{})},body:JSON.stringify(payload)});const json=await res.json();if(!res.ok||!json.id)throw new Error('Submission not confirmed');status.textContent='Requirement received. Reference: '+json.id;items=[];save();form.reset();window.dataLayer?.push({event:'generate_lead',lead_reference:json.id})}catch{status.textContent='Unable to submit. Please try again or call our team.'}finally{b.disabled=false;window.turnstile?.reset()}})}

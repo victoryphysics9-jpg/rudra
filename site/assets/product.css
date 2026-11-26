@@ -1,0 +1,801 @@
+/* RUDRA EARTHING SYSTEMS
+   Shared Product Detail Page Styles
+======================================== */
+
+#rudra-product {
+    --rp-navy: #071a2b;
+    --rp-orange: #ed701e;
+    --rp-accent: #a43d0d;
+    --rp-text: #465563;
+    --rp-light: #eef2f6;
+    --rp-border: #d6dfe8;
+
+    font-family: 'Rubik', sans-serif;
+    color: var(--rp-text);
+    line-height: 1.7;
+}
+
+#rudra-product *,
+#rudra-product *::before,
+#rudra-product *::after {
+    box-sizing: border-box;
+}
+
+.rp-container {
+    width: min(1200px, calc(100% - 48px));
+    margin-inline: auto;
+}
+
+#rudra-product h1,
+#rudra-product h2,
+#rudra-product h3 {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700;
+    line-height: 1.15;
+    color: var(--rp-navy);
+    margin: 0;
+    overflow-wrap: break-word;
+}
+
+#rudra-product h1 {
+    font-size: clamp(36px, 4.5vw, 60px);
+}
+
+#rudra-product h2 {
+    font-size: clamp(30px, 3.5vw, 45px);
+}
+
+#rudra-product h3 {
+    font-size: 25px;
+}
+
+#rudra-product p {
+    line-height: 1.8;
+    margin: 0;
+}
+
+#rudra-product img {
+    display: block;
+    max-width: 100%;
+}
+
+.rp-section {
+    padding: clamp(45px, 6vw, 80px) 0;
+}
+
+.rp-light {
+    background: var(--rp-light);
+}
+
+/* ========================================
+   BREADCRUMB
+======================================== */
+
+.rp-breadcrumb {
+    background: linear-gradient(125deg, #071a2b, #102d48);
+    color: #dce6ef;
+    padding: 22px 0;
+}
+
+.rp-breadcrumb ol {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: 13px;
+}
+
+.rp-breadcrumb a {
+    color: #fff;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+/* ========================================
+   PRODUCT DETAIL
+======================================== */
+
+.rp-detail-section {
+    background: #fff;
+    padding: clamp(35px, 5vw, 65px) 0;
+}
+
+.rp-detail-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+    gap: clamp(30px, 5vw, 65px);
+    align-items: center;
+}
+
+.rp-product-image {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 560px;
+    padding: 45px;
+
+    background: radial-gradient(
+        ellipse at center,
+        #ffffff 0%,
+        #e4ebf2 55%,
+        #ccd8e4 100%
+    );
+
+    border: 1px solid var(--rp-border);
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 0;
+}
+
+.rp-product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+
+    filter: drop-shadow(5px 10px 10px rgba(7,26,43,.16));
+}
+
+.rp-image-label {
+    position: absolute;
+    top: 18px;
+    left: 18px;
+
+    color: var(--rp-navy);
+    background: #fff;
+
+    padding: 7px 12px;
+    border-radius: 4px;
+
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.rp-detail-copy {
+    min-width: 0;
+}
+
+.rp-kicker {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    color: var(--rp-accent);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+
+    margin-bottom: 16px !important;
+}
+
+.rp-kicker::before {
+    content: "";
+    width: 28px;
+    height: 3px;
+    flex: 0 0 28px;
+    background: var(--rp-orange);
+}
+
+.rp-description {
+    margin-top: 22px !important;
+    font-size: 16px;
+}
+
+.rp-highlights {
+    list-style: none;
+    display: grid;
+    gap: 12px;
+
+    padding: 22px 0;
+    margin: 24px 0;
+
+    border-top: 1px solid var(--rp-border);
+    border-bottom: 1px solid var(--rp-border);
+}
+
+.rp-highlights li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 14px;
+}
+
+.rp-highlights i {
+    color: var(--rp-accent);
+    margin-top: 5px;
+    flex-shrink: 0;
+}
+
+/* ========================================
+   BUTTONS
+======================================== */
+
+.rp-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 25px;
+}
+
+.rp-btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+
+    min-height: 50px;
+    padding: 13px 22px;
+
+    font: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.5;
+
+    border: 1px solid transparent;
+    border-radius: 5px;
+
+    cursor: pointer;
+    text-decoration: none;
+
+    transition: background .2s, color .2s;
+}
+
+.rp-btn-primary {
+    background: var(--rp-accent);
+    color: #fff;
+}
+
+.rp-btn-primary:hover {
+    background: #7c2c08;
+    color: #fff;
+}
+
+.rp-btn-outline {
+    background: #fff;
+    color: var(--rp-navy);
+    border-color: #aabac9;
+}
+
+.rp-btn-outline:hover {
+    background: var(--rp-navy);
+    color: #fff;
+}
+
+.rp-contact-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    color: var(--rp-accent);
+    font-size: 14px;
+    font-weight: 500;
+    margin-top: 22px;
+
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.rp-note {
+    font-size: 12px;
+    color: #526172;
+    margin-top: 20px !important;
+}
+
+/* ========================================
+   TECHNICAL SPECIFICATIONS
+======================================== */
+
+.rp-heading {
+    margin-bottom: 30px;
+}
+
+.rp-heading > p:last-child:not(.rp-kicker) {
+    margin-top: 14px !important;
+}
+
+.rp-spec-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.8fr) minmax(0, 1fr);
+    gap: 30px;
+    align-items: start;
+}
+
+.rp-spec-card,
+.rp-info-card {
+    background: #fff;
+    border: 1px solid var(--rp-border);
+    border-radius: 7px;
+    padding: clamp(20px, 3vw, 32px);
+    min-width: 0;
+}
+
+.rp-spec-card h3,
+.rp-info-card h3 {
+    margin-bottom: 15px !important;
+}
+
+.rp-table-wrap {
+    width: 100%;
+    overflow-x: auto;
+    border: 1px solid var(--rp-border);
+    border-radius: 5px;
+}
+
+.rp-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    text-align: left;
+}
+
+.rp-table caption {
+    caption-side: top;
+    text-align: left;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 14px;
+    color: var(--rp-navy);
+    background: #fff;
+}
+
+.rp-table th {
+    background: var(--rp-navy);
+    color: #fff;
+    font-weight: 500;
+}
+
+.rp-table th,
+.rp-table td {
+    padding: 15px 14px;
+    border-bottom: 1px solid var(--rp-border);
+    vertical-align: top;
+}
+
+.rp-table tbody tr:nth-child(even) {
+    background: #f4f7fa;
+}
+
+.rp-table tbody tr:last-child td {
+    border-bottom: 0;
+}
+
+.rp-info-list {
+    display: grid;
+    gap: 15px;
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.rp-info-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 14px;
+}
+
+.rp-info-list i {
+    color: var(--rp-accent);
+    flex-shrink: 0;
+    margin-top: 5px;
+}
+
+.rp-catalogue-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    padding: 13px 16px;
+    margin-top: 22px;
+    min-height: 48px;
+
+    background: var(--rp-navy);
+    color: #fff;
+    border-radius: 5px;
+
+    font-size: 13px;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.rp-catalogue-link:hover {
+    background: var(--rp-accent);
+    color: #fff;
+}
+
+/* ========================================
+   RELATED PRODUCT CARDS
+======================================== */
+
+.rp-related-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.rp-related-card {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border: 1px solid var(--rp-border);
+    border-radius: 7px;
+    overflow: hidden;
+    min-width: 0;
+
+    transition: box-shadow .25s, border-color .25s;
+}
+
+.rp-related-card:hover {
+    border-color: #aabac9;
+    box-shadow: 0 8px 25px rgba(7,26,43,.08);
+}
+
+.rp-related-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 290px;
+    padding: 25px;
+
+    background: radial-gradient(
+        ellipse at center,
+        #fff,
+        #e4ebf2 65%,
+        #ccd8e4
+    );
+}
+
+.rp-related-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+
+    filter: drop-shadow(4px 7px 7px rgba(7,26,43,.13));
+    transition: transform .3s ease;
+}
+
+.rp-related-card:hover .rp-related-image img {
+    transform: scale(1.04);
+}
+
+.rp-related-content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 22px;
+}
+
+.rp-related-category {
+    color: var(--rp-accent);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.rp-related-content h3 {
+    margin-bottom: 22px !important;
+}
+
+.rp-related-content h3 a {
+    color: var(--rp-navy);
+    text-decoration: none;
+}
+
+.rp-related-content h3 a:hover {
+    color: var(--rp-accent);
+}
+
+.rp-related-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+
+    padding-top: 18px;
+    margin-top: auto;
+    border-top: 1px solid var(--rp-border);
+}
+
+.rp-related-actions a {
+    color: var(--rp-accent);
+    font-size: 13px;
+    font-weight: 500;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.rp-related-actions button {
+    min-height: 44px;
+    padding: 8px 12px;
+
+    font: inherit;
+    font-size: 12px;
+    font-weight: 500;
+
+    color: var(--rp-navy);
+    background: #fff;
+
+    border: 1px solid #aabac9;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.rp-related-actions button:hover {
+    background: var(--rp-navy);
+    color: #fff;
+}
+
+/* ========================================
+   FINAL CTA
+======================================== */
+
+.rp-cta {
+    background: linear-gradient(125deg, #071a2b, #102d48);
+    color: #dce6ef;
+}
+
+.rp-cta-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 40px;
+    align-items: center;
+}
+
+#rudra-product .rp-cta h2 {
+    color: #fff;
+}
+
+.rp-cta h2 span,
+.rp-cta .rp-kicker {
+    color: #ffad65;
+}
+
+/* ========================================
+   EXISTING RFQ TOAST
+======================================== */
+
+.rp-page .toast {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+
+    width: max-content;
+    max-width: calc(100% - 32px);
+
+    padding: 16px 20px;
+    background: #071a2b;
+    color: #fff;
+
+    border: 1px solid #ed701e;
+    border-radius: 6px;
+
+    font-family: 'Rubik', sans-serif;
+    font-size: 13px;
+
+    box-shadow: 0 8px 25px #0003;
+    z-index: 9999;
+}
+
+.rp-page .toast a {
+    color: #ffad65;
+    margin-left: 8px;
+    text-decoration: underline;
+}
+
+/* ========================================
+   ACCESSIBILITY
+======================================== */
+
+#rudra-product a:focus-visible,
+#rudra-product button:focus-visible,
+#rudra-product [tabindex="0"]:focus-visible,
+.rp-page .rp-mobile-actions a:focus-visible,
+.rp-page .toast a:focus-visible {
+    outline: 2px solid #071a2b !important;
+    outline-offset: 3px;
+    box-shadow: 0 0 0 5px #fff;
+}
+
+.rp-noscript {
+    padding: 16px 24px;
+    background: #eef2f6;
+    color: #071a2b;
+}
+
+.rp-noscript a {
+    color: #a43d0d;
+    text-decoration: underline;
+    margin-right: 12px;
+}
+
+/* ========================================
+   MOBILE ACTION BAR
+======================================== */
+
+.rp-mobile-actions {
+    display: none;
+}
+
+/* ========================================
+   RESPONSIVE
+======================================== */
+
+@media (max-width: 991px) {
+
+    .rp-detail-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 35px;
+    }
+
+    .rp-product-image {
+        height: 480px;
+    }
+
+    .rp-spec-grid,
+    .rp-cta-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .rp-related-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 767px) {
+
+    .rp-container {
+        width: calc(100% - 32px);
+    }
+
+    .rp-product-image {
+        height: 390px;
+        padding: 40px 25px 25px;
+    }
+
+    .rp-description {
+        font-size: 14px;
+    }
+
+    .rp-related-image {
+        height: 260px;
+    }
+
+    .rp-related-grid {
+        gap: 16px;
+    }
+
+    .rp-related-content {
+        padding: 18px;
+    }
+
+    body.rp-page {
+        padding-bottom: calc(64px + env(safe-area-inset-bottom));
+    }
+
+    html:has(body.rp-page) {
+        scroll-padding-bottom: 90px;
+    }
+
+    .rp-page .toast {
+        bottom: calc(76px + env(safe-area-inset-bottom));
+        right: 16px;
+    }
+
+    .rp-mobile-actions {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        background: #071a2b;
+        padding-bottom: env(safe-area-inset-bottom);
+        z-index: 900;
+
+        box-shadow: 0 -4px 20px #0002;
+    }
+
+    .rp-mobile-actions a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+
+        min-height: 58px;
+        padding: 10px;
+
+        color: #fff;
+        font-size: 13px;
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+    .rp-mobile-actions a:last-child {
+        background: #a43d0d;
+    }
+}
+
+@media (max-width: 575px) {
+
+    .rp-product-image {
+        height: 360px;
+    }
+
+    .rp-related-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .rp-actions .rp-btn {
+        width: 100%;
+    }
+
+    .rp-table th,
+    .rp-table td {
+        padding: 12px 10px;
+        font-size: 12px;
+    }
+
+    .rp-breadcrumb ol {
+        font-size: 12px;
+        gap: 8px;
+    }
+
+    .rp-kicker {
+        font-size: 11px;
+        letter-spacing: 1px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    #rudra-product *,
+    #rudra-product *::before,
+    #rudra-product *::after {
+        transition: none !important;
+        animation: none !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* ========================================
+   QUOTATION SUCCESS STATE
+======================================== */
+
+.rp-page #rudra-product button.add-quote.is-added {
+    background: #16794a !important;
+    border-color: #16794a !important;
+    color: #ffffff !important;
+    transition: background .2s ease;
+}
+
+.rp-page #rudra-product button.add-quote.is-added:hover {
+    background: #11633c !important;
+    border-color: #11633c !important;
+    color: #ffffff !important;
+}
+
+.rp-page .toast.show {
+    display: block !important;
+    opacity: 1;
+    line-height: 1.7;
+    max-width: min(420px, calc(100% - 32px));
+    overflow-wrap: anywhere;
+}
+
+.rp-page .toast a {
+    display: inline-block;
+    margin: 8px 0 0;
+    font-weight: 600;
+}

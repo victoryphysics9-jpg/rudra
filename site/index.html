@@ -896,13 +896,61 @@ header.main-header .main-menu ul ul li a:hover,header.main-header .main-menu ul 
 </li>
 </ul>
 </li>
-<!-- CATALOGUE -->
+<!-- INDUSTRIES -->
+<li class="nav-item">
+    <a class="nav-link" href="/industries/">Industries</a>
+</li>
+
+<!-- RESOURCES -->
 <li class="nav-item submenu" id="rudra-desktop-catalogue" data-rn-dropdown>
-<a class="nav-link" href="/downloads/rudra-catalogue.pdf" aria-expanded="false" aria-controls="rn-desktop-catalogue-list" data-rn-trigger>Catalogue</a>
-<ul id="rn-desktop-catalogue-list">
-<li class="nav-item"><a class="nav-link" href="/downloads/rudra-catalogue.pdf" target="_blank" rel="noopener noreferrer" aria-label="View Catalogue (PDF, opens in a new tab)">View Catalogue</a></li>
-<li class="nav-item"><a class="nav-link" href="/downloads/rudra-catalogue.pdf" download>Download PDF</a></li>
-</ul>
+
+    <a class="nav-link"
+       href="/resources/"
+       aria-expanded="false"
+       aria-controls="rn-desktop-catalogue-list"
+       data-rn-trigger>
+        Resources
+    </a>
+
+    <ul id="rn-desktop-catalogue-list">
+
+        <li class="nav-item">
+            <a class="nav-link" href="/resources/">
+                Resource Centre
+            </a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" href="/resources/#resource-library">
+                Technical Library
+            </a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link"
+               href="/downloads/rudra-catalogue.pdf"
+               target="_blank"
+               rel="noopener noreferrer">
+                View Catalogue
+            </a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link"
+               href="/downloads/rudra-catalogue.pdf"
+               download>
+                Download Catalogue
+            </a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" href="/resources/#technical-assistance">
+                Request Documents
+            </a>
+        </li>
+
+    </ul>
+
 </li>
 <li class="nav-item">
 <a class="nav-link" href="/contact/">
@@ -1024,12 +1072,60 @@ header.main-header .main-menu ul ul li a:hover,header.main-header .main-menu ul 
 </ul>
 </li>
 <!-- CATALOGUE -->
+<!-- INDUSTRIES -->
+<li>
+    <a href="/industries/">
+        <span>Industries</span>
+    </a>
+</li>
+
+<!-- RESOURCES -->
 <li class="mobile-dropdown" id="rudra-mobile-catalogue">
-<a aria-expanded="false" class="mobile-dropdown-toggle" href="/downloads/rudra-catalogue.pdf" aria-controls="rn-mobile-catalogue-list"><span>Catalogue</span><span class="rn-chevron" aria-hidden="true"></span></a>
-<ul id="rn-mobile-catalogue-list">
-<li><a href="/downloads/rudra-catalogue.pdf" target="_blank" rel="noopener noreferrer" aria-label="View Catalogue (PDF, opens in a new tab)">View Catalogue</a></li>
-<li><a href="/downloads/rudra-catalogue.pdf" download>Download PDF</a></li>
-</ul>
+
+    <a aria-expanded="false"
+       class="mobile-dropdown-toggle"
+       href="/resources/"
+       aria-controls="rn-mobile-catalogue-list">
+
+        <span>Resources</span>
+        <span class="rn-chevron" aria-hidden="true"></span>
+
+    </a>
+
+    <ul id="rn-mobile-catalogue-list">
+
+        <li>
+            <a href="/resources/">Resource Centre</a>
+        </li>
+
+        <li>
+            <a href="/resources/#resource-library">
+                Technical Library
+            </a>
+        </li>
+
+        <li>
+            <a href="/downloads/rudra-catalogue.pdf"
+               target="_blank"
+               rel="noopener noreferrer">
+                View Catalogue
+            </a>
+        </li>
+
+        <li>
+            <a href="/downloads/rudra-catalogue.pdf" download>
+                Download Catalogue
+            </a>
+        </li>
+
+        <li>
+            <a href="/resources/#technical-assistance">
+                Request Documents
+            </a>
+        </li>
+
+    </ul>
+
 </li>
 <!-- CONTACT -->
 <li>
@@ -1715,6 +1811,254 @@ header.main-header .main-menu ul ul li a:hover,header.main-header .main-menu ul 
     </div>
 
 </section>
+
+<section id="rudra-discover-more"
+         aria-labelledby="rudra-discover-title">
+
+    <style>
+
+        #rudra-discover-more {
+            padding: 70px 0;
+            background: #eef2f6;
+            font-family: 'Rubik', sans-serif;
+        }
+
+        #rudra-discover-more .rd-container {
+            width: min(1240px, calc(100% - 40px));
+            margin: auto;
+        }
+
+        #rudra-discover-more .rd-heading {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        #rudra-discover-more .rd-kicker {
+            color: #a43d0d;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        #rudra-discover-more h2 {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: clamp(30px, 4vw, 46px);
+            color: #071a2b;
+            font-weight: 700;
+        }
+
+        #rudra-discover-more .rd-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 25px;
+        }
+
+        #rudra-discover-more .rd-card {
+            position: relative;
+            isolation: isolate;
+            overflow: hidden;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+
+            min-height: 340px;
+            padding: 35px;
+            border-radius: 8px;
+            background: #071a2b;
+            color: #fff;
+        }
+
+        #rudra-discover-more .rd-card img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -2;
+            transition: transform .5s ease;
+        }
+
+        #rudra-discover-more .rd-card::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            z-index: -1;
+            background: linear-gradient(
+                0deg,
+                #071a2b 5%,
+                #071a2bd9 45%,
+                #071a2b35
+            );
+        }
+
+        #rudra-discover-more .rd-card:hover img {
+            transform: scale(1.05);
+        }
+
+        #rudra-discover-more .rd-card h3 {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: clamp(28px, 3vw, 36px);
+            line-height: 1.15;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 12px;
+        }
+
+        #rudra-discover-more .rd-card p {
+            font-size: 14px;
+            line-height: 1.8;
+            color: #e2e8f0;
+            margin-bottom: 22px;
+        }
+
+        #rudra-discover-more .rd-icon {
+            color: #ffad65;
+            font-size: 30px;
+            margin-bottom: 18px;
+        }
+
+        #rudra-discover-more .rd-btn {
+            align-self: flex-start;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            min-height: 46px;
+            padding: 12px 20px;
+            background: #a43d0d;
+            color: #fff;
+            border-radius: 5px;
+            font-size: 13px;
+            font-weight: 500;
+            text-decoration: none;
+        }
+
+        #rudra-discover-more .rd-btn:hover {
+            background: #7c2c08;
+        }
+
+        #rudra-discover-more .rd-btn:focus-visible {
+            outline: 3px solid #fff;
+            outline-offset: 4px;
+        }
+
+        @media (max-width: 767px) {
+
+            #rudra-discover-more {
+                padding: 45px 0;
+            }
+
+            #rudra-discover-more .rd-grid {
+                grid-template-columns: 1fr;
+                gap: 18px;
+            }
+
+            #rudra-discover-more .rd-card {
+                min-height: 300px;
+                padding: 24px;
+            }
+
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+
+            #rudra-discover-more .rd-card img {
+                transition: none;
+            }
+
+            #rudra-discover-more .rd-card:hover img {
+                transform: none;
+            }
+
+        }
+
+    </style>
+
+    <div class="rd-container">
+
+        <div class="rd-heading">
+
+            <p class="rd-kicker">Explore More With Rudra</p>
+
+            <h2 id="rudra-discover-title">
+                Find the right information for your project.
+            </h2>
+
+        </div>
+
+        <div class="rd-grid">
+
+            <!-- INDUSTRIES CARD -->
+
+            <article class="rd-card">
+
+                <img src="/assets/industry-factory.webp"
+                     alt=""
+                     loading="lazy"
+                     decoding="async">
+
+                <i class="fa-solid fa-industry rd-icon"
+                   aria-hidden="true"></i>
+
+                <h3>Industries &amp; Applications</h3>
+
+                <p>
+                    Explore earthing and lightning protection
+                    product applications across 12 industry
+                    sectors, from residential buildings to
+                    industrial infrastructure.
+                </p>
+
+                <a class="rd-btn" href="/industries/">
+
+                    Explore Your Industry
+
+                    <i class="fa-solid fa-arrow-right"
+                       aria-hidden="true"></i>
+
+                </a>
+
+            </article>
+
+            <!-- RESOURCES CARD -->
+
+            <article class="rd-card">
+
+                <img src="/images/installation.webp"
+                     alt=""
+                     loading="lazy"
+                     decoding="async">
+
+                <i class="fa-solid fa-book-open rd-icon"
+                   aria-hidden="true"></i>
+
+                <h3>Technical Resource Centre</h3>
+
+                <p>
+                    Access product specifications, catalogue
+                    downloads, educational guides and technical
+                    documentation request options.
+                </p>
+
+                <a class="rd-btn" href="/resources/">
+
+                    Explore Technical Resources
+
+                    <i class="fa-solid fa-arrow-right"
+                       aria-hidden="true"></i>
+
+                </a>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
 </main>
 <div id="rudra-footer-mount">
 <footer class="rudra-footer" id="rudra-footer">
@@ -1749,6 +2093,10 @@ header.main-header .main-menu ul ul li a:hover,header.main-header .main-menu ul 
     <a href="/products/">All Products</a>
 
     <a href="/solutions/">Solutions</a>
+
+<a href="/industries/">Industries &amp; Applications</a>
+
+<a href="/resources/">Technical Resources</a>
 
     <a href="/downloads/rudra-catalogue.pdf"
        target="_blank"

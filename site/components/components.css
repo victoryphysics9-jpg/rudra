@@ -1,0 +1,131 @@
+/* Loader */
+#rudra-page-loader {
+    position: fixed;
+    inset: 0;
+    z-index: 2147483647;
+    display: grid;
+    place-items: center;
+    background: #071a2b;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    animation: rudraPageLoaderExit .3s ease 1.35s forwards;
+}
+#rudra-page-loader > img {
+    display: block;
+    width: 120px;
+    height: auto;
+    max-width: none;
+    margin: 0;
+}
+@keyframes rudraPageLoaderExit {
+    from { opacity: 1; visibility: visible; }
+    to { opacity: 0; visibility: hidden; pointer-events: none; }
+}
+@media (max-width: 767px) {
+    #rudra-page-loader > img { width: 95px; }
+}
+@media (prefers-reduced-motion: reduce) {
+    #rudra-page-loader { display: none; }
+}
+
+/* Shared navigation */
+
+/* Only the new product/catalogue dropdowns use these rules. */
+@media (min-width:992px) {
+    #menu > li[data-rn-dropdown] > ul,
+    #menu #rudra-desktop-products .rn-category > ul {
+        visibility:hidden; opacity:0; pointer-events:none;
+        transform:none; padding:5px 0; transition:none;
+    }
+    #menu > li[data-rn-dropdown].rn-open > ul,
+    #menu #rudra-desktop-products .rn-category.rn-open > ul {
+        visibility:visible; opacity:1; pointer-events:auto;
+    }
+    #menu #rudra-desktop-products > ul {width:245px; z-index:20;}
+    #menu #rudra-desktop-catalogue > ul {left:auto; right:0; z-index:20;}
+    #menu #rudra-desktop-products .rn-category > a {
+        display:flex; align-items:center; justify-content:space-between; gap:8px;
+    }
+    #menu #rudra-desktop-products .rn-category > a::after {
+        content:""; flex:0 0 7px; width:7px; height:7px;
+        border-right:1.8px solid currentColor; border-bottom:1.8px solid currentColor;
+        transform:rotate(-45deg); margin:0 2px 0 auto;
+    }
+    #menu #rudra-desktop-products .rn-category.rn-open > a {
+        background:rgba(255,255,255,.14); color:#fff;
+    }
+    #menu #rudra-desktop-products .rn-product-flyout {
+        left:100%; top:0; width:300px; max-height:var(--rn-flyout-height,360px);
+        overflow-y:auto; overscroll-behavior:contain;
+        box-shadow:5px 8px 24px rgba(7,26,43,.15);
+        border-left:1px solid rgba(255,255,255,.22);
+    }
+    #menu #rudra-desktop-products.rn-flip .rn-product-flyout {left:auto; right:100%;}
+    #menu #rudra-desktop-products.rn-flip .rn-category > a::after {transform:rotate(135deg);}
+    #menu #rudra-desktop-products .rn-product-flyout a {white-space:normal; overflow-wrap:anywhere;}
+}
+/* Keep the existing desktop layout; make room for the added Catalogue item. */
+@media (min-width:992px) and (max-width:1199px) {
+    header.main-header .main-menu .nav-menu-wrapper > #menu > li > a {font-size:14px; padding:15px 8px!important; white-space:nowrap;}
+    header.main-header .main-menu .nav-menu-wrapper {margin:0 6px;}
+}
+@media (max-width:991px) {
+    header.main-header .responsive-menu.is-open .mobile-menu-inner {
+        max-height:var(--rn-mobile-height,65vh); overflow-y:auto; overscroll-behavior:contain;
+    }
+    #rudra-mobile-products .rn-category-button {
+        display:flex; align-items:center; justify-content:space-between; gap:12px;
+        width:100%; min-height:44px; padding:10px 20px 10px 34px;
+        border:0; background:transparent; color:#fff; text-align:left;
+        font:inherit; font-size:15px; line-height:1.4; cursor:pointer;
+    }
+    #rudra-mobile-products .rn-category-button[aria-expanded="true"] {background:rgba(255,255,255,.12);}
+    #rudra-mobile-products .rn-mobile-category > ul {display:none;}
+    #rudra-mobile-products .rn-mobile-category.rn-expanded > ul {display:block; background:rgba(0,0,0,.12);}
+    #rudra-mobile-products .rn-mobile-category > ul a {padding:10px 20px 10px 48px!important; min-height:44px; line-height:1.4;}
+    header.main-header .responsive-menu .rn-chevron {
+        display:inline-block; flex:0 0 8px; width:8px; height:8px;
+        border-right:2px solid currentColor; border-bottom:2px solid currentColor;
+        transform:rotate(45deg); margin:0 10px 4px 4px;
+    }
+    header.main-header .responsive-menu [aria-expanded="true"] > .rn-chevron {transform:rotate(225deg); margin-bottom:-4px;}
+}
+#rudra-header-mount [data-rn-trigger]:focus-visible,
+#rudra-header-mount [data-rn-category-trigger]:focus-visible,
+#rudra-header-mount .rn-category-button:focus-visible {outline:2px solid currentColor; outline-offset:-3px;}
+
+/* Shared footer and accessibility */
+#rudra-footer .rudra-footer-heading {
+    color:#fff;font-size:18px;font-weight:700;margin:5px 0 23px;position:relative;padding-bottom:12px;
+}
+#rudra-footer .rudra-footer-heading::after {
+    content:"";position:absolute;left:0;bottom:0;width:34px;height:2px;background:var(--rudra-orange);
+}
+/* Skip navigation, visible focus and sticky-header clearance. */
+.rudra-skip-link {position:fixed;top:8px;left:8px;z-index:2147483647;
+    padding:14px 18px;background:#071a2b;color:#fff;border:2px solid #fff;
+    transform:translateY(-150%);border-radius:4px;line-height:1.4;}
+.rudra-skip-link:focus {transform:none;color:#fff;}
+#main-content {scroll-margin-top:110px;}
+#main-content:focus {outline:none;}
+a[href],button {scroll-margin-top:120px;}
+a[href]:focus-visible,button:focus-visible {
+    outline:2px solid #071a2b!important;outline-offset:3px;
+    box-shadow:0 0 0 5px #fff!important;
+}
+.btn-default:focus-visible {outline-offset:-5px;box-shadow:inset 0 0 0 3px #fff!important;}
+header.main-header .header-sticky.active.hide:focus-within {transform:none;}
+
+
+#rudra-page-loader {pointer-events:none;}
+html.rudra-keyboard-start #rudra-page-loader {display:none;}
+
+header.main-header .main-menu ul ul,
+header.main-header .mobile-menu-inner {background:linear-gradient(90deg,#ab3b0c,#a23210);}
+header.main-header .main-menu ul li a:hover,header.main-header .main-menu ul li a:focus {color:#a43d0d;}
+header.main-header .main-menu ul ul li a:hover,header.main-header .main-menu ul ul li a:focus {color:#fff;}
+
+header.main-header .main-menu ul ul li.nav-item > a {transition-property:color,background-color,padding;}
+#rudra-footer .rudra-footer__logo img {height:auto;}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important;}}

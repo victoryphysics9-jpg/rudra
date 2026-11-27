@@ -992,6 +992,12 @@ dialog::backdrop {
                role="status"
                aria-live="polite"></p>
 
+
+            <p id="new-lead-alert"
+   class="status-message success"
+   role="status"
+   aria-live="polite"></p>
+
             <!-- Statistics -->
 
             <section id="stats-view" aria-label="Enquiry statistics">
@@ -1023,6 +1029,21 @@ dialog::backdrop {
                     </article>
 
                 </div>
+
+                <section class="panel">
+
+    <div class="panel-heading">
+        <h2>Follow-up Centre</h2>
+
+        <p class="muted">
+            Today's and overdue follow-ups
+            from your loaded enquiries.
+        </p>
+    </div>
+
+    <div id="follow-up-list"></div>
+
+</section>
 
                 <div class="dashboard-grid">
 
@@ -1334,6 +1355,14 @@ dialog::backdrop {
                     id="copy-reference">
                 Copy Reference
             </button>
+
+            <button type="button"
+        class="btn btn-primary"
+        id="generate-quotation">
+
+    Generate Quotation
+
+</button>
         </div>
 
         <section class="detail-section">
@@ -1368,6 +1397,18 @@ dialog::backdrop {
                     </select>
                 </label>
 
+                <label for="edit-follow-up">
+    Next Follow-up Date
+
+    <input
+        type="date"
+        id="edit-follow-up"
+    >
+
+    <small class="muted">
+        Select the next date for contacting this customer.
+    </small>
+</label>
                 <label for="edit-notes">
                     Internal sales notes
                     <textarea id="edit-notes"
@@ -1403,6 +1444,20 @@ dialog::backdrop {
                    aria-live="polite"></p>
 
             </form>
+
+            <div class="detail-section">
+
+    <h3>Lead Activity History</h3>
+
+    <p class="muted">
+        Recent status, follow-up and internal note changes.
+    </p>
+
+    <div id="lead-activity">
+        No activity loaded.
+    </div>
+
+</div>
         </section>
 
     </div>

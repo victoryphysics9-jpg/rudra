@@ -74,7 +74,7 @@
     const SELECT_FIELDS = [
         'id', 'created_at', 'name', 'company', 'phone',
         'email', 'location', 'product', 'message', 'items',
-        'attribution', 'status', 'notes'
+        'attribution', 'status', 'notes', 'follow_up_on'
     ].join(',');
 
     let token = '';
@@ -351,6 +351,13 @@
         text('stat-conversion', '0% of loaded enquiries');
 
         $('edit-notes').value = '';
+
+
+        $('edit-follow-up').value = '';
+
+text('lead-activity', '');
+
+text('follow-up-list', '');
         $('edit-status').value = 'new';
 
         ['detail-call', 'detail-mail'].forEach(id => {
@@ -908,7 +915,175 @@
         `;
     }
 
+function renderFollowUps() {
+
+    const container = $('follow-up-list');
+
+    if (!container) return;
+
+    const today = localDate(new Date());
+
+    const pending = leads.filter(lead =>
+
+        lead.follow_up_on &&
+        lead.follow_up_on <= today &&
+        !['won', 'lost'].includes(lead.status)
+
+    ).sort((a, b) =>
+        a.follow_up_on.localeCompare(b.follow_up_on)
+    );
+
+    if (!pending.length) {
+
+        container.innerHTML = `
+            <p class="muted">
+                No due follow-ups in loaded enquiries.
+            </p>
+        `;
+
+        return;
+    }
+
+    container.innerHTML = pending.map(lead => {
+
+        const overdue = lead.follow_up_on < today;
+
+        return `
+            <div class="info-row">
+
+                <strong>${escapeHTML(lead.name)}</strong>
+
+                ${escapeHTML(lead.company || 'Individual')}
+
+                <p>
+                    Follow-up:
+                    ${escapeHTML(lead.follow_up_on)}
+                </p>
+
+                <p style="color:${overdue ? '#b42318' : '#16794a'}">
+                    ${overdue ? 'Overdue' : 'Due Today'}
+                </p>
+
+                <button
+                    type="button"
+                    class="row-open"
+                    data-open-lead="${escapeHTML(lead.id)}">
+
+                    Open Customer →
+
+                </button>
+
+            </div>
+        `;
+
+    }).join('');
+}
+
+
+async function loadLeadActivity(id) {
+
+    const container = $('lead-activity');
+
+    if (!container) return;
+
+    container.textContent = 'Loading activity...';
+
+    const params = new URLSearchParams({
+
+        enquiry_id: 'eq.' + id,
+
+        select: [
+            'staff_id',
+            'created_at',
+            'old_status',
+            'new_status',
+            'old_follow_up',
+            'new_follow_up',
+            'notes_changed'
+        ].join(','),
+
+        order: 'created_at.desc,id.desc',
+
+        limit: '20'
+    });
+
+    const rows = await request(
+        '/rest/v1/enquiry_activity?' + params
+    );
+
+    if (selectedId !== id) return;
+
+    container.replaceChildren();
+
+    if (!rows.length) {
+
+        container.textContent = 'No recorded updates yet.';
+
+        return;
+    }
+
+    rows.forEach(row => {
+
+        const item = document.createElement('div');
+
+        item.className = 'info-row';
+
+        const date = document.createElement('strong');
+
+        date.textContent = formatDate(row.created_at);
+
+        const changes = [];
+
+        if (row.old_status !== row.new_status) {
+
+            changes.push(
+                'Status: ' +
+                row.old_status +
+                ' → ' +
+                row.new_status
+            );
+        }
+
+        if (row.old_follow_up !== row.new_follow_up) {
+
+            changes.push(
+                'Follow-up: ' +
+                (row.old_follow_up || 'Not set') +
+                ' → ' +
+                (row.new_follow_up || 'Cleared')
+            );
+        }
+
+        if (row.notes_changed) {
+
+            changes.push('Internal notes updated');
+        }
+
+        const description = document.createElement('p');
+
+        description.textContent = changes.join(' | ');
+
+        const staff = document.createElement('small');
+
+        staff.className = 'muted';
+
+        staff.textContent =
+            row.staff_id === user?.id
+                ? 'Updated by you'
+                : row.staff_id
+                    ? 'Staff ID: ' + row.staff_id
+                    : 'Backend update';
+
+        item.append(date, description, staff);
+
+        container.appendChild(item);
+
+    });
+}
+
     function renderReports() {
+
+        renderFollowUps();
 
         const total = leads.length;
         const counts = countByStatus(leads);
@@ -1273,11 +1448,19 @@
         $('edit-status').value = lead.status;
         $('edit-notes').value = lead.notes || '';
 
+        $('edit-follow-up').value = lead.follow_up_on || '';
+
         notify('detail-status');
 
         $('save-lead-btn').disabled = false;
 
         if (!dialog.open) dialog.showModal();
+
+        runTask(async () => {
+
+    await loadLeadActivity(id);
+
+}, 'detail-status');
     }
 
     app.addEventListener('click', event => {
@@ -1294,9 +1477,10 @@
         const lead = leads.find(item => item.id === selectedId);
 
         const dirty = lead && (
-            $('edit-status').value !== lead.status ||
-            $('edit-notes').value !== (lead.notes || '')
-        );
+    $('edit-status').value !== lead.status ||
+    $('edit-notes').value !== (lead.notes || '') ||
+    $('edit-follow-up').value !== (lead.follow_up_on || '')
+);
 
         if (dirty && !window.confirm('Discard unsaved changes?')) {
             return;
@@ -1362,9 +1546,12 @@
         const id = selectedId;
 
         const payload = {
-            status: $('edit-status').value,
-            notes: $('edit-notes').value.trim()
-        };
+    status: $('edit-status').value,
+    notes: $('edit-notes').value.trim(),
+
+    follow_up_on:
+        $('edit-follow-up').value || null
+};
 
         if (!STATUSES.includes(payload.status) ||
             payload.notes.length > 4000) {
@@ -1411,6 +1598,13 @@
 
             $('edit-status').value = updated[0].status;
             $('edit-notes').value = updated[0].notes || '';
+
+            $('edit-follow-up').value =
+    updated[0].follow_up_on || '';
+
+await loadLeadActivity(id).catch(() => {
+    text('lead-activity', 'Unable to refresh activity history.');
+});
 
             renderWorkspace();
 
@@ -1561,4 +1755,507 @@
         }
     });
 
+    let checkingNewLeads = false;
+
+async function checkNewEnquiries() {
+
+    if (
+        !user ||
+        !token ||
+        busy ||
+        checkingNewLeads ||
+        document.hidden
+    ) return;
+
+    checkingNewLeads = true;
+
+    const currentGeneration = generation;
+
+    try {
+
+        await verifyStaff();
+
+        const params = new URLSearchParams({
+            select: 'id',
+            order: 'created_at.desc,id.desc',
+            limit: '1'
+        });
+
+        const latest = await request(
+            '/rest/v1/enquiries?' + params
+        );
+
+        if (generation !== currentGeneration) return;
+
+        const newId = latest[0]?.id;
+        const loadedId = leads[0]?.id;
+
+        text(
+            'new-lead-alert',
+
+            newId && newId !== loadedId
+
+                ? '🔔 New enquiry received! Click Refresh to view it.'
+
+                : ''
+        );
+
+    } catch (error) {
+
+        if (generation !== currentGeneration) return;
+
+        if (error.code === 401 || error.code === 403) {
+
+            if (!busy) {
+
+                clearSession(
+                    'Staff access expired or restricted.',
+                    'error'
+                );
+            }
+
+        } else {
+
+            text(
+                'new-lead-alert',
+                'Automatic enquiry check unavailable.'
+            );
+        }
+
+    } finally {
+
+        checkingNewLeads = false;
+    }
+}
+
+setInterval(checkNewEnquiries, 30000);
+
+
+$('generate-quotation').addEventListener('click', () => {
+
+    if (!user || !token || busy || !selectedId) return;
+
+    const lead = leads.find(item => item.id === selectedId);
+
+    if (!lead) return;
+
+    const items = getItems(lead).length
+
+        ? getItems(lead)
+
+        : [{
+            name: productName(lead.product),
+            qty: 1
+        }];
+
+    const quotationItems = [];
+
+    let subtotal = 0;
+
+    for (const item of items) {
+
+        const name = String(
+            item.name || productName(item.slug)
+        );
+
+        const quantityInput = window.prompt(
+            'Enter quotation quantity for:\n' + name,
+            String(item.qty || 1)
+        );
+
+        if (quantityInput === null) return;
+
+        const quantity = Number(quantityInput);
+
+        if (!Number.isInteger(quantity) ||
+            quantity < 1 ||
+            quantity > 99999) {
+
+            alert('Please enter a valid quantity.');
+
+            return;
+        }
+
+        const rateInput = window.prompt(
+            'Enter unit price in INR for:\n' + name
+        );
+
+        if (rateInput === null) return;
+
+        const rateText = rateInput.trim();
+
+        if (!/^\d{1,7}(\.\d{1,2})?$/.test(rateText)) {
+
+            alert('Please enter a valid unit price.');
+
+            return;
+        }
+
+        const ratePaise = Math.round(
+            Number(rateText) * 100
+        );
+
+        const amount = ratePaise * quantity;
+
+        if (!Number.isSafeInteger(subtotal + amount)) {
+
+            alert('Quotation amount is too large.');
+
+            return;
+        }
+
+        subtotal += amount;
+
+        quotationItems.push({
+            name,
+            quantity,
+            ratePaise,
+            amount
+        });
+    }
+
+    const terms = window.prompt(
+
+        'Enter delivery, payment and quotation validity terms:',
+
+        'Taxes and freight, if applicable, to be confirmed. ' +
+        'Subject to availability and final approval.'
+
+    );
+
+    if (terms === null) return;
+
+    const money = paise =>
+
+        (paise / 100).toLocaleString('en-IN', {
+            style: 'currency',
+            currency: 'INR'
+        });
+
+    const rows = quotationItems.map((item, index) => `
+
+        <tr>
+            <td>${index + 1}</td>
+            <td>${escapeHTML(item.name)}</td>
+            <td>${item.quantity}</td>
+            <td>${money(item.ratePaise)}</td>
+            <td>${money(item.amount)}</td>
+        </tr>
+
+    `).join('');
+
+    const quotationWindow = window.open(
+        '',
+        '_blank',
+        'width=1000,height=850'
+    );
+
+    if (!quotationWindow) {
+
+        alert('Please allow pop-ups to generate the quotation.');
+
+        return;
+    }
+
+    quotationWindow.opener = null;
+
+    quotationWindow.document.open();
+
+    quotationWindow.document.write(`
+
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+
+<title>Rudra Draft Quotation</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #071a2b;
+    background: #eef2f6;
+    margin: 0;
+    padding: 25px;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.document {
+    max-width: 850px;
+    margin: auto;
+    background: white;
+    padding: 35px;
+    border-top: 6px solid #ed701e;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 20px;
+    border-bottom: 2px solid #071a2b;
+    padding-bottom: 25px;
+}
+
+.logo {
+    width: 190px;
+    max-width: 100%;
+}
+
+.company {
+    text-align: right;
+    font-size: 12px;
+}
+
+h1 {
+    margin: 30px 0 5px;
+    font-size: 32px;
+}
+
+h2 {
+    font-size: 17px;
+}
+
+.customer {
+    background: #eef2f6;
+    padding: 20px;
+    margin: 25px 0;
+    overflow-wrap: anywhere;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 25px;
+}
+
+th {
+    background: #071a2b;
+    color: white;
+}
+
+th, td {
+    border: 1px solid #d6dfe8;
+    padding: 12px;
+    text-align: left;
+    overflow-wrap: anywhere;
+}
+
+.total {
+    text-align: right;
+    font-size: 22px;
+    margin: 25px 0;
+    font-weight: bold;
+}
+
+.terms {
+    padding: 20px;
+    border: 1px solid #d6dfe8;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
+
+.signature {
+    margin-top: 60px;
+    text-align: right;
+}
+
+.footer {
+    border-top: 1px solid #d6dfe8;
+    margin-top: 35px;
+    padding-top: 15px;
+    text-align: center;
+    font-size: 11px;
+}
+
+.print-button {
+    display: block;
+    margin: 0 auto 25px;
+    background: #a43d0d;
+    color: white;
+    padding: 14px 25px;
+    border: 0;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+@page {
+    size: A4;
+    margin: 14mm;
+}
+
+@media print {
+
+    body {
+        background: white;
+        padding: 0;
+    }
+
+    .document {
+        padding: 0;
+        max-width: none;
+    }
+
+    .print-button {
+        display: none;
+    }
+
+    tr {
+        break-inside: avoid;
+    }
+
+    thead {
+        display: table-header-group;
+    }
+
+    .signature {
+        break-inside: avoid;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<button class="print-button" onclick="window.print()">
+    Print / Save as PDF
+</button>
+
+<div class="document">
+
+    <header class="header">
+
+        <div>
+            <img
+                class="logo"
+                src="${escapeHTML(location.origin)}/assets/logo-for-light-bg.webp"
+                alt="Rudra Earthing Systems"
+            >
+
+            <p>
+                Engineered for safety.<br>
+                Built for reliability.
+            </p>
+        </div>
+
+        <div class="company">
+
+            <strong>Rudra Earthing Systems</strong><br>
+
+            538/845 Shiv Puram,<br>
+            Shubh Lagan Guest House,<br>
+            Lucknow, Uttar Pradesh 226020<br>
+
+            +91 73556 67609<br>
+            rudraearthingsystem@gmail.com<br>
+            rudraearthingsystem.com
+
+        </div>
+
+    </header>
+
+    <h1>DRAFT QUOTATION</h1>
+
+    <p>
+        Date: ${escapeHTML(localDate(new Date()))}
+    </p>
+
+    <p style="overflow-wrap:anywhere">
+
+        Enquiry Reference:
+        ${escapeHTML(lead.id)}
+
+    </p>
+
+    <section class="customer">
+
+        <h2>Prepared For</h2>
+
+        <strong>${escapeHTML(lead.name)}</strong><br>
+
+        ${escapeHTML(lead.company || '')}<br>
+
+        Phone: ${escapeHTML(lead.phone)}<br>
+
+        Email: ${escapeHTML(lead.email || 'Not provided')}<br>
+
+        Location: ${escapeHTML(lead.location || 'Not provided')}
+
+    </section>
+
+    <table>
+
+        <thead>
+            <tr>
+                <th>S.No.</th>
+                <th>Product Description</th>
+                <th>Quantity</th>
+                <th>Unit Price</th>
+                <th>Amount</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            ${rows}
+        </tbody>
+
+    </table>
+
+    <div class="total">
+
+        Product Subtotal: ${money(subtotal)}
+
+    </div>
+
+    <p>
+        Taxes and other charges are not calculated automatically.
+        Confirm applicable charges before issuing the final quotation.
+    </p>
+
+    <h2>Terms &amp; Conditions</h2>
+
+    <div class="terms">${escapeHTML(terms)}</div>
+
+    <div class="signature">
+
+        <strong>For Rudra Earthing Systems</strong>
+
+        <br><br>
+
+        __________________________<br>
+
+        Authorized Signatory
+
+    </div>
+
+    <footer class="footer">
+
+        Draft quotation — subject to review and approval.<br>
+        This document is not a tax invoice.
+
+    </footer>
+
+</div>
+
+</body>
+</html>
+
+    `);
+
+    quotationWindow.document.close();
+
+});
 })();

@@ -1,0 +1,142 @@
+/* =========================================
+   RUDRA WHATSAPP FLOATING CONTACT BUTTON
+========================================= */
+
+#rudra-whatsapp-float {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+    z-index: 990;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 13px;
+
+    min-height: 64px;
+    padding: 12px 22px 12px 16px;
+
+    background: #087b48;
+    color: #ffffff !important;
+
+    border: 1px solid rgba(255, 255, 255, .25);
+    border-radius: 50px;
+
+    font-family: 'Rubik', sans-serif;
+    text-decoration: none !important;
+
+    box-shadow:
+        0 8px 28px rgba(0, 0, 0, .22),
+        0 3px 8px rgba(8, 123, 72, .20);
+
+    transition:
+        background .25s ease,
+        transform .25s ease,
+        box-shadow .25s ease;
+}
+
+/* WhatsApp icon */
+
+#rudra-whatsapp-float .rw-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 36px;
+    height: 36px;
+    flex: 0 0 36px;
+
+    font-size: 35px;
+    line-height: 1;
+    color: #ffffff;
+}
+
+/* Button text */
+
+#rudra-whatsapp-float .rw-text {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    text-align: left;
+}
+
+#rudra-whatsapp-float .rw-text small {
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 1.4;
+    color: #e0ffeb;
+}
+
+#rudra-whatsapp-float .rw-text strong {
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.4;
+    color: #ffffff;
+}
+
+/* Hover effect */
+
+#rudra-whatsapp-float:hover {
+    background: #06663c;
+    color: #ffffff;
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 12px 32px rgba(0, 0, 0, .25);
+}
+
+#rudra-whatsapp-float:focus-visible {
+    outline: 3px solid #071a2b !important;
+    outline-offset: 4px;
+
+    box-shadow: 0 0 0 6px #ffffff !important;
+}
+
+/* Mobile responsive */
+
+@media (max-width: 767px) {
+
+    #rudra-whatsapp-float {
+        right: 16px;
+
+        /* Above existing mobile quotation buttons */
+        bottom: calc(82px + env(safe-area-inset-bottom, 0px));
+
+        width: 58px;
+        height: 58px;
+        min-height: 58px;
+
+        padding: 0;
+        border-radius: 50%;
+    }
+
+    #rudra-whatsapp-float .rw-icon {
+        font-size: 33px;
+    }
+
+    #rudra-whatsapp-float .rw-text {
+        display: none;
+    }
+}
+
+/* Reduced motion accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+
+    #rudra-whatsapp-float {
+        transition: none;
+    }
+
+    #rudra-whatsapp-float:hover {
+        transform: none;
+    }
+}
+
+/* Hide floating button when printing */
+
+@media print {
+
+    #rudra-whatsapp-float {
+        display: none !important;
+    }
+}

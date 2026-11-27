@@ -1,35 +1,4 @@
-/* Loader */
-#rudra-page-loader {
-    position: fixed;
-    inset: 0;
-    z-index: 2147483647;
-    display: grid;
-    place-items: center;
-    background: #071a2b;
-    opacity: 1;
-    visibility: visible;
-    pointer-events: auto;
-    animation: rudraPageLoaderExit .3s ease 1.35s forwards;
-}
-#rudra-page-loader > img {
-    display: block;
-    width: 120px;
-    height: auto;
-    max-width: none;
-    margin: 0;
-}
-@keyframes rudraPageLoaderExit {
-    from { opacity: 1; visibility: visible; }
-    to { opacity: 0; visibility: hidden; pointer-events: none; }
-}
-@media (max-width: 767px) {
-    #rudra-page-loader > img { width: 95px; }
-}
-@media (prefers-reduced-motion: reduce) {
-    #rudra-page-loader { display: none; }
-}
 
-/* Shared navigation */
 
 /* Only the new product/catalogue dropdowns use these rules. */
 @media (min-width:992px) {
@@ -118,8 +87,7 @@ a[href]:focus-visible,button:focus-visible {
 header.main-header .header-sticky.active.hide:focus-within {transform:none;}
 
 
-#rudra-page-loader {pointer-events:none;}
-html.rudra-keyboard-start #rudra-page-loader {display:none;}
+
 
 header.main-header .main-menu ul ul,
 header.main-header .mobile-menu-inner {background:linear-gradient(90deg,#ab3b0c,#a23210);}

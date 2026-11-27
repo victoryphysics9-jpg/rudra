@@ -190,39 +190,7 @@
   ]
 }
 </script>
-<!-- Rudra SVG loader: self-contained, no JavaScript -->
-<link rel="preload" href="/images/rudra-loader.svg" as="image" type="image/svg+xml">
-<style>
-#rudra-page-loader {
-    position: fixed;
-    inset: 0;
-    z-index: 2147483647;
-    display: grid;
-    place-items: center;
-    background: #071a2b;
-    opacity: 1;
-    visibility: visible;
-    pointer-events: auto;
-    animation: rudraPageLoaderExit .3s ease 1.35s forwards;
-}
-#rudra-page-loader > img {
-    display: block;
-    width: 120px;
-    height: auto;
-    max-width: none;
-    margin: 0;
-}
-@keyframes rudraPageLoaderExit {
-    from { opacity: 1; visibility: visible; }
-    to { opacity: 0; visibility: hidden; pointer-events: none; }
-}
-@media (max-width: 767px) {
-    #rudra-page-loader > img { width: 95px; }
-}
-@media (prefers-reduced-motion: reduce) {
-    #rudra-page-loader { display: none; }
-}
-</style>
+
 
 
 <style id="rudra-xtra-homepage-styles">
@@ -702,8 +670,7 @@ a[href]:focus-visible,button:focus-visible {
 header.main-header .header-sticky.active.hide:focus-within {transform:none;}
 .rudra-motion .wow:focus-within {opacity:1!important;transform:none!important;transition-delay:0s;}
 .section-title h1,.section-title h2 {cursor:auto;}
-#rudra-page-loader {pointer-events:none;}
-html.rudra-keyboard-start #rudra-page-loader {display:none;}
+
 /* Preserve existing CSS-controlled photo proportions when intrinsic sizes are supplied. */
 .hero-image img,.about-us-images img,.about-video-image figure img,.why-choose-image img,
 .icon-box img,#rudra-footer .rudra-footer__logo img {height:auto;}
@@ -737,12 +704,11 @@ header.main-header .main-menu ul ul li a:hover,header.main-header .main-menu ul 
     animation-play-state: paused !important;
 }
 </style>
+<link rel="stylesheet" href="/assets/loader.css">
+<script src="/assets/loader.js"></script>
 </head>
 <body>
-<a class="rudra-skip-link" href="#main-content">Skip to main content</a>
-<div id="rudra-page-loader" aria-hidden="true" inert>
-    <img src="/images/rudra-loader.svg" width="120" height="102" fetchpriority="high" alt="">
-</div>
+
 <div id="home">
 <div id="rudra-header-mount">
 <header class="main-header">
@@ -2273,7 +2239,15 @@ document.querySelectorAll(
             return;
         }
 
-        window.location.href = productLink.href;
+        if (window.RudraLoader) {
+
+    window.RudraLoader.navigate(productLink.href);
+
+} else {
+
+    window.location.href = productLink.href;
+
+}
 
     });
 
@@ -2284,8 +2258,13 @@ document.querySelectorAll(
 (function () {
     const skip = document.querySelector('.rudra-skip-link');
     const main = document.getElementById('main-content');
-    skip.addEventListener('focus', () => document.documentElement.classList.add('rudra-keyboard-start'));
-    skip.addEventListener('click', () => main.focus({preventScroll:true}));
+    skip?.addEventListener('focus', () => {
+    document.documentElement.classList.add('rudra-keyboard-start');
+});
+
+skip?.addEventListener('click', () => {
+    main?.focus({ preventScroll: true });
+});
     const marquee = document.getElementById('rudra-cert-marquee');
     const pause = document.getElementById('rudra-cert-pause');
     if (marquee && pause) {

@@ -126,7 +126,7 @@
         skip.addEventListener('click', () => main.focus({preventScroll:true}));
     }
     await Promise.allSettled([
-        load('rudra-loader-mount', 'preloader').catch(console.error),
+        
         load('rudra-header-mount', 'header').then(async mount => {
             if (!mount) return;
             markCurrent(mount);
@@ -139,4 +139,7 @@
             await script('/assets/reference/footer.js', mount);
         }).catch(console.error)
     ]);
+
+    window.RudraLoader?.componentsReady();
+
 })();

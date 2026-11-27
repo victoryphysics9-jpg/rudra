@@ -46,68 +46,149 @@
 
     <!-- Structured Data -->
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@graph": [
-            {
-                "@type": "Product",
-                "@id": "https://rudraearthingsystem.com/products/lightning-strike-counter/#product",
-                "name": "Lightning Strike Counter",
-                "description": "Lightning strike counter for recording lightning discharge events and supporting lightning protection inspection and maintenance. Catalogue models include RES-DLSC0101 and RES-ALSC0102.",
-                "url": "https://rudraearthingsystem.com/products/lightning-strike-counter/",
-                "image": "https://rudraearthingsystem.com/assets/lightning-strike-counter.webp",
-                "category": "Lightning Protection Accessories",
-                "brand": {
-                    "@type": "Brand",
-                    "name": "Rudra Earthing Systems"
-                },
-                "manufacturer": {
-                    "@type": "Organization",
-                    "@id": "https://rudraearthingsystem.com/#organization",
-                    "name": "Rudra Earthing Systems",
-                    "url": "https://rudraearthingsystem.com/"
-                },
-                "additionalProperty": [
-                    {
-                        "@type": "PropertyValue",
-                        "name": "Catalogue Models",
-                        "value": "RES-DLSC0101, RES-ALSC0102"
-                    },
-                    {
-                        "@type": "PropertyValue",
-                        "name": "Catalogue Display Information",
-                        "value": "8-digit display; confirm model-specific configuration"
-                    }
-                ]
+{
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "Product",
+            "@id": "https://rudraearthingsystem.com/products/lightning-strike-counter/#product",
+            "name": "Lightning Strike Counter",
+            "description": "Lightning strike counter for recording lightning discharge events and supporting lightning protection inspection and maintenance. Catalogue models include RES-DLSC0101 and RES-ALSC0102.",
+            "url": "https://rudraearthingsystem.com/products/lightning-strike-counter/",
+            "image": "https://rudraearthingsystem.com/assets/lightning-strike-counter.webp",
+            "category": "Lightning Protection Accessories",
+            "brand": {
+                "@type": "Brand",
+                "name": "Rudra Earthing Systems"
             },
-            {
-                "@type": "BreadcrumbList",
-                "itemListElement": [
-                    {
-                        "@type": "ListItem",
-                        "position": 1,
-                        "name": "Home",
-                        "item": "https://rudraearthingsystem.com/"
+            "manufacturer": {
+                "@type": "Organization",
+                "@id": "https://rudraearthingsystem.com/#organization",
+                "name": "Rudra Earthing Systems",
+                "url": "https://rudraearthingsystem.com/"
+            },
+            "additionalProperty": [
+                {
+                    "@type": "PropertyValue",
+                    "name": "Catalogue Models",
+                    "value": "RES-DLSC0101, RES-ALSC0102"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Catalogue Display Information",
+                    "value": "8-digit display; confirm model-specific configuration"
+                }
+            ],
+            "review": [
+                {
+                    "@type": "Review",
+                    "author": {
+                        "@type": "Person",
+                        "name": "Brijesh Narayan Singh"
                     },
-                    {
-                        "@type": "ListItem",
-                        "position": 2,
-                        "name": "Products",
-                        "item": "https://rudraearthingsystem.com/products/"
-                    },
-                    {
-                        "@type": "ListItem",
-                        "position": 3,
-                        "name": "Lightning Strike Counter",
-                        "item": "https://rudraearthingsystem.com/products/lightning-strike-counter/"
+                    "reviewBody": "Installed the digital lightning strike counter along with our ESE arrester. Display is clear, waterproof casing is rugged, and it requires no external battery.",
+                    "reviewRating": {
+                        "@type": "Rating",
+                        "ratingValue": 5,
+                        "bestRating": 5,
+                        "worstRating": 1
                     }
-                ]
+                },
+                {
+                    "@type": "Review",
+                    "author": {
+                        "@type": "Person",
+                        "name": "Tarunendra Singh"
+                    },
+                    "reviewBody": "Mounted on the down conductor at our cement plant unit. Works reliably even during heavy monsoon storms and logs surge events accurately.",
+                    "reviewRating": {
+                        "@type": "Rating",
+                        "ratingValue": 5,
+                        "bestRating": 5,
+                        "worstRating": 1
+                    }
+                },
+                {
+                    "@type": "Review",
+                    "author": {
+                        "@type": "Person",
+                        "name": "Kamleshwar Prasad"
+                    },
+                    "reviewBody": "Compact, IP-rated enclosure and straightforward clamp fitting on the copper strip. Very useful for safety audit records.",
+                    "reviewRating": {
+                        "@type": "Rating",
+                        "ratingValue": 4,
+                        "bestRating": 5,
+                        "worstRating": 1
+                    }
+                }
+            ],
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": 4.67,
+                "reviewCount": 3,
+                "bestRating": 5,
+                "worstRating": 1
             }
-        ]
-    }
+        },
+        {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "https://rudraearthingsystem.com/"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Products",
+                    "item": "https://rudraearthingsystem.com/products/"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "name": "Lightning Strike Counter",
+                    "item": "https://rudraearthingsystem.com/products/lightning-strike-counter/"
+                }
+            ]
+        }
+    ]
+}
     </script>
 <link rel="stylesheet" href="/assets/loader.css">
 <script src="/assets/loader.js"></script>
+<!-- RUDRA-REVIEWS-STYLE START -->
+<style>
+#rudra-product .rrv-section {background:#f1f5f9;color:#071a2b;}
+#rudra-product .rrv-header {display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:24px;}
+#rudra-product .rrv-header h2 {margin-bottom:8px;}
+#rudra-product .rrv-summary {color:#475569;margin:0;}
+#rudra-product .rrv-controls {display:flex;gap:8px;}
+#rudra-product .rrv-controls[hidden] {display:none!important;}
+#rudra-product .rrv-arrow {width:46px;height:46px;border:1px solid #cbd5e1;background:#fff;color:#071a2b;border-radius:50%;font-size:20px;cursor:pointer;}
+#rudra-product .rrv-arrow:hover:not(:disabled) {background:#071a2b;color:#fff;}
+#rudra-product .rrv-arrow:disabled {opacity:.4;cursor:default;}
+#rudra-product .rrv-track {display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 32px)/3);gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;overscroll-behavior-inline:contain;padding:4px 2px 14px;scrollbar-width:thin;scrollbar-color:#94a3b8 transparent;}
+#rudra-product .rrv-card {min-width:0;scroll-snap-align:start;border:1px solid #dbe3ec;border-top:3px solid #ed701e;border-radius:12px;background:#fff;padding:22px;display:flex;flex-direction:column;gap:12px;box-shadow:0 4px 14px #071a2b08;}
+#rudra-product .rrv-person {display:flex;gap:12px;align-items:center;}
+#rudra-product .rrv-avatar {flex:0 0 44px;width:44px;height:44px;display:grid;place-items:center;border-radius:50%;background:#071a2b;color:white;font-weight:700;}
+#rudra-product .rrv-card h3 {font-family:inherit;font-size:16px;line-height:1.4;margin:0;overflow-wrap:anywhere;}
+#rudra-product .rrv-city {font-size:12px;color:#475569;margin:0;overflow-wrap:anywhere;}
+#rudra-product .rrv-stars {color:#a43d0d;font-size:17px;letter-spacing:1px;font-weight:600;margin:0;}
+#rudra-product .rrv-stars span {font-size:12px;color:#334155;letter-spacing:0;}
+#rudra-product .rrv-body {color:#334155;white-space:pre-wrap;overflow-wrap:anywhere;line-height:1.65;font-size:14px;margin:0;}
+#rudra-product .rrv-component {font-size:12px;color:#475569;overflow-wrap:anywhere;}
+#rudra-product .rrv-empty {border:1px solid #dbe3ec;background:#fff;padding:24px;border-radius:12px;}
+#rudra-product .rrv-feedback {margin-top:20px;display:flex;align-items:center;gap:12px;flex-wrap:wrap;}
+#rudra-product .rrv-feedback a {color:#a43d0d;text-decoration:underline;text-underline-offset:3px;font-weight:600;}
+#rudra-product .rrv-section :focus-visible {outline:3px solid #a43d0d;outline-offset:3px;}
+@media(max-width:991px){#rudra-product .rrv-track {grid-auto-columns:calc((100% - 16px)/2);}}
+@media(max-width:575px){#rudra-product .rrv-track {grid-auto-columns:100%;}#rudra-product .rrv-card {padding:18px;}}
+@media(prefers-reduced-motion:reduce){#rudra-product .rrv-track {scroll-behavior:auto!important;}}
+</style>
+<!-- RUDRA-REVIEWS-STYLE END -->
 </head>
 
 <body class="rp-page" id="top">
@@ -367,7 +448,146 @@
             </section>
 
             <!-- Related Products -->
-            <section class="rp-section" aria-labelledby="rp-related-title">
+            <!-- RUDRA-SEO-REVIEWS START -->
+<section class="rp-section rrv-section" id="rudra-review-section" aria-labelledby="rudra-product-review-title">
+<div class="rp-container">
+<div class="rrv-header"><div class="rp-heading">
+<p class="rp-kicker">Customer Feedback</p>
+<h2 id="rudra-product-review-title">Lightning Strike Counter Reviews</h2>
+<p class="rrv-summary">4.67/5 from 3 published product reviews</p>
+</div>
+<div class="rrv-controls" hidden><button type="button" class="rrv-arrow" data-rrv-prev aria-label="Previous reviews" aria-controls="rudra-review-track">&#8592;</button><button type="button" class="rrv-arrow" data-rrv-next aria-label="Next reviews" aria-controls="rudra-review-track">&#8594;</button></div>
+</div>
+<div class="rrv-track" id="rudra-review-track" tabindex="0" role="region" aria-label="Customer review cards; scroll to see more">
+<article class="rrv-card">
+<div class="rrv-person">
+<span class="rrv-avatar" aria-hidden="true">BN</span><div>
+<h3>Brijesh Narayan Singh</h3>
+<p class="rrv-city">Sonbhadra, Uttar Pradesh</p>
+</div></div>
+<p class="rrv-stars"><span aria-hidden="true" style="font-size:17px;color:inherit">&#9733;&#9733;&#9733;&#9733;&#9733;</span> <span>5/5</span></p>
+<p class="rrv-body">Installed the digital lightning strike counter along with our ESE arrester. Display is clear, waterproof casing is rugged, and it requires no external battery.</p></article>
+<article class="rrv-card">
+<div class="rrv-person">
+<span class="rrv-avatar" aria-hidden="true">TS</span><div>
+<h3>Tarunendra Singh</h3>
+<p class="rrv-city">Satna, Madhya Pradesh</p>
+</div></div>
+<p class="rrv-stars"><span aria-hidden="true" style="font-size:17px;color:inherit">&#9733;&#9733;&#9733;&#9733;&#9733;</span> <span>5/5</span></p>
+<p class="rrv-body">Mounted on the down conductor at our cement plant unit. Works reliably even during heavy monsoon storms and logs surge events accurately.</p></article>
+<article class="rrv-card">
+<div class="rrv-person">
+<span class="rrv-avatar" aria-hidden="true">KP</span><div>
+<h3>Kamleshwar Prasad</h3>
+<p class="rrv-city">Jhansi, Uttar Pradesh</p>
+</div></div>
+<p class="rrv-stars"><span aria-hidden="true" style="font-size:17px;color:inherit">&#9733;&#9733;&#9733;&#9733;&#9734;</span> <span>4/5</span></p>
+<p class="rrv-body">Compact, IP-rated enclosure and straightforward clamp fitting on the copper strip. Very useful for safety audit records.</p></article>
+</div>
+<div class="rrv-feedback"><span>Have you used this product?</span><a href="/contact/">Share your experience with our team</a></div></div></section>
+<script>
+/* RUDRA-INFINITE-REVIEWS v2 */
+(function(){
+    const root = document.getElementById('rudra-review-section');
+    if (!root || root.dataset.rrvInfinite === 'yes') return;
+    const track = root.querySelector('.rrv-track');
+    const controls = root.querySelector('.rrv-controls');
+    if (!track || !controls) return;
+    const prev = controls.querySelector('[data-rrv-prev]');
+    const next = controls.querySelector('[data-rrv-next]');
+    const originals = Array.from(track.children);
+    if (!prev || !next || originals.length < 2) return;
+    root.dataset.rrvInfinite = 'yes';
+    const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const SPEED = 45; // pixels per second
+    const cloneGroup = () => {
+        const group = document.createDocumentFragment();
+        originals.forEach(card => {
+            const copy = card.cloneNode(true);
+            copy.setAttribute('aria-hidden','true');
+            copy.setAttribute('inert','');
+            copy.dataset.rrvClone = 'yes';
+            copy.removeAttribute('id');
+            copy.querySelectorAll('[id]').forEach(el => el.removeAttribute('id'));
+            copy.querySelectorAll('a,button,input,select,textarea,[tabindex]').forEach(el => el.setAttribute('tabindex','-1'));
+            group.append(copy);
+        });
+        return group;
+    };
+    // Two groups each side provide enough runway even for two cards on desktop.
+    track.prepend(cloneGroup(),cloneGroup());
+    track.append(cloneGroup(),cloneGroup());
+    track.style.scrollSnapType = 'none';
+    track.style.scrollBehavior = 'auto';
+    controls.hidden = false;
+    prev.disabled = next.disabled = false;
+    let hovered = window.matchMedia('(hover: hover)').matches && root.matches(':hover'), pointer = false, touching = false, visible = true;
+    let period = 0, center = 0, resumeAt = 0, last = 0, fraction = 0, settle;
+    function mod(n,d){ return ((n % d) + d) % d; }
+    function normalize(){
+        if (period <= 0) return;
+        const x = track.scrollLeft;
+        if (x < center - 1 || x >= center + period) track.scrollLeft = center + mod(x - center,period);
+    }
+    function measure(){
+        const phase = period > 0 ? mod(track.scrollLeft - center,period)/period : 0;
+        const after = track.children[originals.length * 3];
+        if (!after || !track.clientWidth) return;
+        const width = after.offsetLeft - originals[0].offsetLeft;
+        if (width <= 0) return;
+        if (width === period) return;
+        period = width;
+        center = originals[0].offsetLeft - track.firstElementChild.offsetLeft;
+        track.scrollLeft = center + phase * period;
+    }
+    function hold(ms){ resumeAt = performance.now() + ms; fraction = 0; }
+    function move(direction){
+        normalize();
+        const step = originals[1].offsetLeft - originals[0].offsetLeft;
+        hold(2200);
+        track.scrollBy({left:direction * step,behavior:motion.matches ? 'instant' : 'smooth'});
+    }
+    prev.addEventListener('click',() => move(-1));
+    next.addEventListener('click',() => move(1));
+    root.addEventListener('pointerenter',e => { if(e.pointerType === 'mouse') hovered = true; });
+    root.addEventListener('pointerleave',e => { if(e.pointerType === 'mouse') { hovered = false; hold(200); } });
+    root.addEventListener('pointerdown',() => { pointer = true; hold(2500); });
+    root.addEventListener('touchstart',() => { touching = true; hold(2500); },{passive:true});
+    function releaseTouch(e){ if(touching && e.touches.length === 0){ touching = false; hold(1200); } }
+    window.addEventListener('touchend',releaseTouch,{passive:true});
+    window.addEventListener('touchcancel',releaseTouch,{passive:true});
+    window.addEventListener('blur',() => { pointer = touching = hovered = false; hold(1200); });
+    function release(){ if(pointer){ pointer = false; hold(2500); } }
+    window.addEventListener('pointerup',release);
+    window.addEventListener('pointercancel',release);
+    track.addEventListener('wheel',() => hold(2500),{passive:true});
+    track.addEventListener('keydown',() => hold(2500));
+    track.addEventListener('scroll',() => {
+        clearTimeout(settle);
+        settle = setTimeout(() => { if (!pointer && !touching) normalize(); },200);
+    },{passive:true});
+    if(typeof IntersectionObserver !== 'undefined'){
+        new IntersectionObserver(entries => { visible = entries[0].isIntersecting; }).observe(track);
+    }
+    if(typeof ResizeObserver !== 'undefined') new ResizeObserver(measure).observe(track);
+    window.addEventListener('resize',measure);
+    function frame(now){
+        const dt = last ? Math.min(now-last,50) : 0;
+        last = now;
+        if(period && !motion.matches && !hovered && !pointer && !touching && visible && !document.hidden && now >= resumeAt && !root.querySelector(':focus-visible')){
+            normalize();
+            fraction += SPEED * dt / 1000;
+            const pixels = Math.floor(fraction);
+            if(pixels){ track.scrollLeft += pixels; fraction -= pixels; }
+        }else fraction = 0;
+        requestAnimationFrame(frame);
+    }
+    measure();
+    requestAnimationFrame(frame);
+})();
+</script>
+<!-- RUDRA-SEO-REVIEWS END -->
+<section class="rp-section" aria-labelledby="rp-related-title">
 
                 <div class="rp-container">
 

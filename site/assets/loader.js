@@ -57,7 +57,7 @@
                 viewBox="0 0 314 266"
                 xmlns="http://www.w3.org/2000/svg"
                 role="img"
-                aria-label="Rudra Earthing Systems"
+                aria-label="Rudra Earthing System"
             >
 
                 <defs>

@@ -1439,7 +1439,7 @@ async function loadLeadActivity(id) {
             $('detail-mail').href =
                 'mailto:' + encodeURIComponent(email).replace(/%40/g, '@') +
                 '?subject=' + encodeURIComponent(
-                    'Your Rudra Earthing Systems enquiry'
+                    'Your Rudra Earthing System enquiry'
                 );
 
             $('detail-mail').hidden = false;
@@ -2142,7 +2142,7 @@ th, td {
             <img
                 class="logo"
                 src="${escapeHTML(location.origin)}/assets/logo-for-light-bg.webp"
-                alt="Rudra Earthing Systems"
+                alt="Rudra Earthing System"
             >
 
             <p>
@@ -2153,7 +2153,7 @@ th, td {
 
         <div class="company">
 
-            <strong>Rudra Earthing Systems</strong><br>
+            <strong>Rudra Earthing System</strong><br>
 
             538/845 Shiv Puram,<br>
             Shubh Lagan Guest House,<br>
@@ -2231,7 +2231,7 @@ th, td {
 
     <div class="signature">
 
-        <strong>For Rudra Earthing Systems</strong>
+        <strong>For Rudra Earthing System</strong>
 
         <br><br>
 
